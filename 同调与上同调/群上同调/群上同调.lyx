@@ -1,0 +1,967 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass ctex-article
+\begin_preamble
+% 如果没有这一句命令，XeTeX会出错，原因参见
+% http://bbs.ctex.org/viewthread.php?tid=60547
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\end_preamble
+\options UTF8
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package none
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 4cm
+\headheight 1cm
+\headsep 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The below text refers to if we add 
+\begin_inset Quotes eld
+\end_inset
+
+adobefonts
+\begin_inset Quotes erd
+\end_inset
+
+ to the custom class options.
+ The text is outdated and will be updated to reflect this change soon.
+ The change was made because we no longer need proprietary fonts to compile
+ this document.
+ For example, it can be compiled with out-of-the-box TeX Live 2015.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+这是一份文章模板，如果要使用书籍或报告，请设置文档类为
+\family sans
+book (C\SpecialChar TeX
+)
+\family default
+或者
+\family sans
+report (C\SpecialChar TeX
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+群同调与上同调简介
+\end_layout
+
+\begin_layout Author
+任杰
+\end_layout
+
+\begin_layout Standard
+本文将给出群同调与上同调的基本定义，并计算几个最简单的例子，希望给群同调与上同调一个直观的认识。
+\end_layout
+
+\begin_layout Section
+Free resolution
+\end_layout
+
+\begin_layout Standard
+我们先给出形式再做说明。Free resolution 是一个正合序列(exact sequence)：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cccccccccc}
+\stackrel{\cdots}{\longrightarrow} & F_{2} & \stackrel{\partial_{2}}{\longrightarrow} & F_{1} & \stackrel{\partial_{1}}{\longrightarrow} & F_{0} & \stackrel{\partial_{0}}{\longrightarrow} & \mathcal{M} & \stackrel{0}{\longrightarrow} & 0\end{array}
+\end{equation}
+
+\end_inset
+
+其中 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+ 为 G-module，定义为一个阿贝尔群，并且有群作用:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+m\in\mathcal{M}\Rightarrow g\cdot m\in\mathcal{M},\forall g\in G.
+\end{equation}
+
+\end_inset
+
+正合序列意味着
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\ker\left(\partial_{i}\right)=imag\left(\partial_{i+1}\right).
+\end{equation}
+
+\end_inset
+
+设 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+ 由一组基底 
+\begin_inset Formula $\left\{ m_{1},m_{2},\cdots,m_{k}\right\} $
+\end_inset
+
+ 生成(但不一定是自由生成)，要使得序列正合，可定义一个 R-module 
+\begin_inset Formula $F_{1}$
+\end_inset
+
+ ：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F_{0}=\mathcal{R}^{k}=\mathcal{R}e_{1}\oplus\cdots\oplus\mathcal{R}e_{k}
+\end{equation}
+
+\end_inset
+
+其中 
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+ 为一个 group-ring:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{R}=\mathbb{Z}\left[G\right]=\sum_{g\in G}c_{g}\cdot g,\ c_{g}\in\mathbb{Z}.
+\end{equation}
+
+\end_inset
+
+此时 
+\begin_inset Formula $F_{0}$
+\end_inset
+
+ 由 
+\begin_inset Formula $\left\{ e_{1},\cdots,e_{k}\right\} $
+\end_inset
+
+ 自由生成，其中同态映射 
+\begin_inset Formula $\partial_{0}$
+\end_inset
+
+ 效果为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+e_{i} & \mapsto & m_{i}\\
+re_{i} & \mapsto & r\cdot m_{i}
+\end{eqnarray}
+
+\end_inset
+
+设该映射的核 
+\begin_inset Formula $\ker\left(\partial_{0}\right)$
+\end_inset
+
+ 一组基为 
+\begin_inset Formula $\left\{ b_{1},\cdots,b_{l}\right\} $
+\end_inset
+
+, 同样 
+\begin_inset Formula $\ker\left(\partial_{0}\right)$
+\end_inset
+
+ 不一定由这组基自由生成，但同样可以构造
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F_{1}=\mathcal{R}^{l}=\mathcal{R}c_{1}\oplus\cdots\oplus\mathcal{R}c_{l}
+\end{equation}
+
+\end_inset
+
+而 
+\begin_inset Formula $\partial_{1}:\ c_{i}\mapsto b_{i}$
+\end_inset
+
+, 以此类推。Free resolution 就是这样一个将 G-module 写开成一个自由群正合序列的过程。最终我们只保留阶数不小于0的部分：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cccccccc}
+F_{*}: & \cdots & \stackrel{\partial_{3}}{\longrightarrow} & F_{2} & \stackrel{\partial_{2}}{\longrightarrow} & F_{1} & \stackrel{\partial_{1}}{\longrightarrow} & F_{0}\end{array}
+\end{equation}
+
+\end_inset
+
+注意 Free resolution 的选取不唯一，但可以证明不同的选取只相差一个链同伦，不会影响后面的结果。
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+例: bar resolution
+\end_layout
+
+\begin_layout Standard
+Bar resolution 是一个一般的 free resolution 构造方法。考虑 
+\begin_inset Formula $\mathcal{M}=\mathbb{Z}$
+\end_inset
+
+, G 在 module 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+ 上作用平凡：
+\begin_inset Formula $g\cdot1=1$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cccccccccc}
+\stackrel{\cdots}{\longrightarrow} & F_{2} & \stackrel{\partial_{2}}{\longrightarrow} & F_{1} & \stackrel{\partial_{1}}{\longrightarrow} & F_{0} & \stackrel{\partial_{0}}{\longrightarrow} & \mathbb{Z} & \stackrel{0}{\longrightarrow} & 0\end{array}
+\end{equation}
+
+\end_inset
+
+此时各阶 R-module 有一组简单基底
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+F_{0} & = & \mathcal{R}\left[\ \right]\\
+\left[\ \right] & \stackrel{\partial_{0}}{\longmapsto} & 1
+\end{eqnarray}
+
+\end_inset
+
+此时 
+\begin_inset Formula $\ker\partial_{0}=span\left\{ g\left[\ \right]-\left[\ \right],\forall g\in G\right\} $
+\end_inset
+
+, 因此再定义
+\begin_inset Formula 
+\begin{eqnarray}
+F_{1} & = & \bigoplus_{g\in G}\mathcal{R}\left[g\right]\\
+\left[g\right] & \stackrel{\partial_{1}}{\longmapsto} & g\left[\ \right]-\left[\ \right]
+\end{eqnarray}
+
+\end_inset
+
+可以验证此时 
+\begin_inset Formula $\ker\partial_{1}=span\left\{ g\left[h\right]-\left[gh\right]+\left[g\right],\forall g,h\in G\right\} $
+\end_inset
+
+，再定义
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+F_{2} & = & \bigoplus_{g,h\in G}\mathcal{R}\left[\left.g\right|h\right]\\
+\left[\left.g\right|h\right] & \stackrel{\partial_{2}}{\longmapsto} & g\left[h\right]-\left[gh\right]+\left[g\right]
+\end{eqnarray}
+
+\end_inset
+
+这个过程可以一只做下去，这组基底一般形式为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left[g_{1}|g_{2}|\cdots|g_{n}\right]\stackrel{\partial_{n}}{\longmapsto}g_{1}\left[g_{2}|\cdots|g_{n}\right]-\left[g_{1}g_{2}|g_{3}|\cdots|g_{n}\right]+\left[g_{1}|g_{2}g_{3}|\cdots|g_{n}\right]+\cdots+\left[g_{1}|g_{2}|\cdots|g_{n-1}\right]
+\end{equation}
+
+\end_inset
+
+注意到
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+e\left[\ \right]-\left[\ \right]=0
+\end{equation}
+
+\end_inset
+
+即 
+\begin_inset Formula $e\left[\ \right]-\left[\ \right]$
+\end_inset
+
+ 实际上不在 
+\begin_inset Formula $\ker\partial_{1}$
+\end_inset
+
+ 中。以此类推，我们可以丢掉 bar resolution 中所有形如 
+\begin_inset Formula $\left[g_{1}|\cdots|e|\cdots|g_{n}\right]$
+\end_inset
+
+ 的基底。以上构造是一般的。但这个基底往往有很多冗余，因此具体计算几乎不会使用这组基底。
+\end_layout
+
+\begin_layout Section
+群同调
+\end_layout
+
+\begin_layout Standard
+要定义群的同调，还需要一步 co-invariant 操作
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F_{i}\mapsto F_{i}/\left(m=g\cdot m\right)
+\end{equation}
+
+\end_inset
+
+对于 free module, 模掉这个等价关系相当于把系数 
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+ 换为 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+, 对于上述的 bar resolution, co-invariant 操作后的链序列为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccccccccc}
+\mathcal{F}_{*}: & \stackrel{\cdots}{\longrightarrow} & {\displaystyle \bigoplus_{g,h\in G}\mathbb{Z}\left[\left.g\right|h\right]} & \stackrel{\partial_{2}}{\longrightarrow} & {\displaystyle \bigoplus_{g\in G}\mathbb{Z}\left[g\right]} & \stackrel{\partial_{1}}{\longrightarrow} & \mathbb{Z}\left[\ \right] & \stackrel{\partial_{0}}{\longrightarrow} & \mathbb{Z} & \stackrel{0}{\longrightarrow} & 0\end{array}
+\end{equation}
+
+\end_inset
+
+群 G 的
+\series bold
+同调群
+\series default
+定义为序列 
+\begin_inset Formula $\mathcal{F}_{*}$
+\end_inset
+
+ 的同调群
+\begin_inset Formula 
+\begin{equation}
+H_{n}\left(G,\mathbb{Z}\right)\equiv H_{n}\left(\mathcal{F}_{*}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+例：
+\begin_inset Formula $G=\mathbb{Z}_{2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+对于这个简单的群，可以直接使用 bar resolution 计算群同调。此时 
+\begin_inset Formula $G=\left\{ e,\tau\right\} ,\tau^{2}=1,$
+\end_inset
+
+ 各阶 Z module 都只有一个基底 
+\begin_inset Formula $\left[\tau|\cdots|\tau\right]$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cccccccccc}
+\stackrel{\cdots}{\longrightarrow} & {\displaystyle \mathbb{Z}\left[\left.\tau\right|\tau\right]} & \stackrel{\partial_{2}}{\longrightarrow} & {\displaystyle \mathbb{Z}\left[\tau\right]} & \stackrel{\partial_{1}}{\longrightarrow} & \mathbb{Z}\left[\ \right] & \stackrel{\partial_{0}}{\longrightarrow} & \mathbb{Z} & \stackrel{0}{\longrightarrow} & 0\end{array}
+\end{equation}
+
+\end_inset
+
+各阶映射对应基变换为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\left[\ \right] & \mapsto & 1\\
+\left[\tau\right] & \mapsto & \left[\ \right]-\left[\ \right]=0\\
+\left[\left.\tau\right|\tau\right] & \mapsto & \left[\tau\right]-\left[e\right]+\left[\tau\right]=2\left[\tau\right]
+\end{eqnarray}
+
+\end_inset
+
+其一般形式为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left[\tau|\cdots|\tau\right]_{n}\mapsto\begin{cases}
+1 & n=0\\
+0 & n=1\mod2\\
+2\left[\tau|\cdots|\tau\right]_{n-1} & n=0\mod2
+\end{cases}
+\end{equation}
+
+\end_inset
+
+因此经过 co-invariant 操作后的序列为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cccccccccc}
+\mathcal{F}_{*}: & \cdots & \stackrel{2}{\longrightarrow} & \mathbb{Z} & \stackrel{0}{\longrightarrow} & {\displaystyle \mathbb{Z}} & \stackrel{2}{\longrightarrow} & {\displaystyle \mathbb{Z}} & \stackrel{0}{\longrightarrow} & \mathbb{Z}\end{array}
+\end{equation}
+
+\end_inset
+
+读出 
+\begin_inset Formula $\mathbb{Z}_{2}$
+\end_inset
+
+ 群的同调群为
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H_{n}\left(\mathbb{Z}_{2},\mathbb{Z}\right)=\begin{cases}
+\mathbb{Z} & n=0\\
+\mathbb{Z}_{2} & n=1\mod2\\
+0 & n=0\mod2
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+群上同调
+\end_layout
+
+\begin_layout Standard
+群上同调定义是类似的，通过对偶作用：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccccc}
+\mathcal{F}_{*}: & \stackrel{\cdots}{\longrightarrow} & F_{2} & \stackrel{\partial_{2}}{\longrightarrow} & F_{1} & \stackrel{\partial_{1}}{\longrightarrow} & F_{0}\\
+\downarrow &  & \downarrow &  & \downarrow &  & \downarrow\\
+\mathcal{F}^{*}: & \stackrel{\cdots}{\longleftarrow} & \hom\left(F_{2},\mathcal{M}\right) & \stackrel{d_{1}}{\longleftarrow} & \hom\left(F_{1},\mathcal{M}\right) & \stackrel{d_{0}}{\longleftarrow} & \hom\left(F_{0},\mathcal{M}\right)
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+群上同调定义为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H^{n}\left(G,\mathcal{M}\right)\equiv H^{n}\left(\mathcal{F}^{*}\right)
+\end{equation}
+
+\end_inset
+
+注意群上同调依赖 G-module 的选取，
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+ 也被称做群上同调的系数(group cohomology with coefficient)。对于自由群而言，其对偶空间为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hom\left(\mathbb{Z}^{k},\mathcal{M}\right)=\mathcal{M}^{k}.
+\end{equation}
+
+\end_inset
+
+而上边缘算子 
+\begin_inset Formula $d_{i}$
+\end_inset
+
+ 和下边缘算子 
+\begin_inset Formula $\partial_{i+1}$
+\end_inset
+
+ 是分别对应的：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left\langle d_{i}C^{i},C_{i+1}\right\rangle =\left\langle C^{i},\partial_{i+1}C_{i+1}\right\rangle 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+例1：
+\begin_inset Formula $H^{n}\left(\mathbb{Z}_{k},\mathbb{Z}\right)$
+\end_inset
+
+ ：
+\end_layout
+
+\begin_layout Standard
+这里 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ 是群 
+\begin_inset Formula $\mathbb{Z}_{k}$
+\end_inset
+
+ 平凡作用的 module.
+ 对循环群，由于只有一个生成元，此时计算可以大大简化。循环群的 group-ring 为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{R}=\mathbb{Z}\left[G\right]=\mathbb{Z}\left[t\right]/\left(t^{k}-1\right)
+\end{equation}
+
+\end_inset
+
+其中等价关系 
+\begin_inset Formula $t^{k}-1=0$
+\end_inset
+
+ 可分解为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+t^{k}-1=\left(t-1\right)\left(t^{k-1}+t^{k-2}+\cdots+1\right)=0
+\end{equation}
+
+\end_inset
+
+构造 
+\begin_inset Formula $F_{0}$
+\end_inset
+
+ 与 
+\begin_inset Formula $\partial_{0}$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\mathcal{R}e_{0} & \rightarrow & \mathbb{Z}\\
+e_{0} & \mapsto & 1
+\end{eqnarray}
+
+\end_inset
+
+注意到此时
+\begin_inset Formula 
+\begin{equation}
+\ker\partial_{0}=span\left\{ \left(t-1\right)e_{0}\right\} 
+\end{equation}
+
+\end_inset
+
+根据等价关系的分解，我们可以继续构造只包含一个基底的 
+\begin_inset Formula $F_{1}$
+\end_inset
+
+ 与 
+\begin_inset Formula $\partial_{1}$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\mathcal{R}e_{1} & \rightarrow & \mathcal{R}e_{1}\\
+e_{1} & \mapsto & \left(t-1\right)e_{0}
+\end{eqnarray}
+
+\end_inset
+
+此时
+\begin_inset Formula 
+\begin{equation}
+\ker\partial_{1}=span\left\{ Ne_{1}\right\} ,\ N=t^{k-1}+t^{k-2}+\cdots+1
+\end{equation}
+
+\end_inset
+
+更高阶的 
+\begin_inset Formula $F_{i}$
+\end_inset
+
+ 可按此方法周期构造，最终经过 co-invariant 操作后的序列为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cccccccccccc}
+\mathcal{F}_{*}: & \cdots & \stackrel{t-1}{\longrightarrow} & \mathcal{R} & \stackrel{N}{\longrightarrow} & {\displaystyle \mathcal{R}} & \stackrel{t-1}{\longrightarrow} & \mathcal{R} & \stackrel{1}{\longrightarrow} & \mathbb{Z} & \stackrel{0}{\longrightarrow} & 0\end{array}
+\end{equation}
+
+\end_inset
+
+对偶作用后：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccccccc}
+\mathcal{F}_{*}: & \rightarrow & \mathcal{R} & \stackrel{t-1}{\longrightarrow} & \mathcal{R} & \stackrel{N}{\longrightarrow} & \mathcal{R} & \stackrel{t-1}{\longrightarrow} & \mathcal{R}\\
+\downarrow &  & \downarrow &  & \downarrow &  & \downarrow &  & \downarrow\\
+\mathcal{F}^{*}: & \leftarrow & \mathbb{Z} & \stackrel{0}{\longleftarrow} & \mathbb{Z} & \stackrel{k}{\longleftarrow} & \mathbb{Z} & \stackrel{0}{\longleftarrow} & \mathbb{Z}
+\end{array}
+\end{equation}
+
+\end_inset
+
+因为群在 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ 上作用是平凡的，
+\begin_inset Formula $t-1\mapsto0,N\mapsto k$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H^{n}\left(\mathbb{Z}_{k},\mathbb{Z}\right)=\begin{cases}
+\mathbb{Z} & n=0\\
+0 & n=1\mod2\\
+\mathbb{Z}_{k} & n=0\mod2
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+例2：
+\begin_inset Formula $H^{n}\left(\mathbb{Z}_{k},U\left(1\right)\right)$
+\end_inset
+
+ ：
+\end_layout
+
+\begin_layout Standard
+这里 
+\begin_inset Formula $\mathbb{Z}_{k}$
+\end_inset
+
+ 在 
+\begin_inset Formula $U\left(1\right)$
+\end_inset
+
+ 上作用也是平凡的。我们希望群乘是加法，因此将 
+\begin_inset Formula $U(1)$
+\end_inset
+
+ 写作 
+\begin_inset Formula $\mathbb{R}/\mathbb{Z}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H^{n}\left(\mathbb{Z}_{k},U\left(1\right)\right)\approx H^{n}\left(\mathbb{Z}_{k},\mathbb{R}/\mathbb{Z}\right)
+\end{equation}
+
+\end_inset
+
+这样我们只需将例1的结果稍加修改得到：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccccccc}
+\mathcal{F}_{*}: & \rightarrow & \mathcal{R} & \stackrel{t-1}{\longrightarrow} & \mathcal{R} & \stackrel{N}{\longrightarrow} & \mathcal{R} & \stackrel{t-1}{\longrightarrow} & \mathcal{R}\\
+\downarrow &  & \downarrow &  & \downarrow &  & \downarrow &  & \downarrow\\
+\mathcal{F}^{*}: & \leftarrow & \mathbb{R}/\mathbb{Z} & \stackrel{0}{\longleftarrow} & \mathbb{R}/\mathbb{Z} & \stackrel{k}{\longleftarrow} & \mathbb{R}/\mathbb{Z} & \stackrel{0}{\longleftarrow} & \mathbb{R}/\mathbb{Z}
+\end{array}
+\end{equation}
+
+\end_inset
+
+这时和整数情况稍有不同，简单计算得到上同调群为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H^{n}\left(\mathbb{Z}_{k},U\left(1\right)\right)=\begin{cases}
+\mathbb{R}/\mathbb{Z}=U\left(1\right) & n=0\\
+\mathbb{Z}_{k} & n=1\mod2\\
+0 & n=0\mod2
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+例3：
+\begin_inset Formula $H^{n}\left(\mathbb{Z}_{k}\times\mathbb{Z}_{T},U_{T}\left(1\right)\right)$
+\end_inset
+
+ ：
+\end_layout
+
+\begin_layout Standard
+其中 
+\begin_inset Formula $\mathbb{Z}_{T}=\left\{ e,\tau\right\} $
+\end_inset
+
+ 是时间反演算符，在 module 
+\begin_inset Formula $U_{T}(1)$
+\end_inset
+
+ 上的作用为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+e\cdot1 & = & 1\\
+\tau\cdot1 & = & -1
+\end{eqnarray}
+
+\end_inset
+
+我们可以将 
+\begin_inset Formula $\mathbb{Z}_{k}\times\mathbb{Z}_{T}$
+\end_inset
+
+ 写作 
+\begin_inset Formula $\mathbb{Z}_{2k}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H^{n}\left(\mathbb{Z}_{k}\times\mathbb{Z}_{T},U_{T}\left(1\right)\right)\approx H^{n}\left(\mathbb{Z}_{2k},\mathbb{R}/\mathbb{Z}\right)
+\end{equation}
+
+\end_inset
+
+此时群的唯一生成元为 
+\begin_inset Formula $\tau$
+\end_inset
+
+, 
+\begin_inset Formula $\tau$
+\end_inset
+
+ 在 
+\begin_inset Formula $U_{T}(1)$
+\end_inset
+
+ 上作用将单位元取逆。因此 
+\begin_inset Formula $t-1\mapsto-1,N\mapsto0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccccccc}
+\mathcal{F}_{*}: & \rightarrow & \mathcal{R} & \stackrel{t-1}{\longrightarrow} & \mathcal{R} & \stackrel{N}{\longrightarrow} & \mathcal{R} & \stackrel{t-1}{\longrightarrow} & \mathcal{R}\\
+\downarrow &  & \downarrow &  & \downarrow &  & \downarrow &  & \downarrow\\
+\mathcal{F}^{*}: & \leftarrow & \mathbb{R}/\mathbb{Z} & \stackrel{-2}{\longleftarrow} & \mathbb{R}/\mathbb{Z} & \stackrel{0}{\longleftarrow} & \mathbb{R}/\mathbb{Z} & \stackrel{-2}{\longleftarrow} & \mathbb{R}/\mathbb{Z}
+\end{array}
+\end{equation}
+
+\end_inset
+
+稍加计算得到：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H^{n}\left(\mathbb{Z}_{k}\times Z_{T},U_{T}\left(1\right)\right)=\begin{cases}
+0 & n=1\mod2\\
+\mathbb{Z}_{2} & n=0\mod2
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Remark
+\end_layout
+
+\begin_layout Standard
+以上的例子可以展示出群上同调计算的基本流程。但实际上对于多个生成元的群，很难像循环群那样轻易地构造出简单的 free resolution，这时群上同调计算困难
+的地方。
+\end_layout
+
+\end_body
+\end_document
