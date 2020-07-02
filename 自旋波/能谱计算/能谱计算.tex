@@ -284,10 +284,11 @@ i\partial_{t}\psi_{k} & = & T_{k}^{-1}i\partial_{t}\phi_{k}\nonumber \\
 \begin{equation}
 T_{k}^{-1}\left(I_{-}H_{k}\right)T_{k}=\tilde{D}_{k}=diag(\tilde{\omega}_{1},\cdots,\tilde{\omega}_{2N}).
 \end{equation}
-实际上，这样的哈密顿量还包含一个 particle-hole 对称性，我们在这里不详细讨论它。只需注意这个对称性保证能谱是上下对称的，即我们可以排列本征向量使得对角化矩阵为：
+可以证明，对角化后的本征值必为实数，我们可以由小到大排列本征值：
 
 \begin{equation}
-\tilde{D}_{k}=diag(\omega_{1},\cdots,\omega_{n},-\omega_{1},\cdots,-\omega_{n}).
+\tilde{D}_{k}=diag(-\omega_{n}^{h},\cdots,-\omega_{1}^{h},\omega_{1}^{p},\cdots,\omega_{n}^{p}).
 \end{equation}
-因此矩阵 $I_{-}H_{k}$ 本征能谱正频部分就给出波色系统能谱。
+其中 $\omega_{i}^{h},\omega_{j}^{p}$ 分别是空穴，粒子的能谱，能谱正频部分就给出 $k$ 动量的粒子能谱，此时空穴能谱等于
+$-k$ 动量的粒子能谱(系统有粒子-空穴对称性)。
 \end{document}

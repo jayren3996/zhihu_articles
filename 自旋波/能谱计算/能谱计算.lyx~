@@ -684,7 +684,7 @@ T_{k}^{-1}\left(I_{-}H_{k}\right)T_{k}=\tilde{D}_{k}=diag(\tilde{\omega}_{1},\cd
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\tilde{D}_{k}=diag(-\omega_{n}^{h},\cdots,-\omega_{1}^{h},\omega_{1}^{p},\cdots,\omega_{n}^{p}).
+\tilde{D}_{k}=diag(-\omega_{1}^{h},\cdots,-\omega_{n}^{h},\omega_{1}^{p},\cdots,\omega_{n}^{p}).
 \end{equation}
 
 \end_inset
