@@ -1,36 +1,46 @@
-%% LyX 2.3.4.2 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
 \documentclass[UTF8]{ctexart}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2cm,rmargin=2cm,headheight=1cm,headsep=1cm}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage{bm}
 \usepackage{esint}
 
 \makeatletter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
-% 如果没有这一句命令，XeTeX会出错，原因参见
-% http://bbs.ctex.org/viewthread.php?tid=60547
 \DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
 
 \makeatother
 
 \begin{document}
-\title{多体系统的量子化方案}
+\title{多体系统的路径积分量子化}
 \date{任杰}
 
 \maketitle
-对于多体系统，有两种平行的量子化方案：正则量子化和路径积分量子化。相比而言，路径积分有更简洁优雅的形式，而正则量子化有着“更严格”的量子力学结构。本文希望做到两点：
-\begin{itemize}
-\item 更详细地讨论两种框架下定义中一些容易忽略的小细节。
-\item 将两个框架的计算放在一起，比较它们的相同与不同之处。
-\end{itemize}
 
-\section{傅立叶变换}
 
-两种框架内处理的模型基本都在实空间定义，但在计算时变换到动量和频率空间。为了不弄乱变换前后的系数，这里总结对场算符和格林函数的傅立叶变换(它们的系数是不同的!)。大多数多体物理书中都采用以下的系数。 
+\section*{傅立叶变换}
+\noindent 对不显含时间、平移不变的哈密顿量，在动量空间考虑会大大化简问题。这时我们会用到傅立叶变换，然而傅立叶变换前面的归一化系数在不同的地方有着不同的规定。完全不加区分可能在计算过程中算错系数。因此我们在此采用 Atland \& Simons, \textit{Condensed Matter Field Theory} 书中的规定。
+\subsection*{函数的傅立叶系数}
+\noindent 首先考虑函数的傅立叶变换，设函数 $f(\bm r,\tau)$ 是 $d+1$ 维空间的一个函数。其傅立叶变换规定为：
+\begin{eqnarray}
+	f(\bm r,\tau) &=& \frac{1}{\beta L^d} \sum_q f_q e^{i q\cdot r}, \\
+	f_q &=& \int_0^\beta d\tau \int d^d r \ f(\bm r,\tau)e^{-iq\cdot r}.
+\end{eqnarray}
+其中4动量 $q\equiv(\bm q,\omega_n)$，内积 $q\cdot r \equiv \bm q\cdot \bm r - \omega_n \tau$，对 $q$ 求和代表对 4 动量求和.
+
+\subsection*{场的傅立叶系数}
+\noindent 对场 $\phi(\bm r,\tau)$ 的傅立叶变换，采用另一套系数：
+\begin{eqnarray}
+	\psi(\bm r,\tau) &=& \frac{1}{\sqrt{\beta L^d}}\sum_p \psi_p e^{i q\cdot r}, \\
+	\psi_p &=& \frac{1}{\sqrt{\beta L^d}}\int_0^\beta d\tau \int d^d r\ \psi(\bm r,\tau) e^{-i q\cdot r}.
+\end{eqnarray}
+
+\subsection*{傅立叶变换性质}
+\noindent 考虑自由场的作用量：
+\begin{equation}
+	S[\bar\psi,\psi] = \int_0^\beta d\tau \int d^d r
+	\bar\psi(\bm r,\tau) \left(-\frac{\nabla^2}{2m}+V(\bm r)-\mu \right)\psi(\bm r,\tau).
+\end{equation}
+简单的量纲分析可知场的量纲为 $[L^{-d}]$
 
 \subsection{场算符变换}
 

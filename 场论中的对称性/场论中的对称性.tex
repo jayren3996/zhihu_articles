@@ -1,19 +1,12 @@
-%% LyX 2.3.4.2 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
 \documentclass[10pt,UTF8]{ctexart}
 \usepackage[T1]{fontenc}
 \usepackage[a4paper]{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2cm,rmargin=2cm,headheight=1cm,headsep=1cm}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage{bm}
 \usepackage{amsmath}
 \usepackage{amssymb}
 
 \makeatletter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
-% 如果没有这一句命令，XeTeX会出错，原因参见
-% http://bbs.ctex.org/viewthread.php?tid=60547
 \DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
 
 \makeatother
@@ -21,12 +14,13 @@
 \begin{document}
 \title{场论中的对称性}
 \author{任杰}
+\date{}
 \maketitle
 
-\section{连续对称性与守恒律}
+\section*{连续对称性与守恒律}
 
-\subsection{无穷小变换}
-
+\subsection*{无穷小变换}
+\noindent
 对称性可以被定义为坐标和场的一组变换，这组变换使得系统在任何区间内的作用量不变，因此在对称变换下，系统的运动规律不变。我们这里只考虑连续对称性，考虑坐标和场的无穷小变换： 
 
 \begin{eqnarray}
@@ -46,8 +40,8 @@ x^{\mu} & \rightarrow & x'^{\mu}=x^{\mu}+\delta x^{\mu},\\
 \end{equation}
 上式中 $\Omega'$ 是原区域 $\Omega$ 经过坐标变换后对应的区域。 
 
-\subsection{诺特定理}
-
+\subsection*{诺特定理}
+\noindent
 诺特定理告诉我们一个连续对称性对应一个守恒量。我们在这一节中将证明这点。为了证明的方便，我们对场定义一个总变分： 
 
 \begin{equation}
@@ -113,10 +107,10 @@ Q:=\int d^{3}xf^{0}.
 \end{equation}
 
 
-\section{能量-动量张量 }
+\section*{能量-动量张量 }
 
-\subsection{时空平移不变性}
-
+\subsection*{时空平移不变性}
+\noindent
 第一个例子是我们提到过的时空对称性，这个对称性只由时空平移不变形生成，无穷小变换可以写为： 
 
 \begin{equation}
@@ -147,8 +141,8 @@ P_{\nu}=\int d^{3}x{\Theta^{0}}_{\nu}=\int d^{3}x\pi_{r}\left(x\right)\partial_{
 \end{equation}
 这是场的动量密度积分，即动量守恒。 
 
-\subsection{电磁场中的能动张量}
-
+\subsection*{电磁场中的能动张量}
+\noindent
 电磁场(无源)的拉氏量密度定义为：
 
 \begin{equation}
@@ -178,10 +172,10 @@ P^{i} & = & \int d^{3}x\Theta^{0i}=\int d^{3}x\left(\bm{E}\times\bm{B}\right)^{i
 \end{eqnarray}
 
 
-\section{守恒荷}
+\section*{守恒荷}
 
-\subsection{内秉对称性}
-
+\subsection*{内秉对称性}
+\noindent
 第二个例子是场本身的内秉对称性。考虑场本身的无穷小变换： 
 
 \begin{equation}
@@ -199,8 +193,8 @@ Q=\int d^{3}x\pi_{r}\left(x\right)\lambda_{rs}\phi_{s}\left(x\right).
 \end{equation}
 
 
-\subsection{$U(1)$ 守恒荷}
-
+\subsection*{U(1) 守恒荷}
+\noindent
 其中一个重要的情况就是一些复场中的 $U\left(1\right)$ 对称性:
 
 \begin{eqnarray}
@@ -214,10 +208,10 @@ Q=\left(-i\right)\int d^{3}x\left[\pi\left(x\right)\phi\left(x\right)-\pi^{*}\le
 \end{equation}
 
 
-\section{角动量}
+\section*{角动量}
 
-\subsection{洛伦兹对称性}
-
+\subsection*{洛伦兹对称性}
+\noindent
 一个洛伦兹协变的理论要求作用量积分在洛伦兹变换下不变。洛伦兹变换对应的无穷小变换为：
 
 \begin{eqnarray}
@@ -259,8 +253,8 @@ S^{ij} & := & \left(-i\right)\int d^{3}x\left[\pi_{r}\left(x\right)\left(J^{ij}\
 \end{eqnarray}
 
 
-\subsection{电磁场的自旋角动量}
-
+\subsection*{电磁场的自旋角动量}
+\noindent
 电磁场拉氏量密度代入角动量表达式后得到：
 
 \begin{equation}

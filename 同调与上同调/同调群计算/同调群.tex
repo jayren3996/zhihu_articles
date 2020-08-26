@@ -1,19 +1,12 @@
-%% LyX 2.3.4.2 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing.
 \documentclass[UTF8]{ctexart}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2cm,rmargin=2cm,headheight=1cm,headsep=1cm}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{graphicx}
 
 \makeatletter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
-% 如果没有这一句命令，XeTeX会出错，原因参见
-% http://bbs.ctex.org/viewthread.php?tid=60547
 \DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
 
 \makeatother
@@ -21,9 +14,10 @@
 \begin{document}
 \title{Smith 标准型与同调群的一般计算}
 \author{任杰}
+\date{}
 
 \maketitle
-首先是在写作业时想到能否用计算机自动计算各种曲面剖分的同调群。简单调研后发现这是可以做到的，而且出乎意料地简单！同调群这一看似抽象的概念实际上完全可以用线性代数的语言描述和计算。
+\noindent 首先是在写作业时想到能否用计算机自动计算各种曲面剖分的同调群。简单调研后发现这是可以做到的，而且出乎意料地简单！同调群这一看似抽象的概念实际上完全可以用线性代数的语言描述和计算。
 
 各种同调群最终都是在一个链复形上计算一个商群。只考虑整系数情形，这类问题一般都能通过 3 步得到：
 \begin{enumerate}
@@ -33,8 +27,8 @@
 \end{enumerate}
 本文中首先介绍整系数矩阵的 Smith 分解，再说明怎样利用边缘算子的 Smith 分解直接读出同调群。本文中的同调群默认为整系数同调群。
 
-\section{Smith 标准型}
-
+\section*{Smith 标准型}
+\noindent
 对于任意一个整系数矩阵(不要求是方阵，不要求满秩)，总可以将其化为 Smith normal form，形式为：
 
 \begin{equation}
@@ -110,8 +104,8 @@ Smith 标准型：
 Smith 分解是一个机械性的工作，实际上我们可以方便地使用现成的算法高效地给出一个矩阵的 Smith 分解。其中包括 Mathematica
 内置的 SmithDecomposition 函数。
 
-\section{链复形的同调群}
-
+\section*{链复形的同调群}
+\noindent
 本节我们首先规定下我们的记号。各种同调群的核心对象是一个链复形：
 
 \begin{equation}
@@ -180,8 +174,8 @@ H_{i}\cong\mathbb{Z}^{(n-s-r)}\oplus\mathbb{Z}_{\lambda_{1}}\oplus\cdots\oplus\m
 这可以看成多出的这些子空间 $\mathbb{Z}_{\lambda_{1}}\oplus\cdots\oplus\mathbb{Z}_{\lambda_{r}}$
 一个“最干净”的分解，更精确的叙述可以由有限生成阿贝尔群结构定理给出。
 
-\section{单纯形同调群计算举例}
-
+\section*{单纯形同调群计算举例}
+\noindent
 以上是同调群计算一般的描述。下面我们在单纯形同调的框架里，利用我们这个算法算几个曲面的同调群作为例子。
 
 单纯形及三角剖分的定义这里不再赘述。我们计算球面和轮胎面的各阶同调群，说明这两个曲面拓扑不等价。这里链复形可写为：
@@ -189,9 +183,8 @@ H_{i}\cong\mathbb{Z}^{(n-s-r)}\oplus\mathbb{Z}_{\lambda_{1}}\oplus\cdots\oplus\m
 \begin{equation}
 0\stackrel{i}{\longrightarrow}C_{2}\stackrel{M_{2}}{\longrightarrow}C_{1}\stackrel{M_{1}}{\longrightarrow}C_{0}\stackrel{M_{0}}{\longrightarrow}0
 \end{equation}
-
+\noindent
 先算简单的。球面的三角剖分就是个四面体。
-
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[width=8cm]{include/f1}
@@ -199,9 +192,8 @@ H_{i}\cong\mathbb{Z}^{(n-s-r)}\oplus\mathbb{Z}_{\lambda_{1}}\oplus\cdots\oplus\m
 \caption{球面三角剖分}
 
 \end{figure}
-
+\noindent
 3 个线性空间为：
-
 \begin{eqnarray}
 C_{0}^{(4)} & = & span\left\{ p_{0},p_{1},p_{2},p_{3}\right\} \\
 C_{1}^{(6)} & = & span\left\{ (01),(02),(03),(12),(13),(23)\right\} \\
@@ -256,7 +248,8 @@ D_{1}=\left(\begin{array}{cccccc}
 \end{equation}
 因此这个链复形不会出现那种情况。现在我们直接写出各阶同调群：
 
-0 阶：
+\noindent
+\textbf{0 阶:}
 
 \begin{equation}
 n=4,r=3,s=0,
@@ -265,7 +258,7 @@ n=4,r=3,s=0,
 \begin{equation}
 H_{0}\cong\mathbb{Z}^{(n-r-s)}=\mathbb{Z}.
 \end{equation}
-1 阶：
+\textbf{1 阶:}
 
 \begin{equation}
 n=3,r=3,s=3,
@@ -274,7 +267,7 @@ n=3,r=3,s=3,
 \begin{equation}
 H_{1}\cong\left\{ 0\right\} .
 \end{equation}
-2 阶：
+\textbf{2 阶:}
 
 \begin{equation}
 n=4,r=0,s=3,
@@ -283,7 +276,6 @@ n=4,r=0,s=3,
 \begin{equation}
 H_{2}\cong\mathbb{Z}.
 \end{equation}
-
 下面计算轮胎面。
 
 \begin{figure}[H]
@@ -292,7 +284,7 @@ H_{2}\cong\mathbb{Z}.
 \par\end{centering}
 \caption{轮胎面三角剖分}
 \end{figure}
-
+\noindent
 轮胎面的三角剖分比较复杂，但同样可以按部就班地做出同调群来：
 
 \begin{equation}
@@ -345,7 +337,6 @@ C_{2}^{(18)} & = & span\left\{ (013),(135),(125),(257),(207),(073),\right.\nonum
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 & 0
 \end{array}\right)
 \]
-
 Smith 标准型的非零对角元为 17 个 1.
 
 矩阵 $M_{1}$ 为：
@@ -383,7 +374,8 @@ Smith 标准型的非零对角元为 17 个 1.
 \]
 Smith 标准型的非零对角元为 8 个 1. 因此读出同调群为：
 
-0 阶：
+\noindent
+\textbf{0 阶:}
 
 \begin{equation}
 n=9,r=8,s=0,
@@ -392,7 +384,7 @@ n=9,r=8,s=0,
 \begin{equation}
 H_{0}\cong\mathbb{Z}.
 \end{equation}
-1 阶：
+\textbf{1 阶:}
 
 \begin{equation}
 n=27,r=17,s=8,
@@ -401,7 +393,7 @@ n=27,r=17,s=8,
 \begin{equation}
 H_{1}\cong\mathbb{Z}^{2}.
 \end{equation}
-2 阶：
+\textbf{2 阶:}
 
 \begin{equation}
 n=18,r=0,s=17,
@@ -412,8 +404,8 @@ H_{2}\cong\mathbb{Z}.
 \end{equation}
 我们看到 1 阶同调群可区分这两个曲面。
 
-\section{Comment}
-
+\section*{Comment}
+\noindent
 单纯形上同调在物理中也许并没有太多用处，这种基于三角剖分的办法难以更高维的流形。但所有的同调群计算几乎全都基于链复形和边缘算子，只要我们清楚每一阶链群，并且有方法给出每一阶边缘算符的具体矩阵形式，那么同调群的计算都是一样的。
 
 在这个意义上，同调群的计算基本可以认为是一个线性代数问题。
