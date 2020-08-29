@@ -201,13 +201,14 @@ Wick 定理可用于计算 $2n$ 点关联函数：
 \noindent
 自由费米气体的格林函数为
 \begin{equation}
-	G_{p} = \langle \psi_{p} \bar\psi_{p} \rangle = \frac{1}{-i\omega_n + \xi_{\bm p}},
+	G_{p} \equiv -\langle \psi_{p} \bar\psi_{p} \rangle 
+	= \frac{1}{i\omega_n - \xi_{\bm p}},
 \end{equation}
 其中 $\xi_{\bm p}=\frac{\bm p^2}{2m}-\mu$. 对频率求和的结果为：
 \begin{eqnarray}
-	\frac{1}{\beta} \sum_{n} G_p & = & \frac{1}{\beta} \sum_{n}\frac{1}{-i\omega_n+\xi_{\bm p}}\\
- 	& = & -\sum_{z_{k}} \left. \mathrm{Res}\left[\frac{1}{e^{\beta z}+1} \frac{1}{z-\xi_{\bm p}}\right]\right|_{z=z_{k}}\\
-  	& = & - n_{F}(\xi_{\bm p}).
+	\frac{1}{\beta} \sum_{n} G_p & = & \frac{1}{\beta} \sum_{n}\frac{1}{i\omega_n - \xi_{\bm p}}\\
+ 	& = & \sum_{z_{k}} \left. \mathrm{Res}\left[\frac{1}{e^{\beta z}+1} \frac{1}{z-\xi_{\bm p}}\right]\right|_{z=z_{k}}\\
+  	& = & n_{F}(\xi_{\bm p}).
 \end{eqnarray}
 
 
