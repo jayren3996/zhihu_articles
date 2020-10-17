@@ -27,7 +27,7 @@
 \date{}
 
 \maketitle
-
+\noindent
 Lieb-Robinson bound 给出了非相对论多体系统中信息传播速度的一个上界。这个定理告诉我们，即使我们的考虑完全忽略相对论的多体系统，在局域的哈密顿量演化下，多体系统仍然不能超距地传递信息。这个定理除了给出信息传播速度上限之外，还能证明有能隙、无简并的系统基态关联函数随距离指数衰减，而后者和基态纠缠熵面积律有直接关系(详见参考文献[4],[5])。下面的证明主要 follow M. B. Hastings 的一个 note(参考文献[2])，但我们这里对“算符局域性”做了比 Hastings 文中稍强些的限制，这样会使得证明更简单些。
 
 \section*{多体系统中的局域性}
@@ -48,7 +48,7 @@ Lieb-Robinson bound 给出了非相对论多体系统中信息传播速度的一
 \begin{itemize}
 	\item 算符的是局域的，即 $|X| \le k,\ \mathrm{diam}(X) \le r$;
 	\item 算符是有界的，即 $\Vert \hat H_X \Vert \le h$;
-	\item support 包含格点 $i$ 的算符数量是有限的，至多为 $m$.
+	\item 包含格点 $i$ 的算符数量是有限的，至多为 $m$.
 \end{itemize}
 Lieb-Robinson bound 关心的对象是在海森堡表象下，在两个不相交的区域 $X,Y$ 上定义的两个算符 $\hat{A}_X,\hat{B}_Y$ 的对易子 $[\hat A_X(t),\hat B_Y]$. 显然，在零时刻对易子为零，一个直接的想法是 $X$ 处算符的信息传递到 $Y$ 需要一个时间 $t^*$，当 $t<t^*$ 时对易子为零。
 \begin{figure}[H]
