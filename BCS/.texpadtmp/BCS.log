@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.4.2)  29 AUG 2020 11:37
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.4.2)  18 OCT 2020 14:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -261,7 +261,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 LaTeX Info: Redefining \nobreakspace on input line 13.
- (/Users/ren/Documents/GitHub/zhihu_articles/路径积分 BCS 理论/.texpadtmp/BCS.aux)
+ (/Users/ren/Documents/GitHub/zhihu_articles/BCS/.texpadtmp/BCS.aux)
 \openout1 = `BCS.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -378,27 +378,23 @@ Package geometry Warning: The marginal notes overrun the paper.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [1
 
-LaTeX Warning: No \author given.
-
-[1
-
-] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] (/Users/ren/Documents/GitHub/zhihu_articles/路径积分 BCS 理论/.texpadtmp/BCS.aux) ) 
+] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] (/Users/ren/Documents/GitHub/zhihu_articles/BCS/.texpadtmp/BCS.aux) ) 
 Here is how much of TeX's memory you used:
  8191 strings out of 479805
- 226334 string characters out of 5893181
+ 226278 string characters out of 5893181
  515002 words of memory out of 5000000
  25221 multiletter control sequences out of 15000+600000
  565469 words of font info for 93 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  56i,13n,72p,367b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/ren/Documents/GitHub/zhihu_articles/路径积分 BCS 理论/.texpadtmp/BCS.pdf (13 pages).
+Output written on /Users/ren/Documents/GitHub/zhihu_articles/BCS/.texpadtmp/BCS.pdf (13 pages).

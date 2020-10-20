@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.4.2)  26 AUG 2020 19:39
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.4.2)  20 OCT 2020 19:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -390,27 +390,31 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.53937> on input line 22.
+(Font)              <10.53937> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 22.
+(Font)              <7> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 22.
+(Font)              <5> on input line 21.
 [1
 
 ] [2] [3]
-File: include/mpstrm.png Graphic file (type bmp)
-<include/mpstrm.png>
- [4]
-File: include/mpscor.png Graphic file (type bmp)
-<include/mpscor.png>
- [5] (/Users/ren/Documents/GitHub/zhihu_articles/转移矩阵/.texpadtmp/转移矩阵.aux) ) 
+File: include/T-tensor.png Graphic file (type bmp)
+<include/T-tensor.png>
+ [4] [5]
+File: include/mps-inner.png Graphic file (type bmp)
+<include/mps-inner.png>
+File: include/mps-tm.png Graphic file (type bmp)
+<include/mps-tm.png>
+File: include/mps-correlation.png Graphic file (type bmp)
+<include/mps-correlation.png>
+ [6] [7] (/Users/ren/Documents/GitHub/zhihu_articles/转移矩阵/.texpadtmp/转移矩阵.aux) ) 
 Here is how much of TeX's memory you used:
- 7994 strings out of 479805
- 225019 string characters out of 5893181
+ 8038 strings out of 479805
+ 227184 string characters out of 5893181
  514938 words of memory out of 5000000
- 25032 multiletter control sequences out of 15000+600000
- 557288 words of font info for 63 fonts, out of 8000000 for 9000
+ 25073 multiletter control sequences out of 15000+600000
+ 557653 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  56i,9n,72p,368b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/ren/Documents/GitHub/zhihu_articles/转移矩阵/.texpadtmp/转移矩阵.pdf (5 pages).
+Output written on /Users/ren/Documents/GitHub/zhihu_articles/转移矩阵/.texpadtmp/转移矩阵.pdf (7 pages).

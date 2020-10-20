@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.4.2)  13 OCT 2020 17:26
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2020.4.2)  20 OCT 2020 20:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -416,7 +416,7 @@ LaTeX Info: Redefining \nobreakspace on input line 14.
 Package: xeCJK-listings 2020/02/18 v3.8.2 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count296
 \l__xeCJK_listings_flag_int=\count297
-) (/Users/ren/Documents/GitHub/zhihu_articles/典型单纯李代数的表示/.texpadtmp/典型单纯李群的表示.aux)
+) (/Users/ren/Documents/GitHub/zhihu_articles/李代数表示/.texpadtmp/典型单纯李群的表示.aux)
 \openout1 = `典型单纯李群的表示.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -551,28 +551,24 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 18.
 LaTeX Info: Redefining \pageref on input line 18.
 LaTeX Info: Redefining \nameref on input line 18.
- (/Users/ren/Documents/GitHub/zhihu_articles/典型单纯李代数的表示/.texpadtmp/典型单纯李群的表示.out) (/Users/ren/Documents/GitHub/zhihu_articles/典型单纯李代数的表示/.texpadtmp/典型单纯李群的表示.out)
+ (/Users/ren/Documents/GitHub/zhihu_articles/李代数表示/.texpadtmp/典型单纯李群的表示.out) (/Users/ren/Documents/GitHub/zhihu_articles/李代数表示/.texpadtmp/典型单纯李群的表示.out)
 \@outlinefile=\write3
 \openout3 = `典型单纯李群的表示.out'.
 
 \c@lstlisting=\count299
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12.045> on input line 23.
+(Font)              <12.045> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 23.
+(Font)              <8> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 23.
-
-
-LaTeX Warning: No \author given.
-
+(Font)              <6> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.53937> on input line 25.
+(Font)              <10.53937> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 25.
+(Font)              <7> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 25.
-[1
+(Font)              <5> on input line 26.
+ [1
 
 ]
 File: include/Y1.png Graphic file (type bmp)
@@ -586,7 +582,7 @@ File: include/Y3.png Graphic file (type bmp)
 Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
 (fontspec)                Script "CJK".
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 87.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 88.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -728,23 +724,23 @@ File: include/O21.png Graphic file (type bmp)
 File: include/T11.png Graphic file (type bmp)
 <include/T11.png>
  [23] [24]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 702.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 703.
  [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 702.
- (/Users/ren/Documents/GitHub/zhihu_articles/典型单纯李代数的表示/.texpadtmp/典型单纯李群的表示.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 702.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 702.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 703.
+ (/Users/ren/Documents/GitHub/zhihu_articles/李代数表示/.texpadtmp/典型单纯李群的表示.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 703.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 703.
 Package rerunfilecheck Info: File `典型单纯李群的表示.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 702.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 703.
  ) 
 Here is how much of TeX's memory you used:
  17534 strings out of 479805
- 370195 string characters out of 5893181
- 645460 words of memory out of 5000000
+ 370140 string characters out of 5893181
+ 646460 words of memory out of 5000000
  34375 multiletter control sequences out of 15000+600000
  558364 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  56i,6n,72p,606b,854s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/ren/Documents/GitHub/zhihu_articles/典型单纯李代数的表示/.texpadtmp/典型单纯李群的表示.pdf (25 pages).
+Output written on /Users/ren/Documents/GitHub/zhihu_articles/李代数表示/.texpadtmp/典型单纯李群的表示.pdf (25 pages).
