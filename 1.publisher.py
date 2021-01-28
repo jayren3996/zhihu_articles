@@ -37,7 +37,7 @@ def process_for_zhihu():
         lines = table_ops(lines)
         with open(args.input.parent/(args.input.stem+"_for_zhihu.md"), "w+", encoding=chatest["encoding"]) as fw:
             fw.write(lines)
-        #git_ops()
+        git_ops()
 
 # Deal with the formula and change them into Zhihu original format
 def formula_ops(_lines):
@@ -98,6 +98,12 @@ def reduce_image_size():
         else:
             copyfile(image_path, str(image_folder_new_path/image_path.name))
     image_folder_path = image_folder_new_path
+
+# Push your new change to github remote end
+def git_ops():
+   subprocess.run(["git","add","-A"])
+   subprocess.run(["git","commit","-m", "update file "+args.input.stem])
+   subprocess.run(["git","push", "-u", "origin", "master"])
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser('Please input the file path you want to transfer using --input=""')
