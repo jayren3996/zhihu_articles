@@ -12,59 +12,31 @@
 对于一维格点系统，若每个格点有  <img src="https://www.zhihu.com/equation?tex=d" alt="d" class="ee_img tr_noresize" eeimg="1">  个量子态，则多体态的希尔伯特空间可以表示为格点希尔伯特空间的张量积：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    \mathscr{H}=\mathscr{H}_{1}\otimes\mathscr{H}_{2}\otimes\cdots\otimes\mathscr{H}_{N}.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    \mathscr{H}=\mathscr{H}_{1}\otimes\mathscr{H}_{2}\otimes\cdots\otimes\mathscr{H}_{N}.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \mathscr{H}=\mathscr{H}_{1}\otimes\mathscr{H}_{2}\otimes\cdots\otimes\mathscr{H}_{N}.
+" alt="​    \mathscr{H}=\mathscr{H}_{1}\otimes\mathscr{H}_{2}\otimes\cdots\otimes\mathscr{H}_{N}.
 " class="ee_img tr_noresize" eeimg="1">
 
 相应任意多体态可以表示为：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}C_{i_{1},\cdots,i_{N}}\left|i_{1},\cdots,i_{N}\right\rangle.
 
-​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}C_{i_{1},\cdots,i_{N}}\left|i_{1},\cdots,i_{N}\right\rangle.
+" alt="​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}C_{i_{1},\cdots,i_{N}}\left|i_{1},\cdots,i_{N}\right\rangle.
 
-\end{equation}
-" alt="\begin{equation}
-
-​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}C_{i_{1},\cdots,i_{N}}\left|i_{1},\cdots,i_{N}\right\rangle.
-
-\end{equation}
 " class="ee_img tr_noresize" eeimg="1">
 
 矩阵乘积态(MPS)的核心思想是将多体态表示为:
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\left|i_{1},\cdots,i_{N}\right\rangle.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\left|i_{1},\cdots,i_{N}\right\rangle.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\left|i_{1},\cdots,i_{N}\right\rangle.
+" alt="​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\left|i_{1},\cdots,i_{N}\right\rangle.
 " class="ee_img tr_noresize" eeimg="1">
 
 我们将一个含有 N 个指标的系数（N阶张量） <img src="https://www.zhihu.com/equation?tex=C_{i_{1},\cdots,i_{N}}" alt="C_{i_{1},\cdots,i_{N}}" class="ee_img tr_noresize" eeimg="1">  替换为了  <img src="https://www.zhihu.com/equation?tex=N" alt="N" class="ee_img tr_noresize" eeimg="1">  个矩阵的乘积   <img src="https://www.zhihu.com/equation?tex=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}" alt="M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}" class="ee_img tr_noresize" eeimg="1">  , 其中  <img src="https://www.zhihu.com/equation?tex=M_{i_{1}}^{\left[1\right]},M_{i_{N}}^{\left[N\right]}" alt="M_{i_{1}}^{\left[1\right]},M_{i_{N}}^{\left[N\right]}" class="ee_img tr_noresize" eeimg="1">  分别为行向量和列向量，因此矩阵乘积是一个数。这种表示往往用于开边界系统中，对于周期边界系统，  <img src="https://www.zhihu.com/equation?tex=M_{i_{1}}^{\left[1\right]},M_{i_{N}}^{\left[N\right]}" alt="M_{i_{1}}^{\left[1\right]},M_{i_{N}}^{\left[N\right]}" class="ee_img tr_noresize" eeimg="1">  往往不是向量，因此其矩阵乘积表示应写为：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}Tr\left[M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\right]\left|i_{1},\cdots,i_{N}\right\rangle.
-\end{equation}
-" alt="\begin{equation}
-
-​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}Tr\left[M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\right]\left|i_{1},\cdots,i_{N}\right\rangle.
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}Tr\left[M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\right]\left|i_{1},\cdots,i_{N}\right\rangle.
+" alt="​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}Tr\left[M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\right]\left|i_{1},\cdots,i_{N}\right\rangle.
 " class="ee_img tr_noresize" eeimg="1">
 
 这里我们只讨论开边界系统。
@@ -84,106 +56,50 @@
 我们现在来证明任意有限维的 <img src="https://www.zhihu.com/equation?tex=N" alt="N" class="ee_img tr_noresize" eeimg="1"> 阶张量可以表示为带指标的  <img src="https://www.zhihu.com/equation?tex=N" alt="N" class="ee_img tr_noresize" eeimg="1">  个矩阵的乘积：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]} .
-
-\end{equation}
-" alt="\begin{equation}
-
-​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]} .
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]} .
+" alt="​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]} .
 " class="ee_img tr_noresize" eeimg="1">
 
 这种表示本质上是张量的分解，我们将 <img src="https://www.zhihu.com/equation?tex=N" alt="N" class="ee_img tr_noresize" eeimg="1"> 阶张量的指标组合，变为一矩阵：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    C_{i_{1},i_{2},\cdots,i_{N}}\rightarrow C_{i_{1},\left(i_{2},\cdots,i_{N}\right)}\rightarrow C_{m,n},
-
-\end{equation}
-" alt="\begin{equation}
-
-​    C_{i_{1},i_{2},\cdots,i_{N}}\rightarrow C_{i_{1},\left(i_{2},\cdots,i_{N}\right)}\rightarrow C_{m,n},
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    C_{i_{1},i_{2},\cdots,i_{N}}\rightarrow C_{i_{1},\left(i_{2},\cdots,i_{N}\right)}\rightarrow C_{m,n},
+" alt="​    C_{i_{1},i_{2},\cdots,i_{N}}\rightarrow C_{i_{1},\left(i_{2},\cdots,i_{N}\right)}\rightarrow C_{m,n},
 " class="ee_img tr_noresize" eeimg="1">
 
 括号表示张量指标合并，具体可以写为：  <img src="https://www.zhihu.com/equation?tex=m=i_{1},\ n=i_{2}d^{N-2}+i_{3}d^{N-3}+\cdots+i_{N}d^{0}" alt="m=i_{1},\ n=i_{2}d^{N-2}+i_{3}d^{N-3}+\cdots+i_{N}d^{0}" class="ee_img tr_noresize" eeimg="1"> . 我们接下来对矩阵  <img src="https://www.zhihu.com/equation?tex=C_{mn}" alt="C_{mn}" class="ee_img tr_noresize" eeimg="1">  做奇异值分解：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    C_{m,n}=\sum_{\lambda=1}^{k}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger} .
-
-\end{equation}
-" alt="\begin{equation}
-
-​    C_{m,n}=\sum_{\lambda=1}^{k}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger} .
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    C_{m,n}=\sum_{\lambda=1}^{k}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger} .
+" alt="​    C_{m,n}=\sum_{\lambda=1}^{k}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger} .
 " class="ee_img tr_noresize" eeimg="1">
 
 我们用左边的矩阵  <img src="https://www.zhihu.com/equation?tex=U" alt="U" class="ee_img tr_noresize" eeimg="1">  作为矩阵乘积的第一项：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    \left(M_{i_{1}}^{\left[1\right]}\right)_{1,a}=U_{i_{1},a} ,
-
-\end{equation}
-" alt="\begin{equation}
-
-​    \left(M_{i_{1}}^{\left[1\right]}\right)_{1,a}=U_{i_{1},a} ,
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \left(M_{i_{1}}^{\left[1\right]}\right)_{1,a}=U_{i_{1},a} ,
+" alt="​    \left(M_{i_{1}}^{\left[1\right]}\right)_{1,a}=U_{i_{1},a} ,
 " class="ee_img tr_noresize" eeimg="1">
 
  <img src="https://www.zhihu.com/equation?tex=M_{i_{1}}^{\left[1\right]}" alt="M_{i_{1}}^{\left[1\right]}" class="ee_img tr_noresize" eeimg="1">  是一个  <img src="https://www.zhihu.com/equation?tex=1\times k" alt="1\times k" class="ee_img tr_noresize" eeimg="1">  矩阵。我们将剩余部分合并为新矩阵：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    \sum_{\lambda=1}^{k}S_{\lambda}V_{\lambda,n}^{\dagger}=D_{\lambda,i_{2},\cdots,i_{N}}\rightarrow D_{\left(\lambda,i_{2}\right),\left(i_{3},\cdots,i_{N}\right)}\rightarrow D_{m,n} ,
-
-\end{equation}
-" alt="\begin{equation}
-
-​    \sum_{\lambda=1}^{k}S_{\lambda}V_{\lambda,n}^{\dagger}=D_{\lambda,i_{2},\cdots,i_{N}}\rightarrow D_{\left(\lambda,i_{2}\right),\left(i_{3},\cdots,i_{N}\right)}\rightarrow D_{m,n} ,
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \sum_{\lambda=1}^{k}S_{\lambda}V_{\lambda,n}^{\dagger}=D_{\lambda,i_{2},\cdots,i_{N}}\rightarrow D_{\left(\lambda,i_{2}\right),\left(i_{3},\cdots,i_{N}\right)}\rightarrow D_{m,n} ,
+" alt="​    \sum_{\lambda=1}^{k}S_{\lambda}V_{\lambda,n}^{\dagger}=D_{\lambda,i_{2},\cdots,i_{N}}\rightarrow D_{\left(\lambda,i_{2}\right),\left(i_{3},\cdots,i_{N}\right)}\rightarrow D_{m,n} ,
 " class="ee_img tr_noresize" eeimg="1">
 
 其中  <img src="https://www.zhihu.com/equation?tex=m=\lambda k+i_{2},\ n=i_{3}d^{N-3}+\cdots+i_{N}d^{0}" alt="m=\lambda k+i_{2},\ n=i_{3}d^{N-3}+\cdots+i_{N}d^{0}" class="ee_img tr_noresize" eeimg="1"> . 继续做奇异值分解：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    D_{m,n}=\sum_{\lambda=1}^{k'}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger}.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    D_{m,n}=\sum_{\lambda=1}^{k'}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger}.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    D_{m,n}=\sum_{\lambda=1}^{k'}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger}.
+" alt="​    D_{m,n}=\sum_{\lambda=1}^{k'}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger}.
 " class="ee_img tr_noresize" eeimg="1">
 
 左边的矩阵  <img src="https://www.zhihu.com/equation?tex=U" alt="U" class="ee_img tr_noresize" eeimg="1">  作为第二项：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    \left(M_{i_{2}}^{\left[2\right]}\right)_{a,b}=U_{a,i_{2},b}.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    \left(M_{i_{2}}^{\left[2\right]}\right)_{a,b}=U_{a,i_{2},b}.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \left(M_{i_{2}}^{\left[2\right]}\right)_{a,b}=U_{a,i_{2},b}.
+" alt="​    \left(M_{i_{2}}^{\left[2\right]}\right)_{a,b}=U_{a,i_{2},b}.
 " class="ee_img tr_noresize" eeimg="1">
 
  <img src="https://www.zhihu.com/equation?tex=M_{i_{2}}^{\left[2\right]}" alt="M_{i_{2}}^{\left[2\right]}" class="ee_img tr_noresize" eeimg="1">  是一个  <img src="https://www.zhihu.com/equation?tex=k\times k'" alt="k\times k'" class="ee_img tr_noresize" eeimg="1">  矩阵。重复以上操作，直到我们分解到最后一个指标  <img src="https://www.zhihu.com/equation?tex=i_{N}" alt="i_{N}" class="ee_img tr_noresize" eeimg="1">  ，即  <img src="https://www.zhihu.com/equation?tex=D_{m,i_{N}}" alt="D_{m,i_{N}}" class="ee_img tr_noresize" eeimg="1"> ,此时我们将  <img src="https://www.zhihu.com/equation?tex=\sum_{\lambda=1}^{k''}S_{\lambda}V_{\lambda,i_{N}}^{\dagger}" alt="\sum_{\lambda=1}^{k''}S_{\lambda}V_{\lambda,i_{N}}^{\dagger}" class="ee_img tr_noresize" eeimg="1">  作为最后一个矩阵  <img src="https://www.zhihu.com/equation?tex=M_{i_{N}}^{\left[N\right]}" alt="M_{i_{N}}^{\left[N\right]}" class="ee_img tr_noresize" eeimg="1"> , 是一个  <img src="https://www.zhihu.com/equation?tex=k'' \times 1" alt="k'' \times 1" class="ee_img tr_noresize" eeimg="1">  矩阵。
@@ -191,16 +107,8 @@
 经过一系列指标重组，奇异值分解后，我们将原来的 <img src="https://www.zhihu.com/equation?tex=N" alt="N" class="ee_img tr_noresize" eeimg="1"> 指标张量表示为了矩阵乘积态:
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}.
+" alt="​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}.
 " class="ee_img tr_noresize" eeimg="1">
 
 我们可以用图形语言十分清楚地表示出以上过程：
@@ -216,16 +124,8 @@
 其中 <img src="https://www.zhihu.com/equation?tex=i" alt="i" class="ee_img tr_noresize" eeimg="1"> 指标是格点量子态， <img src="https://www.zhihu.com/equation?tex=x，y" alt="x，y" class="ee_img tr_noresize" eeimg="1"> 可以看作其与左右系统之间的量子纠缠。这时这种表示的优越性就体现了出来，类似之前证明中的构造过程，我们可以将多体系统表示写为施密特分解的形式：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    \left|\psi\right\rangle =\sum_{\lambda}S_{\lambda}\left|\lambda\right\rangle _{A}\left|\lambda\right\rangle _{B}.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    \left|\psi\right\rangle =\sum_{\lambda}S_{\lambda}\left|\lambda\right\rangle _{A}\left|\lambda\right\rangle _{B}.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \left|\psi\right\rangle =\sum_{\lambda}S_{\lambda}\left|\lambda\right\rangle _{A}\left|\lambda\right\rangle _{B}.
+" alt="​    \left|\psi\right\rangle =\sum_{\lambda}S_{\lambda}\left|\lambda\right\rangle _{A}\left|\lambda\right\rangle _{B}.
 " class="ee_img tr_noresize" eeimg="1">
 
 其中  <img src="https://www.zhihu.com/equation?tex=\left|\lambda\right\rangle _{A},\left|\lambda\right\rangle _{B}" alt="\left|\lambda\right\rangle _{A},\left|\lambda\right\rangle _{B}" class="ee_img tr_noresize" eeimg="1">  分别为 <img src="https://www.zhihu.com/equation?tex=A,B" alt="A,B" class="ee_img tr_noresize" eeimg="1"> 子系统的一组正交基。图形语言表示为：
@@ -276,16 +176,8 @@
 其中
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    S=-\sum_{\lambda}S_{\lambda}\log\left(S_{\lambda}\right).
-
-\end{equation}
-" alt="\begin{equation}
-
-​    S=-\sum_{\lambda}S_{\lambda}\log\left(S_{\lambda}\right).
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    S=-\sum_{\lambda}S_{\lambda}\log\left(S_{\lambda}\right).
+" alt="​    S=-\sum_{\lambda}S_{\lambda}\log\left(S_{\lambda}\right).
 " class="ee_img tr_noresize" eeimg="1">
 
 ### 矩阵乘积算符
@@ -293,16 +185,8 @@
 对于一个多体算符，像态一样，我们可以将多体算符写为矩阵乘积的形式(MPO)：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}C_{i_{1},\cdots,i_{N}}^{i_{1}',\cdots,i_{N}'}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}C_{i_{1},\cdots,i_{N}}^{i_{1}',\cdots,i_{N}'}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}C_{i_{1},\cdots,i_{N}}^{i_{1}',\cdots,i_{N}'}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
+" alt="​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}C_{i_{1},\cdots,i_{N}}^{i_{1}',\cdots,i_{N}'}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
 " class="ee_img tr_noresize" eeimg="1">
 
 图形表示为：
@@ -312,16 +196,8 @@
 和态不同的是，局域算符组成的哈密顿量自然地可以写为矩阵乘积形式：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}M_{i_{1}',i_{1}}^{\left[1\right]}M_{i_{2}',i_{2}}^{\left[2\right]}\cdots M_{i_{N}',i_{N}}^{\left[N\right]}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}M_{i_{1}',i_{1}}^{\left[1\right]}M_{i_{2}',i_{2}}^{\left[2\right]}\cdots M_{i_{N}',i_{N}}^{\left[N\right]}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}M_{i_{1}',i_{1}}^{\left[1\right]}M_{i_{2}',i_{2}}^{\left[2\right]}\cdots M_{i_{N}',i_{N}}^{\left[N\right]}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
+" alt="​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}M_{i_{1}',i_{1}}^{\left[1\right]}M_{i_{2}',i_{2}}^{\left[2\right]}\cdots M_{i_{N}',i_{N}}^{\left[N\right]}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
 " class="ee_img tr_noresize" eeimg="1">
 
 ![](https://raw.githubusercontent.com/jayren3996/zhihu_articles/master/MPS/p12.png)
@@ -337,16 +213,8 @@
 本征值问题本质上是对一个变分极小值问题：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    E\left[\psi\right]=\left\langle \psi\right|H\left|\psi\right\rangle.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    E\left[\psi\right]=\left\langle \psi\right|H\left|\psi\right\rangle.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    E\left[\psi\right]=\left\langle \psi\right|H\left|\psi\right\rangle.
+" alt="​    E\left[\psi\right]=\left\langle \psi\right|H\left|\psi\right\rangle.
 " class="ee_img tr_noresize" eeimg="1">
 
 用图形语言表述：
@@ -366,61 +234,29 @@
 态的演化可以看成是一个时间演化算符在态上的作用：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    \left|\psi\left(t\right)\right\rangle =e^{-iHt}\left|\psi\left(0\right)\right\rangle.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    \left|\psi\left(t\right)\right\rangle =e^{-iHt}\left|\psi\left(0\right)\right\rangle.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \left|\psi\left(t\right)\right\rangle =e^{-iHt}\left|\psi\left(0\right)\right\rangle.
+" alt="​    \left|\psi\left(t\right)\right\rangle =e^{-iHt}\left|\psi\left(0\right)\right\rangle.
 " class="ee_img tr_noresize" eeimg="1">
 
 TEBD 的核心思想是将由局域哈密顿量组成的算符拆成一系列短程作用的叠加。我们这里讨论只含近邻格点作用的哈密顿量，这样的哈密顿量可以写为：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    H=\sum_{i}H_{i,i+1}=\sum_{i=even}H_{i,i+i}+\sum_{i=odd}H_{i,i+1}.
-
-\end{equation}
-" alt="\begin{equation}
-
-​    H=\sum_{i}H_{i,i+1}=\sum_{i=even}H_{i,i+i}+\sum_{i=odd}H_{i,i+1}.
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    H=\sum_{i}H_{i,i+1}=\sum_{i=even}H_{i,i+i}+\sum_{i=odd}H_{i,i+1}.
+" alt="​    H=\sum_{i}H_{i,i+1}=\sum_{i=even}H_{i,i+i}+\sum_{i=odd}H_{i,i+1}.
 " class="ee_img tr_noresize" eeimg="1">
 
 我们这样可以将哈密顿量分为两组，其中同一组内算符互相对易：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    \left[H_{i,i+1},H_{j,j+1}\right]=0,\ i=j\ \left(mod\ 2\right).
-
-\end{equation}
-" alt="\begin{equation}
-
-​    \left[H_{i,i+1},H_{j,j+1}\right]=0,\ i=j\ \left(mod\ 2\right).
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    \left[H_{i,i+1},H_{j,j+1}\right]=0,\ i=j\ \left(mod\ 2\right).
+" alt="​    \left[H_{i,i+1},H_{j,j+1}\right]=0,\ i=j\ \left(mod\ 2\right).
 " class="ee_img tr_noresize" eeimg="1">
 
 我们要做的近似是，当  <img src="https://www.zhihu.com/equation?tex=\tau=t/n" alt="\tau=t/n" class="ee_img tr_noresize" eeimg="1">   较小时，忽略奇偶成分之间非对易的成分：
 
 
-<img src="https://www.zhihu.com/equation?tex=\begin{equation}
-
-​    e^{-iH\tau}\approx\left(\prod_{i=even}e^{-i\tau H_{i,i+1}}\right)\cdot\left(\prod_{i=odd}e^{-i\tau H_{i,i+1}}\right).
-
-\end{equation}
-" alt="\begin{equation}
-
-​    e^{-iH\tau}\approx\left(\prod_{i=even}e^{-i\tau H_{i,i+1}}\right)\cdot\left(\prod_{i=odd}e^{-i\tau H_{i,i+1}}\right).
-
-\end{equation}
+<img src="https://www.zhihu.com/equation?tex=​    e^{-iH\tau}\approx\left(\prod_{i=even}e^{-i\tau H_{i,i+1}}\right)\cdot\left(\prod_{i=odd}e^{-i\tau H_{i,i+1}}\right).
+" alt="​    e^{-iH\tau}\approx\left(\prod_{i=even}e^{-i\tau H_{i,i+1}}\right)\cdot\left(\prod_{i=odd}e^{-i\tau H_{i,i+1}}\right).
 " class="ee_img tr_noresize" eeimg="1">
 
 这样，我们可以将  <img src="https://www.zhihu.com/equation?tex=t" alt="t" class="ee_img tr_noresize" eeimg="1">  分割成  <img src="https://www.zhihu.com/equation?tex=n" alt="n" class="ee_img tr_noresize" eeimg="1">  份，并交替地作用奇偶算符。用图像语言表述为：
