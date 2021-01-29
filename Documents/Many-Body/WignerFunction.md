@@ -363,11 +363,11 @@ $$
 
 我们可以画出叠加态的 Wigner 函数：
 
-![](./include/WignerFunction/cor.jpg)
+![](./include/WignerFunction/cor.pdf)
 
 注意在两个波包之间，Wigner 函数出现了由量子相干导致的非零值，并且此时函数会取到负值，这是“猫态”的“量子性”的表现，作为比较，我们画出退相干后的混合态的 Wigner 函数：
 
-![](./include/WignerFunction/mix.jpg)
+![](./include/WignerFunction/mix.pdf)
 
 ### References
 1. M. Hillery, Distribution function in physics: fundamentals.

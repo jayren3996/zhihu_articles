@@ -9,7 +9,7 @@
 相互作用波色系统作用量一般形式为：
 
 $$
-	S = \int_0^\beta d\tau \int d^d r \left[
+S = \int_0^\beta d\tau \int d^d r \left[
 		\phi^* \partial_\tau \phi + \frac{1}{2m}|\nabla \phi|^2 - \mu |\phi|^2 + \frac{g}{2} |\phi|^4 
 	\right].
 $$
@@ -574,7 +574,7 @@ $$
 
 ## Reference
 
-1. N. Nagaosa, \textit{Quantum Field Theory in Condensed Matter Physics}.
-2. Xiao-Gang Wen, \textit{Quantum Field Theory of Many-Body System}.
-3. Altland, Simons, \textit{Condensed Matter Field Theory}.
+1. N. Nagaosa, Quantum Field Theory in Condensed Matter Physics.
+2. Xiao-Gang Wen, Quantum Field Theory of Many-Body System.
+3. Altland, Simons, Condensed Matter Field Theory.
 

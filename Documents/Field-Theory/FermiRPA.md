@@ -256,7 +256,6 @@ $$
 松原频率求和可转换为复平面内回路积分。$\ln$ 函数在复平面上有割线，回路转换为绕割线的积分，也就是实轴上下部分的积分：
 
 <img src="./include/FermiRPA/branch_cut_path.png" width=50%>
-
 $$
 \begin{eqnarray}
 	\sum_{n} \ln\left[\beta(-i\omega_n+\xi_{\vec p})\right]
@@ -347,7 +346,6 @@ $$
 
 <img src="./include/FermiRPA/hartree.png" width=40%>
 <img src="./include/FermiRPA/fock.png" width=40%>
-
 $$
 \begin{eqnarray}
 	F^{\left(1\right)} & = & \frac{T^{2}}{2L^{3}}\sum_{p_{1},p_{2},k}\sum_{\sigma,\sigma'}\left\langle \bar{\psi}_{p_{1}+k}^{\sigma}\bar{\psi}_{p_{2}-k}^{\sigma'}V\left(\vec{k}\right)\psi_{p_{2}}^{\sigma'}\psi_{p_{1}}^{\sigma}\right\rangle _{0}^{c}\\
