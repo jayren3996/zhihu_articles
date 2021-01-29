@@ -192,10 +192,10 @@
 " class="ee_img tr_noresize" eeimg="1">
 
 
-## 辅助场路径积分}
+## 辅助场路径积分
 
 
-### 辅助场作用量}
+### 辅助场作用量
 
 现在，利用高斯积分公式，有恒等式：
 
@@ -285,7 +285,9 @@
 " alt="S[\Delta, \bar\Delta] = \frac{1}{g}\int_0^\beta d\tau \int d^d r |\Delta|^2 - \mathrm{Tr} \ln \hat{\mathcal G}^{-1}.
 " class="ee_img tr_noresize" eeimg="1">
 
+
 ### 鞍点近似
+
 对辅助场作用量取极值：
 
 
@@ -527,7 +529,7 @@
 注意展开式没有奇数次项，因为奇数次  <img src="https://www.zhihu.com/equation?tex=\hat{\mathcal G}^{-1}_0 \hat\Delta" alt="\hat{\mathcal G}^{-1}_0 \hat\Delta" class="ee_img tr_noresize" eeimg="1">  乘积是无迹矩阵。
 
 
-### 二阶近似}
+### 二阶近似
 
 首先将表达式展开到二阶项( <img src="https://www.zhihu.com/equation?tex=n=1" alt="n=1" class="ee_img tr_noresize" eeimg="1"> )，其结果为：
 
@@ -670,7 +672,7 @@ Ginzburg-Landau 经典作用量为：
 ## 规范对称性自发破缺
 
 
-### 规范不变作用量}
+### 规范不变作用量
 
 费米场具有 U(1) 规范对称性：
 
