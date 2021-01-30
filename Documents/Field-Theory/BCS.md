@@ -118,7 +118,7 @@ $$
 上式第二个等号对 $(\omega_n, -\omega_{n})$ 求了平均。最终，有效作用量为：
 
 $$
-	S_{eff}[\psi,\bar\psi] = S_{el}[\psi,\bar\psi]-\frac{\gamma^2}{2m} \sum_q \frac{q^2}{\omega_n^2+\omega_q^2}\rho_q\rho_{-q}.
+S_{eff}[\psi,\bar\psi] = S_{el}[\psi,\bar\psi]-\frac{\gamma^2}{2m} \sum_q \frac{q^2}{\omega_n^2+\omega_q^2}\rho_q\rho_{-q}.
 $$
 
 将虚时变为实时，即做替换 $i\omega_n\rightarrow \omega$，相互作用势为：
