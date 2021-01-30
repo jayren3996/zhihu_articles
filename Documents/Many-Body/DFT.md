@@ -88,11 +88,11 @@ $$
 同时由于基态的唯一性：
 
 $$
-\left\langle \psi_{0}'\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{0}'\right\rangle >E_{0},
+\langle \psi_{0}'| \hat{T} + \hat V_{int} + \hat V _{ext} |\psi_{0}'\rangle > E_{0},
 $$
 
 $$
-\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}^{'}\left|\psi_{0}\right\rangle >E_{0}'. 
+\langle \psi_{0}|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}^{'}|\psi_{0}\rangle > E_{0}'. 
 $$
 
 两两相减有：

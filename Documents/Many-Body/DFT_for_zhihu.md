@@ -100,13 +100,13 @@ Hohenberg-Kohn 定理叙述的就是这种一一对应关系：只要我们知�
 同时由于基态的唯一性：
 
 
-<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}'\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{0}'\right\rangle >E_{0},
-" alt="\left\langle \psi_{0}'\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{0}'\right\rangle >E_{0},
+<img src="https://www.zhihu.com/equation?tex=\langle \psi_{0}'| \hat{T} + \hat V_{int} + \hat V _{ext} |\psi_{0}'\rangle > E_{0},
+" alt="\langle \psi_{0}'| \hat{T} + \hat V_{int} + \hat V _{ext} |\psi_{0}'\rangle > E_{0},
 " class="ee_img tr_noresize" eeimg="1">
 
 
-<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}^{'}\left|\psi_{0}\right\rangle >E_{0}'. 
-" alt="\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}^{'}\left|\psi_{0}\right\rangle >E_{0}'. 
+<img src="https://www.zhihu.com/equation?tex=\langle \psi_{0}|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}^{'}|\psi_{0}\rangle > E_{0}'. 
+" alt="\langle \psi_{0}|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}^{'}|\psi_{0}\rangle > E_{0}'. 
 " class="ee_img tr_noresize" eeimg="1">
 
 两两相减有：
