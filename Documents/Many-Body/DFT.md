@@ -1,6 +1,6 @@
 # 密度泛函简介
 
-密度泛函理论是处理多电子体系的一种重要方法。其核心思想是用基态电子密度分布代替多体波函数来表示基态信息，并且可以说明一切物理量原则上可以表示为基态电子密度的泛函。本文介绍密度泛函理论的基础：Hohenberg-Kohn 定理，这可以看作是基态电子密度的唯一性定理，也是密度泛函存在的必要条件。
+密度泛函理论是处理多电子体系的一种重要方法。其核心思想是用基态电子密度分布代替多体波函数来表示基态信息，并且可以说明(Hohenberg-Kohn)一切物理量原则上可以表示为基态电子密度的泛函。利用哈密顿量对应的能量泛函，可以变分求解基态电子密度从而方便地求解基态性质。然而能量泛函的精确形式是难以得到的，然而对于电子关联不太强的体系，我们可以用单粒子轨道(Kohn-Sham)的结果作为能量泛函。我们最后会讨论，即便是这样的密度泛函求解仍然是超越单粒子近似的。
 
 ## 多电子系统的普遍形式
 对于一般的量子多电子体系，我们可以将其哈密顿量写为：
@@ -34,11 +34,11 @@ $$
 我们这里从集合的角度叙述这个定理。为此首先引入两个集合：
 
 $$
- A:=\left\{ \hat{H}=\hat{T}+\hat{V}_{int}+\hat{V}_{ext}|\ \hat{H}\ \text{基态非简并}\right\},  
+ A:=\left\{ \hat{H}=\hat{T}+\hat{V}_{int}+\hat{V}_{ext}|\ \hat{H}\ \text{基态非简并}\right\},
 $$
 
 $$
-B := \left\{ \rho\left(r\right)=\left\langle \psi_{0}\right|c_{r}^{\dagger}c_{r}\left|\psi_{0}\right\rangle |\ \hat{H}\left|\psi_{0}\right\rangle =E_{0}\left|\psi_{0}\right\rangle ,\hat{H}\in A\right\}.   
+B := \left\{ \rho\left(r\right)=\left\langle \psi_{0}\right|c_{r}^{\dagger}c_{r}\left|\psi_{0}\right\rangle |\ \hat{H}\left|\psi_{0}\right\rangle =E_{0}\left|\psi_{0}\right\rangle ,\hat{H}\in A\right\}.
 $$
 
 其中 $A$ 是具有以上形式的基态非简并哈密顿量的集合；$B$ 是 $A$ 中所有哈密顿量对应的基态电子密度。
@@ -46,11 +46,11 @@ $$
 集合 $A$ 到集合 $B$ 有一个自然的满射 $f$：
 
 $$
-f:A\rightarrow B, 
+f:A\rightarrow B,
 $$
 
 $$
-\hat{H}\mapsto\rho\left(r\right)=\left\langle \psi_{0}\right|c_{r}^{\dagger}c_{r}\left|\psi_{0}\right\rangle.  
+\hat{H}\mapsto\rho\left(r\right)=\left\langle \psi_{0}\right|c_{r}^{\dagger}c_{r}\left|\psi_{0}\right\rangle.
 $$
 
 即 $f$ 将一个哈密顿量映射到它的基态电子密度分布。一个重要的问题就是，这个映射是否存在逆映射？或者说哈密顿量和基态电子密度分布是否是一一对应的。
@@ -78,28 +78,40 @@ $$
 假设两哈密顿量基态波函数为 $\left|\psi_{0}\right\rangle ,\left|\psi_{0}'\right\rangle$ :
 
 $$
-\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{0}\right\rangle =E_{0}, \\
+\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{0}\right\rangle =E_{0},
+$$
+
+$$
 \left\langle \psi_{0}'\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}'\left|\psi_{0}'\right\rangle =E_{0}'. 
 $$
 
 同时由于基态的唯一性：
 
 $$
-\left\langle \psi_{0}'\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{0}'\right\rangle >E_{0}, \\
+\left\langle \psi_{0}'\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{0}'\right\rangle >E_{0},
+$$
+
+$$
 \left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}'\left|\psi_{0}\right\rangle >E_{0}'. 
 $$
 
 两两相减有：
 
 $$
-\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle >E_{0}'-E_{0}, \\
+\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle >E_{0}'-E_{0},
+$$
+
+$$
 \left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}'\left|\psi_{0}'\right\rangle >E_{0}-E_{0}'. 
 $$
 
 由于
 
 $$
-\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle =\int dr\rho\left(r\right)\left[V_{ext}'\left(r\right)-V_{ext}\left(r\right)\right], \\
+\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle =\int dr\rho\left(r\right)\left[V_{ext}'\left(r\right)-V_{ext}\left(r\right)\right],
+$$
+
+$$
 \left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}'\left|\psi_{0}'\right\rangle =\int dr\rho'\left(r\right)\left[V_{ext}\left(r\right)-V_{ext}'\left(r\right)\right]. 
 $$
 
