@@ -379,7 +379,7 @@ $$
 \begin{eqnarray}
 E_{HF} &=& \left\langle \psi_{HF}\right|\hat{H}\left|\psi_{HF}\right\rangle \\
 &=&\left\langle \psi_{HF}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{HF}\right\rangle \\
-&=&T+E_{ext}+\left\langle \psi_{HF}\right|\hat{V}_{int}\left|\psi_{HF}\right\rangle,  
+&=&T+E_{ext}+\left\langle \psi_{HF}\right|\hat{V}_{int}\left|\psi_{HF}\right\rangle,
 \end{eqnarray}
 $$
 

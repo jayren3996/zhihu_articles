@@ -433,12 +433,12 @@ Kohn-Sham 方程有着单粒子轨道的形式，因此会让人误以为是一�
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
 E_{HF} &=& \left\langle \psi_{HF}\right|\hat{H}\left|\psi_{HF}\right\rangle \\
 &=&\left\langle \psi_{HF}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{HF}\right\rangle \\
-&=&T+E_{ext}+\left\langle \psi_{HF}\right|\hat{V}_{int}\left|\psi_{HF}\right\rangle,  
+&=&T+E_{ext}+\left\langle \psi_{HF}\right|\hat{V}_{int}\left|\psi_{HF}\right\rangle,
 \end{eqnarray}
 " alt="\begin{eqnarray}
 E_{HF} &=& \left\langle \psi_{HF}\right|\hat{H}\left|\psi_{HF}\right\rangle \\
 &=&\left\langle \psi_{HF}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}\left|\psi_{HF}\right\rangle \\
-&=&T+E_{ext}+\left\langle \psi_{HF}\right|\hat{V}_{int}\left|\psi_{HF}\right\rangle,  
+&=&T+E_{ext}+\left\langle \psi_{HF}\right|\hat{V}_{int}\left|\psi_{HF}\right\rangle,
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
