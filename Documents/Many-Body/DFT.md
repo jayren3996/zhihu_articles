@@ -82,7 +82,7 @@ $$
 $$
 
 $$
-\left\langle \psi_{0}'\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}'\left|\psi_{0}'\right\rangle =E_{0}'. 
+\left\langle \psi_{0}'\right| \hat{T}+ \hat{V}_{int}+ \hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle =E_{0}'. 
 $$
 
 同时由于基态的唯一性：
@@ -92,27 +92,27 @@ $$
 $$
 
 $$
-\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}'\left|\psi_{0}\right\rangle >E_{0}'. 
+\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}^{'}\left|\psi_{0}\right\rangle >E_{0}'. 
 $$
 
 两两相减有：
 
 $$
-\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle >E_{0}'-E_{0},
+\left\langle \psi_{0}\right|\hat{V}_{ext}^{'}-\hat{V}_{ext}\left|\psi_{0}\right\rangle >E_{0}'-E_{0},
 $$
 
 $$
-\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}'\left|\psi_{0}'\right\rangle >E_{0}-E_{0}'. 
+\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle >E_{0}-E_{0}'. 
 $$
 
 由于
 
 $$
-\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle =\int dr\rho\left(r\right)\left[V_{ext}'\left(r\right)-V_{ext}\left(r\right)\right],
+\left\langle \psi_{0}\right|\hat{V}_{ext}^{'}-\hat{V}_{ext}\left|\psi_{0}\right\rangle =\int dr\rho\left(r\right)\left[V_{ext}^{'}\left(r\right)-V_{ext}\left(r\right)\right],
 $$
 
 $$
-\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}'\left|\psi_{0}'\right\rangle =\int dr\rho'\left(r\right)\left[V_{ext}\left(r\right)-V_{ext}'\left(r\right)\right]. 
+\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle =\int dr\rho'\left(r\right)\left[V_{ext}\left(r\right)-V_{ext}^{'}\left(r\right)\right]. 
 $$
 
 两式相加得到 $0>0$, 矛盾说明定理成立。

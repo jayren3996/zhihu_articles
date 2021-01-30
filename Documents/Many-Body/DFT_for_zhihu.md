@@ -93,8 +93,8 @@ Hohenberg-Kohn 定理叙述的就是这种一一对应关系：只要我们知�
 " class="ee_img tr_noresize" eeimg="1">
 
 
-<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}'\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}'\left|\psi_{0}'\right\rangle =E_{0}'. 
-" alt="\left\langle \psi_{0}'\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}'\left|\psi_{0}'\right\rangle =E_{0}'. 
+<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}'\right| \hat{T}+ \hat{V}_{int}+ \hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle =E_{0}'. 
+" alt="\left\langle \psi_{0}'\right| \hat{T}+ \hat{V}_{int}+ \hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle =E_{0}'. 
 " class="ee_img tr_noresize" eeimg="1">
 
 同时由于基态的唯一性：
@@ -105,32 +105,32 @@ Hohenberg-Kohn 定理叙述的就是这种一一对应关系：只要我们知�
 " class="ee_img tr_noresize" eeimg="1">
 
 
-<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}'\left|\psi_{0}\right\rangle >E_{0}'. 
-" alt="\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}'\left|\psi_{0}\right\rangle >E_{0}'. 
+<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}^{'}\left|\psi_{0}\right\rangle >E_{0}'. 
+" alt="\left\langle \psi_{0}\right|\hat{T}+\hat{V}_{int}+\hat{V}_{ext}^{'}\left|\psi_{0}\right\rangle >E_{0}'. 
 " class="ee_img tr_noresize" eeimg="1">
 
 两两相减有：
 
 
-<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle >E_{0}'-E_{0},
-" alt="\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle >E_{0}'-E_{0},
+<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}\right|\hat{V}_{ext}^{'}-\hat{V}_{ext}\left|\psi_{0}\right\rangle >E_{0}'-E_{0},
+" alt="\left\langle \psi_{0}\right|\hat{V}_{ext}^{'}-\hat{V}_{ext}\left|\psi_{0}\right\rangle >E_{0}'-E_{0},
 " class="ee_img tr_noresize" eeimg="1">
 
 
-<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}'\left|\psi_{0}'\right\rangle >E_{0}-E_{0}'. 
-" alt="\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}'\left|\psi_{0}'\right\rangle >E_{0}-E_{0}'. 
+<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle >E_{0}-E_{0}'. 
+" alt="\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle >E_{0}-E_{0}'. 
 " class="ee_img tr_noresize" eeimg="1">
 
 由于
 
 
-<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle =\int dr\rho\left(r\right)\left[V_{ext}'\left(r\right)-V_{ext}\left(r\right)\right],
-" alt="\left\langle \psi_{0}\right|\hat{V}_{ext}'-\hat{V}_{ext}\left|\psi_{0}\right\rangle =\int dr\rho\left(r\right)\left[V_{ext}'\left(r\right)-V_{ext}\left(r\right)\right],
+<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}\right|\hat{V}_{ext}^{'}-\hat{V}_{ext}\left|\psi_{0}\right\rangle =\int dr\rho\left(r\right)\left[V_{ext}^{'}\left(r\right)-V_{ext}\left(r\right)\right],
+" alt="\left\langle \psi_{0}\right|\hat{V}_{ext}^{'}-\hat{V}_{ext}\left|\psi_{0}\right\rangle =\int dr\rho\left(r\right)\left[V_{ext}^{'}\left(r\right)-V_{ext}\left(r\right)\right],
 " class="ee_img tr_noresize" eeimg="1">
 
 
-<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}'\left|\psi_{0}'\right\rangle =\int dr\rho'\left(r\right)\left[V_{ext}\left(r\right)-V_{ext}'\left(r\right)\right]. 
-" alt="\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}'\left|\psi_{0}'\right\rangle =\int dr\rho'\left(r\right)\left[V_{ext}\left(r\right)-V_{ext}'\left(r\right)\right]. 
+<img src="https://www.zhihu.com/equation?tex=\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle =\int dr\rho'\left(r\right)\left[V_{ext}\left(r\right)-V_{ext}^{'}\left(r\right)\right]. 
+" alt="\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle =\int dr\rho'\left(r\right)\left[V_{ext}\left(r\right)-V_{ext}^{'}\left(r\right)\right]. 
 " class="ee_img tr_noresize" eeimg="1">
 
 两式相加得到  <img src="https://www.zhihu.com/equation?tex=0>0" alt="0>0" class="ee_img tr_noresize" eeimg="1"> , 矛盾说明定理成立。
