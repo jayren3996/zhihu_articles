@@ -1,90 +1,187 @@
 # Bogoliubov 变换与 Majorana 表示
 
-在处理费米子二次型哈密顿量中，有时会遇到成对出现产生或湮灭算符 $c_i c_j, c_i^\dagger c_j^\dagger$，其中最常见的是 BCS 平均场理论中的超导配对项。对于这一类哈密顿量，我们可以用 Bogoliubov 变换求得系统的准粒子态以及能谱。在 BCS 模型中我们只引入了一组产生湮灭算符的组合。本文我们将考虑更一般的含配对项哈密顿量的对角化方法，并通过引入 Majorana 算符给出形式较为简单的算法。
+在处理费米子二次型哈密顿量中，有时会遇到成对出现产生或湮灭算符 $c_i c_j, c_i^\dagger c_j^\dagger$，其中最常见的是 BCS 平均场理论中的超导配对项。对于这一类哈密顿量，我们可以用 Bogoliubov 变换求得系统的准粒子态以及能谱。在 BCS 模型中我们只引入了一组产生湮灭算符的组合。本文我们将考虑一般形式的含配对项 (BdG) 哈密顿量的对角化方法，并通过引入 Majorana 算符给出更为简单的算法。
 
 ## 从 BCS 模型到多粒子 BdG 型哈密顿量
 
 BCS 平均场模型相当于在自由费米子球模型基础上加入了一超导配对项项的微扰作用。平移不变性未被破坏的前提下在动量空间的哈密顿量为：
 
 $$
-\hat{H}\left(k\right)=\epsilon_{k}\left(c_{k}^{\dagger}c_{k}+c_{-k}^{\dagger}c_{-k}\right)+\Delta_{k}\left(c_{k}^{\dagger}c_{-k}^{\dagger}+c_{-k}c_{k}\right)
+\hat{H} = \bigoplus_k \Psi_k^\dagger 
+\left(\begin{array}{cc}
+	\epsilon_k & \Delta_k \\
+	\Delta_k^* & -\epsilon_k
+\end{array}\right)
+\Psi_k,
 $$
 
-对每个 $k$  值，构造算符：
+其中 $\Psi_k = (c_k, c_{-k}^\dagger)^T$ 称为 Nambu spinor. 我们需要在此 k-sector 寻找一个幺正变换，满足：
+
+1. 保持费米算符的反对易关系;
+2. 满足此哈密顿量的粒子-空穴对称性 ($\sigma_x \Psi_{-k}^* = \Psi_k$);
+3. 哈密顿量是完全对角化的。
+
+满足条件 1, 2 的变换的一般形式为：
 
 $$
-\begin{cases} 
-    \tilde{c}_{k} & =u_{k}c_{k}-v_{k}c_{-k}^{\dagger} \\ 
-    \tilde{c}_{k}^{\dagger} & =u_{k}^*c_{k}^{\dagger}-v_{k}^*c_{-k} 
-\end{cases},\ 
-\begin{cases} 
-    \tilde{c}_{-k} & =u_{k}c_{-k}+v_{k}c_{k}^{\dagger} \\ 
-    \tilde{c}_{-k}^{\dagger} & =u_{k}^*c_{-k}^{\dagger}+v_{k}^*c_{k} 
-\end{cases}
+\tilde \Psi_k =
+\left(
+\begin{array}{c}
+	d_k \\
+	d_{-k}^\dagger
+\end{array}
+\right) = 
+\left(
+\begin{array}{cc}
+	u_k & v_{-k} \\
+	v_k^* & u_{-k}^*
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+	c_k \\
+	c_{-k}^\dagger
+\end{array}
+\right),
 $$
 
-Bogoliubov 变换保持费米子对易关系：
+其中 $|u_k|^2+|v_k|^2 = 1$, 且有对称关系 $u_k = u_{-k}, v_{k} = -v_{-k}$. 对角化条件确定：
 
 $$
-\begin{eqnarray}
-\{ \tilde{c}_{k},\tilde{c}_{k'}^{\dagger}\} &=&\delta_{kk'},\\
-\left\{ \tilde{c}_{k},\tilde{c}_{k'}\right\} &=& 0.
+\begin{eqnarray} 
+|u_k|^{2} &=& \frac{1}{2}+\frac{\epsilon_{k}}{2\sqrt{\epsilon_{k}^{2}+\Delta_{k}^{2}}}, \\ 
+|v_k|^{2} &=& \frac{1}{2}-\frac{\epsilon_{k}}{2\sqrt{\epsilon_{k}^{2}+\Delta_{k}^{2}}}.
 \end{eqnarray}
-$$
-
-因此要求
-
-$$
-\left|u_{k}\right|^{2}+\left|v_{k}\right|^{2}=\left|u_{-k}\right|^{2}+\left|v_{-k}\right|^{2}=1
-$$
-
-代入原哈密顿量，并令非对角项系数为 0，我们得到关系：
-
-$$
-\Delta_{k}\left(u_{k}^{2}-v_{k}^{2}\right)=2\epsilon_{k}u_{k}v_{k}
-$$
-
-联立解得：
-
-$$
-\begin{cases} u_{k}^{2} & =\frac{1}{2}\left(1+\frac{\epsilon_{k}}{\sqrt{\epsilon_{k}^{2}+\Delta_{k}^{2}}}\right)\\ v_{k}^{2} & =\frac{1}{2}\left(1-\frac{\epsilon_{k}}{\sqrt{\epsilon_{k}^{2}+\Delta_{k}^{2}}}\right) \end{cases}
 $$
 
 最终哈密顿量在准粒子算符下变为简单的对角形式：
 
 $$
-\hat{H}\left(k\right)=\sqrt{\epsilon_{k}^{2}+\Delta_{k}^{2}}\left(\tilde{c}_{k}^{\dagger}\tilde{c}_{k}+\tilde{c}_{-k}^{\dagger}\tilde{c}_{-k}\right)+const.
+H_k = \left(\begin{array}{cc}
+	\sqrt{\epsilon_k^2+|\Delta_k|^2} & 0 \\
+	0 & -\sqrt{\epsilon_k^2+|\Delta_k|^2}
+\end{array}\right).
 $$
 
-需要注意的是，超导配对项的引入破话了粒子数守恒。直接的结果是真空态发生移动，即准粒子的真空态，也是 BCS 基态，不再是原先费米子算符的真空态。而是方程
+需要注意的是，超导配对项的引入破坏了粒子数守恒。直接的结果是真空态发生移动，即准粒子的真空态，也是 BCS 基态，不再是原先费米子算符的真空态。而是由方程
 
 $$
-\tilde{c}_{k}\left|G\right\rangle =0,\ \forall k
+d_{k}\left|G\right\rangle =0,\ \forall k
 $$
 
-确定的态。以上的讨论仅限于一个 k-sector 内部的正则变化，当我们考虑一个更一般的耦合时，一个普遍的二次型哈密顿量为：
+确定的态。
+
+以上的讨论仅限于一个 k-sector 内部的正则变化，当我们考虑一个更一般的耦合时，需要将 Nambu spinor 扩展为更一般的形式：
+$$
+\Psi = (c_1,c_2,\cdots,c_N,c_1^\dagger,c_2^\dagger,\cdots,c_N^\dagger)^T.
+$$
+
+哈密顿量矩阵可分块写为(同样满足粒子-空穴对称性)：
 
 $$
-\hat{H}=\sum_{i,j=1}^{N}\left(
-    A_{ij}c_{i}^{\dagger}c_{j} + 
-    \frac{1}{2} B_{ij}c_{i}^{\dagger}c_{j}^{\dagger} -
-    \frac{1}{2} B_{ij}^*c_{i}c_{j}
+H_k = 
+\left(
+\begin{array}{cc}
+	A & B \\
+	-B^* & -A^*
+\end{array}
+\right),
+$$
+其中矩阵 $A$ 为厄米矩阵，$B$ 为反对称矩阵，这种形式的哈密顿量称作 Bogoliubov de Genes (BdG) 型哈密顿量。此时准粒子算符也应是原费米子产生湮灭算符的线性组合，可以写作：
+$$
+\tilde \Psi = 
+\left(
+\begin{array}{c}
+	d_1 \\
+	\vdots \\
+	d_N \\
+	d_1^\dagger \\
+	\vdots \\
+	d_N^\dagger
+\end{array}
+\right) = 
+\left(
+\begin{array}{cccccc}
+	U_{11} & \cdots & U_{1N} & V_{11} & \cdots & V_{1N} \\
+	\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
+	U_{N1} & \cdots & U_{NN} & V_{N1} & \cdots & V_{NN} \\
+	V_{11}^* & \cdots & V_{1N}^* & U_{11}^* & \cdots & U_{1N}^* \\
+	\vdots   & \ddots & \vdots   & \vdots   & \ddots & \vdots   \\
+	V_{N1}^* & \cdots & V_{NN}^* & U_{N1}^* & \cdots & U_{NN}^* \\
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+	c_1 \\
+	\vdots \\
+	c_N \\
+	c_1^\dagger \\
+	\vdots \\
+	c_N^\dagger
+\end{array}
 \right).
 $$
 
-其中 $A_{ij}$ 为厄米矩阵，$B_{ij}$ 为反对称矩阵，这种形式的哈密顿量称作 Bogoliubov de Genes 哈密顿量。此时准粒子算符也应是原费米子产生湮灭算符的线性组合，可以写作：
-
-$$
-\begin{cases} \tilde{c}_{i} & =\sum_{j=1}^{N}\left(U_{ij}c_{j}+V_{ij}c_{j}^{\dagger}\right)\\ \tilde{c}_{i}^{\dagger} & =\sum_{j=1}^{N}\left(V_{ij}^{*}c_{j}+U_{ij}^{*}c_{j}^{\dagger}\right) \end{cases}
-$$
-
-这组线性变换保持费米子对易关系，因此矩阵 $U,V$ 满足：
+对易关系要求矩阵 $U,V$ 满足：
 
 $$
 UU^{\dagger}+VV^{\dagger}=\mathbb{I}
 $$
 
-对于算符数量较少的情形，如 BCS 模型中每个 k-secter 中只含 2 个费米子算符，我们可以将逆变换式代入哈密顿量消去非对角项找到相应系数。但对于算符较多情形，我们需要一个更为系统化的手续。我们接下来会看到，引入 Majorana 算符能将 BdG 型哈密顿量化为更为简单的形式。
+我们下面讨论一般 BdG 型哈密顿量的对角化方案。
+
+## BdG 型哈密顿量的对角化
+
+对于形如
+
+$$
+\hat H = \sum_{i,j=1}^{2N} \Psi_i^\dagger H_{ij} \Psi_j
+$$
+
+的哈密顿量，我们需要寻找满足粒子-空穴对称性的幺正变换 $T$ 使得：
+
+$$
+T^\dagger H T = \mathrm{diag}(\lambda_1,\cdots,\lambda_N,-\lambda_1,\cdots,-\lambda_N).
+$$
+
+则通过变换 $\tilde \Psi = T^\dagger \cdot \Psi$，哈密顿量变为对角的。下面我们讨论如何找到这样的幺正变换。
+
+首先，BdG 型哈密顿量的粒子-空穴对称性保证了能谱的对称性。我们可以首先找到 $H_{ij}$ 全部的本征值为正的本征向量。我们将它们形式化地记为：
+
+$$
+\psi_k = (u_{1,k}, \cdots, u_{N,k},v_{1,k},\cdots,v_{N,k})^T,\ k=1,2,\cdots,N,
+$$
+
+$$
+H\cdot \psi_k = \lambda_k \psi_k,\ \lambda_k >0.
+$$
+
+通过这 $N$ 个向量，构造矩阵：
+
+$$
+T = \left(\begin{array}{cc}
+	U & V^* \\
+	V & U^*
+\end{array}
+\right),
+$$
+
+其中矩阵 $U,V$ 由本征向量的系数确定。注意若能谱中有零能，$T$ 可以不是方阵。算法实现为 (Julia)：
+
+```julia
+function bdg_eigen(
+    A::AbstractMatrix{<:Number},
+    B::AbstractMatrix{<:Number}
+)
+    n = size(A, 1)
+	H = [A B; -conj(B) -conj(A)]
+    vals, vecs = eigen(Hermitian(H))
+    pos = vals .> 1e-14 # Discard zero-modes
+    λ = vals[pos]
+    T = [vecs[1:n, pos] conj(vecs[n+1:2n, pos]); vecs[n+1:2n, pos] conj(vecs[1:n, pos])]
+    λ, T
+end
+```
 
 ## Majorana 算符的引入
 
@@ -93,7 +190,7 @@ Majorana 是一类特殊的算符，它和费米子有直接的转换关系,任�
 $$
 \begin{eqnarray} 
     \omega^{A}_j &=& c_j + c_j^{\dagger}, \\ 
-    \omega^{B}_j &=& -i(c_j-c_j^{\dagger}).
+    \omega^{B}_j &=& \frac{c_j-c_j^\dagger}{i},
 \end{eqnarray}
 $$
 
@@ -244,6 +341,19 @@ $$
 H = \sum_k \lambda_k \tilde{c}_k^\dagger \tilde{c}_k.
 $$
 
+算法实现为 (Julia)：
+
+```julia
+function majorana_real(
+    A::AbstractMatrix{<:AbstractFloat},
+    B::AbstractMatrix{<:AbstractFloat}
+)
+    M = A - B
+    U, λ, V = svd(M)
+    λ, U, V
+end
+```
+
 ## 复数 BdG 型的舒尔分解
 
 对一般复数 BdG 型，我们需要考虑纯虚反对称矩阵
@@ -316,24 +426,9 @@ H &=& \frac{i}{4} \sum_{k} \lambda_k (\gamma_k^A\gamma_k^B-\gamma_k^B\gamma_k^A)
 \end{eqnarray}
 $$
 
-我们得到了和实数情形同样的形式。
-
-## 简单的算法实现 (Julia)
-
-这里我们给出一个简单的 Julia 代码实现上述两种情况下的谱分解。返回的是能谱和相应 Majorana 的正交变换。
+我们得到了和实数情形同样的形式。算法实现为 (Julia):
 
 ```julia
-using LinearAlgebra
-
-function majorana_real(
-    A::AbstractMatrix{<:AbstractFloat},
-    B::AbstractMatrix{<:AbstractFloat}
-)
-    M = A - B
-    U, λ, V = svd(M)
-    λ, U, V
-end
-
 function majorana_complex(
     A::AbstractMatrix{<:Number},
     B::AbstractMatrix{<:Number}
@@ -349,11 +444,11 @@ function majorana_complex(
         [AI+BI AR-BR; -AR-BR AI-BI]
     end
     F = schur(H)
-    S = F.T
-    O = F.Z
+    S = F.T # Almost standard form
+    O = F.Z # Transform matrix
     for i=1:n
         Si = S[2i-1, 2i]
-        if Si < 0
+        if Si < 0 # swith place
             energy[i] = -Si
             temp .= O[:, 2i-1]
             O[:, 2i-1] .= O[:, 2i]
@@ -362,7 +457,7 @@ function majorana_complex(
             energy[i] = Si
         end
     end
-    sortinds = sortperm(energy, rev=true)
+    sortinds = sortperm(energy, rev=true) # sort eigen values
     sortinds2 = vcat(([2i-1, 2i] for i in sortinds)...)
     λ = energy[sortinds]
     O = O[:, sortinds2]

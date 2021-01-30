@@ -197,7 +197,7 @@ $V_{ext}\left(r\right)$ 由在 $\rho_{0}\left(r\right)$ 附近的泛函导数完
 
 
 ## Hohenberg-Kohn 第二定理
-Hohenberg-Kohn 定理说的是对于给定外势，存在定义在所有密度分布上能量泛函 ¥E\left[\cdot\right]$, 基态密度是能量泛函关于所有可能的密度分布的变分极值。
+Hohenberg-Kohn 定理说的是对于给定外势，存在定义在所有密度分布上能量泛函 $E\left[\cdot\right]$, 基态密度是能量泛函关于所有可能的密度分布的变分极值。
 
 这个定理看起来是显然的。注意之前我们对 $f,g$ 的讨论中，密度分布只定义在 $B,B'$ 中，而并非所有密度分布函数集合 $\left\{ \rho\left(r\right)|\int dr\rho\left(r\right)=N\right\}$. 定理的证明同样可以借助 Levy-Lieb 泛函：
 
