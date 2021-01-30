@@ -98,11 +98,11 @@ $$
 两两相减有：
 
 $$
-\left\langle \psi_{0}\right|\hat{V}_{ext}^{'}-\hat{V}_{ext}\left|\psi_{0}\right\rangle >E_{0}'-E_{0},
+\langle \psi_{0}| \hat V_{ext}'- \hat V_{ext}|\psi_{0}\rangle > E_{0}'-E_{0},
 $$
 
 $$
-\left\langle \psi_{0}'\right|\hat{V}_{ext}-\hat{V}_{ext}^{'}\left|\psi_{0}'\right\rangle >E_{0}-E_{0}'. 
+\langle \psi_{0}'|\hat V_{ext}-\hat V_{ext}' |\psi_{0}'\rangle > E_{0}-E_{0}'. 
 $$
 
 由于
