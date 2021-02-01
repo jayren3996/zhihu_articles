@@ -4,33 +4,47 @@
 
 ## 从 BCS 模型到多粒子 BdG 型哈密顿量
 
-BCS 平均场模型相当于在自由费米子球模型基础上加入了一超导配对项项的微扰作用。平移不变性未被破坏的前提下在动量空间的哈密顿量为：
+BCS 平均场模型相当于在自由费米子球模型基础上加入了一超导配对项项的微扰作用。平移不变性未被破坏的前提下在动量空间的哈密顿量可记为 BdG 形式：
 
 
-<img src="https://www.zhihu.com/equation?tex=\hat{H} = \bigoplus_k \Psi_k^\dagger 
+<img src="https://www.zhihu.com/equation?tex=\hat{H} = \frac{1}{2}\sum_k \underline \Psi_k^\dagger 
 \left(\begin{array}{cc}
 	\epsilon_k & \Delta_k \\
-	\Delta_k^* & -\epsilon_k
+	\Delta_{k}^* & -\epsilon_{k}
 \end{array}\right)
-\Psi_k,
-" alt="\hat{H} = \bigoplus_k \Psi_k^\dagger 
+\underline \Psi_k,
+" alt="\hat{H} = \frac{1}{2}\sum_k \underline \Psi_k^\dagger 
 \left(\begin{array}{cc}
 	\epsilon_k & \Delta_k \\
-	\Delta_k^* & -\epsilon_k
+	\Delta_{k}^* & -\epsilon_{k}
 \end{array}\right)
-\Psi_k,
+\underline \Psi_k,
 " class="ee_img tr_noresize" eeimg="1">
 
-其中  <img src="https://www.zhihu.com/equation?tex=\Psi_k = (c_k, c_{-k}^\dagger)^T" alt="\Psi_k = (c_k, c_{-k}^\dagger)^T" class="ee_img tr_noresize" eeimg="1">  称为 Nambu spinor. 我们需要在此 k-sector 寻找一个幺正变换，满足：
+其中  <img src="https://www.zhihu.com/equation?tex=\underline\Psi_k = (c_k, c_{-k}^\dagger)^T" alt="\underline\Psi_k = (c_k, c_{-k}^\dagger)^T" class="ee_img tr_noresize" eeimg="1">  称为 Nambu spinor. 此哈密顿量的特征是满足粒子-空穴对称性  <img src="https://www.zhihu.com/equation?tex=\mathcal C" alt="\mathcal C" class="ee_img tr_noresize" eeimg="1"> ，此对称性在算符基底上的作用为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\mathcal C \cdot \underline\Psi_k = \sigma^x \cdot \underline\Psi_{-k}^*
+" alt="\mathcal C \cdot \underline\Psi_k = \sigma^x \cdot \underline\Psi_{-k}^*
+" class="ee_img tr_noresize" eeimg="1">
+
+在哈密顿量上，表现为：
+
+
+<img src="https://www.zhihu.com/equation?tex=C H_{k}C^{-1}=\sigma^x \cdot H^*_{k} \cdot\sigma^x=-H_{-k}.
+" alt="C H_{k}C^{-1}=\sigma^x \cdot H^*_{k} \cdot\sigma^x=-H_{-k}.
+" class="ee_img tr_noresize" eeimg="1">
+
+我们需要在此动量  <img src="https://www.zhihu.com/equation?tex=k" alt="k" class="ee_img tr_noresize" eeimg="1">  子空间内寻找一个幺正变换  <img src="https://www.zhihu.com/equation?tex=T_k" alt="T_k" class="ee_img tr_noresize" eeimg="1"> ，满足：
 
 1. 保持费米算符的反对易关系;
-2. 满足此哈密顿量的粒子-空穴对称性 ( <img src="https://www.zhihu.com/equation?tex=\sigma_x \Psi_{-k}^* = \Psi_k" alt="\sigma_x \Psi_{-k}^* = \Psi_k" class="ee_img tr_noresize" eeimg="1"> );
+2. 满足此哈密顿量的粒子-空穴对称性 ( <img src="https://www.zhihu.com/equation?tex=\sigma^x \cdot T_{-k}^* \sigma^x = T_k" alt="\sigma^x \cdot T_{-k}^* \sigma^x = T_k" class="ee_img tr_noresize" eeimg="1"> );
 3. 哈密顿量是完全对角化的。
 
 满足条件 1, 2 的变换的一般形式为：
 
 
-<img src="https://www.zhihu.com/equation?tex=\tilde \Psi_k =
+<img src="https://www.zhihu.com/equation?tex=\tilde{\underline{\Psi}}_k =
 \left(
 \begin{array}{c}
 	d_k \\
@@ -39,8 +53,8 @@ BCS 平均场模型相当于在自由费米子球模型基础上加入了一超�
 \right) = 
 \left(
 \begin{array}{cc}
-	u_k & v_{-k} \\
-	v_k^* & u_{-k}^*
+	u_k & -v_{k} \\
+	v_k^* & u_k^*
 \end{array}
 \right)
 \left(
@@ -49,7 +63,7 @@ BCS 平均场模型相当于在自由费米子球模型基础上加入了一超�
 	c_{-k}^\dagger
 \end{array}
 \right),
-" alt="\tilde \Psi_k =
+" alt="\tilde{\underline{\Psi}}_k =
 \left(
 \begin{array}{c}
 	d_k \\
@@ -58,8 +72,8 @@ BCS 平均场模型相当于在自由费米子球模型基础上加入了一超�
 \right) = 
 \left(
 \begin{array}{cc}
-	u_k & v_{-k} \\
-	v_k^* & u_{-k}^*
+	u_k & -v_{k} \\
+	v_k^* & u_k^*
 \end{array}
 \right)
 \left(
@@ -70,7 +84,7 @@ BCS 平均场模型相当于在自由费米子球模型基础上加入了一超�
 \right),
 " class="ee_img tr_noresize" eeimg="1">
 
-其中  <img src="https://www.zhihu.com/equation?tex=|u_k|^2+|v_k|^2 = 1" alt="|u_k|^2+|v_k|^2 = 1" class="ee_img tr_noresize" eeimg="1"> , 且有对称关系  <img src="https://www.zhihu.com/equation?tex=u_k = u_{-k}, v_{k} = -v_{-k}" alt="u_k = u_{-k}, v_{k} = -v_{-k}" class="ee_img tr_noresize" eeimg="1"> . 对角化条件确定：
+其中  <img src="https://www.zhihu.com/equation?tex=|u_k|^2+|v_k|^2 = 1" alt="|u_k|^2+|v_k|^2 = 1" class="ee_img tr_noresize" eeimg="1"> , 且有对称关系  <img src="https://www.zhihu.com/equation?tex=u_k = u_{-k}, v_{k} = -v_{-k}" alt="u_k = u_{-k}, v_{k} = -v_{-k}" class="ee_img tr_noresize" eeimg="1"> . 将上述形式代回，令非对角元为零，确定对角化条件为：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray} 
@@ -96,160 +110,139 @@ BCS 平均场模型相当于在自由费米子球模型基础上加入了一超�
 \end{array}\right).
 " class="ee_img tr_noresize" eeimg="1">
 
-需要注意的是，超导配对项的引入破坏了粒子数守恒。直接的结果是真空态发生移动，即准粒子的真空态，也是 BCS 基态，不再是原先费米子算符的真空态。而是由方程
+需要注意的是，超导配对项的引入破坏了粒子数守恒。直接的结果是真空态发生移动，即准粒子的真空态，也是 BCS 基态，不再是原先费米子算符的真空态。而是由方程  <img src="https://www.zhihu.com/equation?tex=d_{k}\left|G\right\rangle =0,\ \forall k" alt="d_{k}\left|G\right\rangle =0,\ \forall k" class="ee_img tr_noresize" eeimg="1">  确定的态。
+
+以上的讨论仅涉及两分量场内部的正则变化，我们直接利用待定系数法就确定了正则变换的系数。然而对于更一般的情况，即场分量较多的情形，我们需要一个更为系统的手续。一下我们将讨论一般 BdG 型哈密顿量的对角化方案，我们首先讨论实空间情形，再考虑有平移不变性的体系。
+## 实空间 BdG 型哈密顿量及其对角化
+
+实空间 BdG 格点哈密顿量一般形式为：
 
 
-<img src="https://www.zhihu.com/equation?tex=d_{k}\left|G\right\rangle =0,\ \forall k
-" alt="d_{k}\left|G\right\rangle =0,\ \forall k
+<img src="https://www.zhihu.com/equation?tex=\hat H = \sum_{ij}A_{ij}c_i^\dagger c_j+\frac{1}{2}\sum_{ij}(B_{ij}c_i^\dagger c_j^\dagger-B_{ij}^*c_ic_j).
+" alt="\hat H = \sum_{ij}A_{ij}c_i^\dagger c_j+\frac{1}{2}\sum_{ij}(B_{ij}c_i^\dagger c_j^\dagger-B_{ij}^*c_ic_j).
 " class="ee_img tr_noresize" eeimg="1">
 
-确定的态。
+其中  <img src="https://www.zhihu.com/equation?tex=A" alt="A" class="ee_img tr_noresize" eeimg="1">  为厄米矩阵， <img src="https://www.zhihu.com/equation?tex=B" alt="B" class="ee_img tr_noresize" eeimg="1">  为反对称矩阵。对此我们将 Nambu spinor 扩展为：
 
-以上的讨论仅限于一个 k-sector 内部的正则变化，当我们考虑一个更一般的耦合时，需要将 Nambu spinor 扩展为更一般的形式：
 
-<img src="https://www.zhihu.com/equation?tex=\Psi = (c_1,c_2,\cdots,c_N,c_1^\dagger,c_2^\dagger,\cdots,c_N^\dagger)^T.
-" alt="\Psi = (c_1,c_2,\cdots,c_N,c_1^\dagger,c_2^\dagger,\cdots,c_N^\dagger)^T.
+<img src="https://www.zhihu.com/equation?tex=\underline\Psi = (c_1,\cdots,c_N,c_1^\dagger,\cdots,c_N^\dagger)^T.
+" alt="\underline\Psi = (c_1,\cdots,c_N,c_1^\dagger,\cdots,c_N^\dagger)^T.
 " class="ee_img tr_noresize" eeimg="1">
 
-哈密顿量矩阵可分块写为(同样满足粒子-空穴对称性)：
+此时哈密顿量可形式化记为：
 
 
-<img src="https://www.zhihu.com/equation?tex=H_k = 
-\left(
-\begin{array}{cc}
+<img src="https://www.zhihu.com/equation?tex=\hat H = \frac{1}{2}\sum_{i,j=1}^{2N} \Psi_i^\dagger H_{ij} \Psi_j + const.
+" alt="\hat H = \frac{1}{2}\sum_{i,j=1}^{2N} \Psi_i^\dagger H_{ij} \Psi_j + const.
+" class="ee_img tr_noresize" eeimg="1">
+
+其中哈密顿量矩阵有分块形式：
+
+
+<img src="https://www.zhihu.com/equation?tex=H = 
+\left(\begin{array}{cc}
 	A & B \\
 	-B^* & -A^*
-\end{array}
-\right),
-" alt="H_k = 
-\left(
-\begin{array}{cc}
+\end{array}\right).
+" alt="H = 
+\left(\begin{array}{cc}
 	A & B \\
 	-B^* & -A^*
-\end{array}
-\right),
+\end{array}\right).
 " class="ee_img tr_noresize" eeimg="1">
-其中矩阵  <img src="https://www.zhihu.com/equation?tex=A" alt="A" class="ee_img tr_noresize" eeimg="1">  为厄米矩阵， <img src="https://www.zhihu.com/equation?tex=B" alt="B" class="ee_img tr_noresize" eeimg="1">  为反对称矩阵，这种形式的哈密顿量称作 Bogoliubov de Genes (BdG) 型哈密顿量。此时准粒子算符也应是原费米子产生湮灭算符的线性组合，可以写作：
 
-<img src="https://www.zhihu.com/equation?tex=\tilde \Psi = 
+实空间粒子-空穴对称性  <img src="https://www.zhihu.com/equation?tex=\mathcal C" alt="\mathcal C" class="ee_img tr_noresize" eeimg="1">  再 Nambu spinor 上作用为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\mathcal C \cdot \underline\Psi = \sigma^x \cdot \underline\Psi^*.
+" alt="\mathcal C \cdot \underline\Psi = \sigma^x \cdot \underline\Psi^*.
+" class="ee_img tr_noresize" eeimg="1">
+
+在哈密顿矩阵上的作用为：
+
+
+<img src="https://www.zhihu.com/equation?tex=C H C^{-1} = \sigma^x\cdot H^* \cdot \sigma^x = -H.
+" alt="C H C^{-1} = \sigma^x\cdot H^* \cdot \sigma^x = -H.
+" class="ee_img tr_noresize" eeimg="1">
+
+满足粒子-空穴对称性的幺正变换的一般形式为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\tilde{\underline\Psi} =
 \left(
 \begin{array}{c}
-	d_1 \\
-	\vdots \\
-	d_N \\
-	d_1^\dagger \\
-	\vdots \\
-	d_N^\dagger
+	\vec d \\
+	\vec d^\dagger
 \end{array}
 \right) = 
 \left(
-\begin{array}{cccccc}
-	U_{11} & \cdots & U_{1N} & V_{11} & \cdots & V_{1N} \\
-	\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
-	U_{N1} & \cdots & U_{NN} & V_{N1} & \cdots & V_{NN} \\
-	V_{11}^* & \cdots & V_{1N}^* & U_{11}^* & \cdots & U_{1N}^* \\
-	\vdots   & \ddots & \vdots   & \vdots   & \ddots & \vdots   \\
-	V_{N1}^* & \cdots & V_{NN}^* & U_{N1}^* & \cdots & U_{NN}^* \\
+\begin{array}{cc}
+	U & V \\
+	V^* & U^*
 \end{array}
 \right)
 \left(
 \begin{array}{c}
-	c_1 \\
-	\vdots \\
-	c_N \\
-	c_1^\dagger \\
-	\vdots \\
-	c_N^\dagger
+	\vec c \\
+	\vec c^\dagger
 \end{array}
-\right).
-" alt="\tilde \Psi = 
+\right),
+" alt="\tilde{\underline\Psi} =
 \left(
 \begin{array}{c}
-	d_1 \\
-	\vdots \\
-	d_N \\
-	d_1^\dagger \\
-	\vdots \\
-	d_N^\dagger
+	\vec d \\
+	\vec d^\dagger
 \end{array}
 \right) = 
 \left(
-\begin{array}{cccccc}
-	U_{11} & \cdots & U_{1N} & V_{11} & \cdots & V_{1N} \\
-	\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
-	U_{N1} & \cdots & U_{NN} & V_{N1} & \cdots & V_{NN} \\
-	V_{11}^* & \cdots & V_{1N}^* & U_{11}^* & \cdots & U_{1N}^* \\
-	\vdots   & \ddots & \vdots   & \vdots   & \ddots & \vdots   \\
-	V_{N1}^* & \cdots & V_{NN}^* & U_{N1}^* & \cdots & U_{NN}^* \\
+\begin{array}{cc}
+	U & V \\
+	V^* & U^*
 \end{array}
 \right)
 \left(
 \begin{array}{c}
-	c_1 \\
-	\vdots \\
-	c_N \\
-	c_1^\dagger \\
-	\vdots \\
-	c_N^\dagger
-\end{array}
-\right).
-" class="ee_img tr_noresize" eeimg="1">
-
-对易关系要求矩阵  <img src="https://www.zhihu.com/equation?tex=U,V" alt="U,V" class="ee_img tr_noresize" eeimg="1">  满足：
-
-
-<img src="https://www.zhihu.com/equation?tex=UU^{\dagger}+VV^{\dagger}=\mathbb{I}
-" alt="UU^{\dagger}+VV^{\dagger}=\mathbb{I}
-" class="ee_img tr_noresize" eeimg="1">
-
-我们下面讨论一般 BdG 型哈密顿量的对角化方案。
-
-## BdG 型哈密顿量的对角化
-
-对于形如
-
-
-<img src="https://www.zhihu.com/equation?tex=\hat H = \sum_{i,j=1}^{2N} \Psi_i^\dagger H_{ij} \Psi_j
-" alt="\hat H = \sum_{i,j=1}^{2N} \Psi_i^\dagger H_{ij} \Psi_j
-" class="ee_img tr_noresize" eeimg="1">
-
-的哈密顿量，我们需要寻找满足粒子-空穴对称性的幺正变换  <img src="https://www.zhihu.com/equation?tex=T" alt="T" class="ee_img tr_noresize" eeimg="1">  使得：
-
-
-<img src="https://www.zhihu.com/equation?tex=T^\dagger H T = \mathrm{diag}(\lambda_1,\cdots,\lambda_N,-\lambda_1,\cdots,-\lambda_N).
-" alt="T^\dagger H T = \mathrm{diag}(\lambda_1,\cdots,\lambda_N,-\lambda_1,\cdots,-\lambda_N).
-" class="ee_img tr_noresize" eeimg="1">
-
-则通过变换  <img src="https://www.zhihu.com/equation?tex=\tilde \Psi = T^\dagger \cdot \Psi" alt="\tilde \Psi = T^\dagger \cdot \Psi" class="ee_img tr_noresize" eeimg="1"> ，哈密顿量变为对角的。下面我们讨论如何找到这样的幺正变换。
-
-首先，BdG 型哈密顿量的粒子-空穴对称性保证了能谱的对称性。我们可以首先找到  <img src="https://www.zhihu.com/equation?tex=H_{ij}" alt="H_{ij}" class="ee_img tr_noresize" eeimg="1">  全部的本征值为正的本征向量。我们将它们形式化地记为：
-
-
-<img src="https://www.zhihu.com/equation?tex=\psi_k = (u_{1,k}, \cdots, u_{N,k},v_{1,k},\cdots,v_{N,k})^T,\ k=1,2,\cdots,N,
-" alt="\psi_k = (u_{1,k}, \cdots, u_{N,k},v_{1,k},\cdots,v_{N,k})^T,\ k=1,2,\cdots,N,
-" class="ee_img tr_noresize" eeimg="1">
-
-
-<img src="https://www.zhihu.com/equation?tex=H\cdot \psi_k = \lambda_k \psi_k,\ \lambda_k >0.
-" alt="H\cdot \psi_k = \lambda_k \psi_k,\ \lambda_k >0.
-" class="ee_img tr_noresize" eeimg="1">
-
-通过这  <img src="https://www.zhihu.com/equation?tex=N" alt="N" class="ee_img tr_noresize" eeimg="1">  个向量，构造矩阵：
-
-
-<img src="https://www.zhihu.com/equation?tex=T = \left(\begin{array}{cc}
-	U & V^* \\
-	V & U^*
-\end{array}
-\right),
-" alt="T = \left(\begin{array}{cc}
-	U & V^* \\
-	V & U^*
+	\vec c \\
+	\vec c^\dagger
 \end{array}
 \right),
 " class="ee_img tr_noresize" eeimg="1">
 
-其中矩阵  <img src="https://www.zhihu.com/equation?tex=U,V" alt="U,V" class="ee_img tr_noresize" eeimg="1">  由本征向量的系数确定。注意若能谱中有零能， <img src="https://www.zhihu.com/equation?tex=T" alt="T" class="ee_img tr_noresize" eeimg="1">  可以不是方阵。算法实现为 (Julia)：
+下面我们讨论如何找到这样的幺正变换  <img src="https://www.zhihu.com/equation?tex=T" alt="T" class="ee_img tr_noresize" eeimg="1"> 。首先，粒子-空穴对称性保证了能谱的正负对称性：
+
+
+<img src="https://www.zhihu.com/equation?tex=T H T^\dagger = \mathrm{diag}(\lambda_1,\cdots,\lambda_N,-\lambda_1,\cdots,-\lambda_N).
+" alt="T H T^\dagger = \mathrm{diag}(\lambda_1,\cdots,\lambda_N,-\lambda_1,\cdots,-\lambda_N).
+" class="ee_img tr_noresize" eeimg="1">
+
+我们可以首先找到  <img src="https://www.zhihu.com/equation?tex=H_{ij}" alt="H_{ij}" class="ee_img tr_noresize" eeimg="1">  全部的本征值为正的本征向量。我们将它们形式化地记为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\psi_n = (U_{n,1}^*, \cdots, U_{n,N}^*,V_{n,1}^*,\cdots,V_{n,N}^*)^T,\ n=1,2,\cdots,N,
+" alt="\psi_n = (U_{n,1}^*, \cdots, U_{n,N}^*,V_{n,1}^*,\cdots,V_{n,N}^*)^T,\ n=1,2,\cdots,N,
+" class="ee_img tr_noresize" eeimg="1">
+
+满足本征方程
+
+
+<img src="https://www.zhihu.com/equation?tex=H\cdot \psi_n = \lambda_n \psi_n,\ \lambda_n >0.
+" alt="H\cdot \psi_n = \lambda_n \psi_n,\ \lambda_n >0.
+" class="ee_img tr_noresize" eeimg="1">
+
+由此  <img src="https://www.zhihu.com/equation?tex=N" alt="N" class="ee_img tr_noresize" eeimg="1">  个本征向量能够确定矩阵  <img src="https://www.zhihu.com/equation?tex=U,V" alt="U,V" class="ee_img tr_noresize" eeimg="1"> ，通过变换  <img src="https://www.zhihu.com/equation?tex=\tilde{\underline\Psi} = T \cdot \underline\Psi" alt="\tilde{\underline\Psi} = T \cdot \underline\Psi" class="ee_img tr_noresize" eeimg="1"> ，哈密顿量变为对角形式：
+
+
+<img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
+\hat H &=& \frac{1}{2} \sum_n \lambda_n (\tilde c_n^\dagger \tilde c_n-\tilde c_n \tilde c_n^\dagger) \\
+&=& \sum_n \lambda_n\left(\tilde c_n^\dagger \tilde c_n-\frac{1}{2}\right).
+\end{eqnarray}
+" alt="\begin{eqnarray}
+\hat H &=& \frac{1}{2} \sum_n \lambda_n (\tilde c_n^\dagger \tilde c_n-\tilde c_n \tilde c_n^\dagger) \\
+&=& \sum_n \lambda_n\left(\tilde c_n^\dagger \tilde c_n-\frac{1}{2}\right).
+\end{eqnarray}
+" class="ee_img tr_noresize" eeimg="1">
+
+算法实现为 (Julia)：
 
 ```julia
 function bdg_eigen(
@@ -261,14 +254,18 @@ function bdg_eigen(
     vals, vecs = eigen(Hermitian(H))
     pos = vals .> 1e-14 # Discard zero-modes
     λ = vals[pos]
-    T = [vecs[1:n, pos] conj(vecs[n+1:2n, pos]); vecs[n+1:2n, pos] conj(vecs[1:n, pos])]
+    U = vecs[1:n, pos]'
+    V = vecs[n+1:2n, pos]'
+    T = [U V;conj(V) conj(U)]
     λ, T
 end
 ```
 
+所有格点 BdG 哈密顿量原则上都可由此求解，我们接下来讨论另一种对角化方法，即引入 Majorana 算符。Majorana 算符可以看作厄米矩阵一组自然的算符基，哈密顿量在此算符基下系数总是实数，我们因此(数值上)可以在实数域计算本征解。这在许多情况下能化简问题的计算复杂度。
+
 ## Majorana 算符的引入
 
-Majorana 是一类特殊的算符，它和费米子有直接的转换关系,任意一个费米子可以拆成两个 Majorana 算符:
+Majorana 是一类费米产生湮灭算符的一种特殊线性组合：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray} 
@@ -281,20 +278,20 @@ Majorana 是一类特殊的算符，它和费米子有直接的转换关系,任�
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
-同时任何两个 Majorana 算符可以组合成费米子算符：
+同时，费米算符可以表达为 Majorana 的叠加：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray} 
-    c &=& \frac{\omega_1+i\omega_2}{2}, \\ 
-    c^\dagger &=& \frac{\omega_1-i\omega_2}{2}.
+    c_j &=& \frac{\omega_j^A+i\omega_j^B}{2}, \\ 
+    c_j^\dagger &=& \frac{\omega_j^A-i\omega_j^B}{2}.
 \end{eqnarray}
 " alt="\begin{eqnarray} 
-    c &=& \frac{\omega_1+i\omega_2}{2}, \\ 
-    c^\dagger &=& \frac{\omega_1-i\omega_2}{2}.
+    c_j &=& \frac{\omega_j^A+i\omega_j^B}{2}, \\ 
+    c_j^\dagger &=& \frac{\omega_j^A-i\omega_j^B}{2}.
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
-从上面的表达式中我们可以看到， Majorana 算符某种程度上可以看作费米子的实部和虚部。它有和费米子类似的反对易关系：
+Majorana 算符之间有和费米子类似的反对易关系：
 
 
 <img src="https://www.zhihu.com/equation?tex=\{\omega_i,\omega_j\} = 2\delta_{ij},
@@ -308,117 +305,114 @@ Majorana 是一类特殊的算符，它和费米子有直接的转换关系,任�
 " alt="\omega^\dagger = \omega.
 " class="ee_img tr_noresize" eeimg="1">
 
-现在我们考虑将一般的 BdG 形哈密顿量写为 Majorana 算符形式。首先考虑第一部分，即费米子 hopping 项：
-
-
-<img src="https://www.zhihu.com/equation?tex=H_1 = \sum_{ij} c_i^\dagger A_{ij} c_j.
-" alt="H_1 = \sum_{ij} c_i^\dagger A_{ij} c_j.
-" class="ee_img tr_noresize" eeimg="1">
-
-将费米算符代换为 Majorana 算符得到：
+现在我们考虑将一般的 BdG 形哈密顿量写为 Majorana 算符形式。我们将 Majorana 基形式化记为：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
-H_1 
-&=& \frac{1}{4}\sum_{ij} (\omega_i^A-i\omega_i^B) A_{ij} (\omega_j^A+i\omega_{j}^B) \\
-&=& \frac{1}{4}\sum_{ij} A_{ij}(\omega_i^A \omega_j^A + \omega_i^B \omega_j^B +i\omega_i^A \omega_j^B+i\omega_j^A \omega_i^B).
+\underline\Omega &=& (\omega_i^A,\cdots,\omega_N^A,\omega_1^B,\cdots,\omega_N^B)^T \\
+&=& \left(\begin{array}{cc}
+	\mathbb{I} & \mathbb{I} \\
+	-i\mathbb{I} & i\mathbb{I}
+\end{array}\right)
+\cdot \underline\Psi.
 \end{eqnarray}
 " alt="\begin{eqnarray}
-H_1 
-&=& \frac{1}{4}\sum_{ij} (\omega_i^A-i\omega_i^B) A_{ij} (\omega_j^A+i\omega_{j}^B) \\
-&=& \frac{1}{4}\sum_{ij} A_{ij}(\omega_i^A \omega_j^A + \omega_i^B \omega_j^B +i\omega_i^A \omega_j^B+i\omega_j^A \omega_i^B).
+\underline\Omega &=& (\omega_i^A,\cdots,\omega_N^A,\omega_1^B,\cdots,\omega_N^B)^T \\
+&=& \left(\begin{array}{cc}
+	\mathbb{I} & \mathbb{I} \\
+	-i\mathbb{I} & i\mathbb{I}
+\end{array}\right)
+\cdot \underline\Psi.
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
-注意系数矩阵  <img src="https://www.zhihu.com/equation?tex=A_{ij}" alt="A_{ij}" class="ee_img tr_noresize" eeimg="1">  是厄米的，我们可以将其分解为：
+逆变换为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\underline\Psi = \frac{1}{2}
+\left(\begin{array}{cc}
+	\mathbb{I} & i\mathbb{I} \\
+	\mathbb{I} & -i\mathbb{I}
+\end{array}\right)
+\cdot \underline\Omega.
+" alt="\underline\Psi = \frac{1}{2}
+\left(\begin{array}{cc}
+	\mathbb{I} & i\mathbb{I} \\
+	\mathbb{I} & -i\mathbb{I}
+\end{array}\right)
+\cdot \underline\Omega.
+" class="ee_img tr_noresize" eeimg="1">
+
+这样，我们可以将原先的哈密顿量矩阵做基变换：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
-A_{ij} &=& A_{ij}^R + i A_{ij}^I, \\
-A_{ij}^R &=& \frac{1}{2}(A_{ij} + A_{ij}^*), \\
-A_{ij}^I &=& \frac{1}{2i}(A_{ij} - A_{ij}^*),
-\end{eqnarray}
-" alt="\begin{eqnarray}
-A_{ij} &=& A_{ij}^R + i A_{ij}^I, \\
-A_{ij}^R &=& \frac{1}{2}(A_{ij} + A_{ij}^*), \\
-A_{ij}^I &=& \frac{1}{2i}(A_{ij} - A_{ij}^*),
-\end{eqnarray}
-" class="ee_img tr_noresize" eeimg="1">
-
-其中  <img src="https://www.zhihu.com/equation?tex=A^R" alt="A^R" class="ee_img tr_noresize" eeimg="1">  是实对称矩阵， <img src="https://www.zhihu.com/equation?tex=A^I" alt="A^I" class="ee_img tr_noresize" eeimg="1">  是实反对称矩阵。利用系数矩阵的对称关系， <img src="https://www.zhihu.com/equation?tex=H_1" alt="H_1" class="ee_img tr_noresize" eeimg="1">  继续化简为：
-
-
-<img src="https://www.zhihu.com/equation?tex=H_1 = i \sum_{ij} \left[ 
-    \frac{1}{4}A_{ij}^I (\omega_i^A \omega_j^A + \omega_i^B \omega_j^B)
-    +\frac{1}{2}A_{ij}^R \omega_i^A \omega_j^B
-\right]+\frac{1}{2}Tr[A].
-" alt="H_1 = i \sum_{ij} \left[ 
-    \frac{1}{4}A_{ij}^I (\omega_i^A \omega_j^A + \omega_i^B \omega_j^B)
-    +\frac{1}{2}A_{ij}^R \omega_i^A \omega_j^B
-\right]+\frac{1}{2}Tr[A].
-" class="ee_img tr_noresize" eeimg="1">
-
-现在考虑第二部分，即费米子 pairing 项：
-
-
-<img src="https://www.zhihu.com/equation?tex=H_2 = \frac{1}{2}\sum_{ij} B_{ij}c_i^\dagger c_j^\dagger +h.c.
-" alt="H_2 = \frac{1}{2}\sum_{ij} B_{ij}c_i^\dagger c_j^\dagger +h.c.
-" class="ee_img tr_noresize" eeimg="1">
-
-代换为 Majorana 算符，并将反对称系数矩阵  <img src="https://www.zhihu.com/equation?tex=B_{ij}" alt="B_{ij}" class="ee_img tr_noresize" eeimg="1">  分解为实部和虚部，得到：
-
-
-<img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
-H_2 
-&=& \frac{1}{8}\sum_{ij}B_{ij} (\omega_i^A - i\omega_i^B)(\omega_j^A - i\omega_j^B)+h.c. \\
-&=& \frac{1}{8}\sum_{ij}B_{ij} (\omega_i^A \omega_j^A - \omega_i^B\omega_j^B -i \omega_i^A\omega_j^B+i\omega_j^A\omega_i^B)+h.c. \\
-&=& i\sum_{ij} \left[
-  \frac{1}{4} B^I_{ij} (\omega_i^A \omega_j^A - \omega_i^B\omega_j^B) - 
-  \frac{1}{2} B^R_{ij} \omega_i^A \omega_j^B
-\right].
-\end{eqnarray}
-" alt="\begin{eqnarray}
-H_2 
-&=& \frac{1}{8}\sum_{ij}B_{ij} (\omega_i^A - i\omega_i^B)(\omega_j^A - i\omega_j^B)+h.c. \\
-&=& \frac{1}{8}\sum_{ij}B_{ij} (\omega_i^A \omega_j^A - \omega_i^B\omega_j^B -i \omega_i^A\omega_j^B+i\omega_j^A\omega_i^B)+h.c. \\
-&=& i\sum_{ij} \left[
-  \frac{1}{4} B^I_{ij} (\omega_i^A \omega_j^A - \omega_i^B\omega_j^B) - 
-  \frac{1}{2} B^R_{ij} \omega_i^A \omega_j^B
-\right].
-\end{eqnarray}
-" class="ee_img tr_noresize" eeimg="1">
-
-将两部分和在一起，我们可将哈密顿量写为：
-
-
-<img src="https://www.zhihu.com/equation?tex=H = \underline{\Omega}\cdot \underline{H} \cdot \underline{\Omega}
-" alt="H = \underline{\Omega}\cdot \underline{H} \cdot \underline{\Omega}
-" class="ee_img tr_noresize" eeimg="1">
-
-其中将算符组记作向量
-
-
-<img src="https://www.zhihu.com/equation?tex=\underline\Omega = (\omega_i^A,\cdots,\omega_N^A,\omega_1^B,\cdots,\omega_N^B).
-" alt="\underline\Omega = (\omega_i^A,\cdots,\omega_N^A,\omega_1^B,\cdots,\omega_N^B).
-" class="ee_img tr_noresize" eeimg="1">
-
-矩阵为
-
-
-<img src="https://www.zhihu.com/equation?tex=\underline{H} = \frac{i}{4} 
+\hat H &=& \frac{1}{4} \underline\Omega 
+\left(\begin{array}{cc}
+	\mathbb{I} & \mathbb{I} \\
+	-i\mathbb{I} & i\mathbb{I}
+\end{array}\right)
+\cdot
+\left(\begin{array}{cc}
+	A & B \\
+	-B^* & -A^*
+\end{array}\right)
+\cdot
+\left(\begin{array}{cc}
+	\mathbb{I} & i\mathbb{I} \\
+	\mathbb{I} & -i\mathbb{I}
+\end{array}\right)
+\underline\Omega \\
+&=& \frac{i}{2} 
+\underline\Omega 
 \left(
 \begin{array}{cc}
     A^I + B^I & A^R - B^R \\
     - A^R-B^R &  A^I - B^I
 \end{array}
 \right)
-" alt="\underline{H} = \frac{i}{4} 
+\underline\Omega.
+\end{eqnarray}
+" alt="\begin{eqnarray}
+\hat H &=& \frac{1}{4} \underline\Omega 
+\left(\begin{array}{cc}
+	\mathbb{I} & \mathbb{I} \\
+	-i\mathbb{I} & i\mathbb{I}
+\end{array}\right)
+\cdot
+\left(\begin{array}{cc}
+	A & B \\
+	-B^* & -A^*
+\end{array}\right)
+\cdot
+\left(\begin{array}{cc}
+	\mathbb{I} & i\mathbb{I} \\
+	\mathbb{I} & -i\mathbb{I}
+\end{array}\right)
+\underline\Omega \\
+&=& \frac{i}{2} 
+\underline\Omega 
 \left(
 \begin{array}{cc}
     A^I + B^I & A^R - B^R \\
     - A^R-B^R &  A^I - B^I
 \end{array}
 \right)
+\underline\Omega.
+\end{eqnarray}
+" class="ee_img tr_noresize" eeimg="1">
+
+其中
+
+
+<img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
+A^R &=& \mathrm{Re}[A],\ A^I = \mathrm{Im}[A], \\
+B^R &=& \mathrm{Re}[B],\ B^I = \mathrm{Im}[B].
+\end{eqnarray}
+" alt="\begin{eqnarray}
+A^R &=& \mathrm{Re}[A],\ A^I = \mathrm{Im}[A], \\
+B^R &=& \mathrm{Re}[B],\ B^I = \mathrm{Im}[B].
+\end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
 注意这个矩阵是  <img src="https://www.zhihu.com/equation?tex=2N \times 2N" alt="2N \times 2N" class="ee_img tr_noresize" eeimg="1">  维的纯虚反对称矩阵。接下来我们将讨论这种形式的矩阵的谱性质。
@@ -435,50 +429,50 @@ H_2
 其中系数矩阵  <img src="https://www.zhihu.com/equation?tex=M=A^R-B^R" alt="M=A^R-B^R" class="ee_img tr_noresize" eeimg="1"> . 此时 BdG 型哈密顿量变为一个  <img src="https://www.zhihu.com/equation?tex=N\times N" alt="N\times N" class="ee_img tr_noresize" eeimg="1">  维的实矩阵，哈密顿量的谱可以通过对系数矩阵做奇异值分解得到：
 
 
-<img src="https://www.zhihu.com/equation?tex=M_{ij} = \sum_k U_{ik} \lambda_k V^T_{kj}.
-" alt="M_{ij} = \sum_k U_{ik} \lambda_k V^T_{kj}.
+<img src="https://www.zhihu.com/equation?tex=M_{ij} = \sum_n U_{in} \lambda_n V^T_{nj}.
+" alt="M_{ij} = \sum_n U_{in} \lambda_n V^T_{nj}.
 " class="ee_img tr_noresize" eeimg="1">
 
 其中  <img src="https://www.zhihu.com/equation?tex=U,V" alt="U,V" class="ee_img tr_noresize" eeimg="1">  为两个实正交矩阵。我们可以定义一组新的 Majorana 算符：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
-\gamma^A_k &=& \sum_j \omega_j^A U_{jk} , \\
-\gamma^B_k &=& \sum_j \omega_j^B V_{jk} .
+\gamma^A_n &=& \sum_j \omega_j^A U_{jn} , \\
+\gamma^B_n &=& \sum_j \omega_j^B V_{jn} .
 \end{eqnarray}
 " alt="\begin{eqnarray}
-\gamma^A_k &=& \sum_j \omega_j^A U_{jk} , \\
-\gamma^B_k &=& \sum_j \omega_j^B V_{jk} .
+\gamma^A_n &=& \sum_j \omega_j^A U_{jn} , \\
+\gamma^B_n &=& \sum_j \omega_j^B V_{jn} .
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
 容易验证，实正交变换后的算符  <img src="https://www.zhihu.com/equation?tex=\gamma^A, \gamma^B" alt="\gamma^A, \gamma^B" class="ee_img tr_noresize" eeimg="1">  还是 Majorana 算符，而哈密顿量变为对角形式：
 
 
-<img src="https://www.zhihu.com/equation?tex=H = \frac{i}{2}\sum_k \lambda_k \gamma_k^A \gamma_k^B + \frac{1}{2}Tr[A].
-" alt="H = \frac{i}{2}\sum_k \lambda_k \gamma_k^A \gamma_k^B + \frac{1}{2}Tr[A].
+<img src="https://www.zhihu.com/equation?tex=H = \frac{i}{2}\sum_n \lambda_n \gamma_n^A \gamma_n^B + \frac{1}{2}Tr[A].
+" alt="H = \frac{i}{2}\sum_n \lambda_n \gamma_n^A \gamma_n^B + \frac{1}{2}Tr[A].
 " class="ee_img tr_noresize" eeimg="1">
 
 这样的形式事实上已经是 Majorana 算符表示下的准粒子形式，如果我们想回到熟悉的费米子表示，只需将两个 Majorana 算符重新配对：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
-\frac{i}{2}\gamma_{k}^{A}\gamma_{k}^{B}
-&=&\frac{1} {2}\left(\tilde{c}_{k}+\tilde{c}_{k}^{\dagger}\right)\left(\tilde{c}_{k}-\tilde{c}_{k}^{\dagger}\right) \\
-&=&\tilde{c}_{k}^{\dagger}\tilde{c}_{k}-\frac{1}{2}.
+\frac{i}{2}\gamma_{n}^{A}\gamma_{n}^{B}
+&=&\frac{1} {2}\left(\tilde{c}_{n}+\tilde{c}_{n}^{\dagger}\right)\left(\tilde{c}_{n}-\tilde{c}_{n}^{\dagger}\right) \\
+&=&\tilde{c}_{n}^{\dagger}\tilde{c}_{n}-\frac{1}{2}.
 \end{eqnarray}
 " alt="\begin{eqnarray}
-\frac{i}{2}\gamma_{k}^{A}\gamma_{k}^{B}
-&=&\frac{1} {2}\left(\tilde{c}_{k}+\tilde{c}_{k}^{\dagger}\right)\left(\tilde{c}_{k}-\tilde{c}_{k}^{\dagger}\right) \\
-&=&\tilde{c}_{k}^{\dagger}\tilde{c}_{k}-\frac{1}{2}.
+\frac{i}{2}\gamma_{n}^{A}\gamma_{n}^{B}
+&=&\frac{1} {2}\left(\tilde{c}_{n}+\tilde{c}_{n}^{\dagger}\right)\left(\tilde{c}_{n}-\tilde{c}_{n}^{\dagger}\right) \\
+&=&\tilde{c}_{n}^{\dagger}\tilde{c}_{n}-\frac{1}{2}.
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
 带回对角形的 Majorana 哈密顿量，得到对角形费米子哈密顿量：
 
 
-<img src="https://www.zhihu.com/equation?tex=H = \sum_k \lambda_k \tilde{c}_k^\dagger \tilde{c}_k.
-" alt="H = \sum_k \lambda_k \tilde{c}_k^\dagger \tilde{c}_k.
+<img src="https://www.zhihu.com/equation?tex=H = \sum_n \lambda_n \tilde{c}_n^\dagger \tilde{c}_n.
+" alt="H = \sum_n \lambda_n \tilde{c}_n^\dagger \tilde{c}_n.
 " class="ee_img tr_noresize" eeimg="1">
 
 算法实现为 (Julia)：
@@ -496,48 +490,26 @@ end
 
 ## 复数 BdG 型的舒尔分解
 
-对一般复数 BdG 型，我们需要考虑纯虚反对称矩阵
+对一般复数 BdG 型，我们将考虑实反对称矩阵
 
 
-<img src="https://www.zhihu.com/equation?tex=\underline{H} = \frac{i}{4} 
+<img src="https://www.zhihu.com/equation?tex=H = 
 \left(
 \begin{array}{cc}
     A^I + B^I & A^R - B^R \\
-    -A^R - B^R &  A^I - B^I
+    - A^R-B^R &  A^I - B^I
 \end{array}
-\right)
-" alt="\underline{H} = \frac{i}{4} 
+\right).
+" alt="H = 
 \left(
 \begin{array}{cc}
     A^I + B^I & A^R - B^R \\
-    -A^R - B^R &  A^I - B^I
+    - A^R-B^R &  A^I - B^I
 \end{array}
-\right)
+\right).
 " class="ee_img tr_noresize" eeimg="1">
 
-的谱分解。我们将要说明一下 3 点：
-
-1. 反对称矩阵的本征值一定成对出现(互为相反数)。
-2. 实反对称矩阵可以通过一正交变换化为标准型，数值上可由矩阵的舒尔分解得到。
-3. 复数 BdG 型谱完全由实反对称矩阵标准型确定。
-
-我们首先证明本征值成对出现。注意对于任意(右)本征向量  <img src="https://www.zhihu.com/equation?tex=\vec v_k" alt="\vec v_k" class="ee_img tr_noresize" eeimg="1"> , 有：
-
-
-<img src="https://www.zhihu.com/equation?tex=\underline{M}\cdot \vec{v}_k = \lambda_k \vec{v}_k
-" alt="\underline{M}\cdot \vec{v}_k = \lambda_k \vec{v}_k
-" class="ee_img tr_noresize" eeimg="1">
-
-对其取转置：
-
-
-<img src="https://www.zhihu.com/equation?tex=\vec{v}_k^T\cdot \underline{M}^T = - \vec{v}_k^T\cdot \underline{M} = \vec{v}_k^T.
-" alt="\vec{v}_k^T\cdot \underline{M}^T = - \vec{v}_k^T\cdot \underline{M} = \vec{v}_k^T.
-" class="ee_img tr_noresize" eeimg="1">
-
-意味着  <img src="https://www.zhihu.com/equation?tex=\vec{v}_k^T" alt="\vec{v}_k^T" class="ee_img tr_noresize" eeimg="1">  是本征值为  <img src="https://www.zhihu.com/equation?tex=-\lambda_k" alt="-\lambda_k" class="ee_img tr_noresize" eeimg="1">  的左本征向量。根据矩阵本征值分解的一般性质，这意味着一定存在一本征值为  <img src="https://www.zhihu.com/equation?tex=-\lambda_k" alt="-\lambda_k" class="ee_img tr_noresize" eeimg="1">  的右边本征向量。
-
-现在我们考虑实反对称矩阵标准型。其定义为：
+实反对称矩阵均能化为标准型：
 
 
 <img src="https://www.zhihu.com/equation?tex=\underline M = \underline O \cdot \underline\Sigma \cdot \underline O^T.
@@ -563,18 +535,16 @@ end
 \right).
 " class="ee_img tr_noresize" eeimg="1">
 
-此形式可直接通过矩阵的舒尔分解得到。
-
-现在，我们又能通过正交变换定义新的 Majorana 算符：
+数值上，实反对称矩阵的舒尔分解可以直接给出以上形式( <img src="https://www.zhihu.com/equation?tex=\lambda_i" alt="\lambda_i" class="ee_img tr_noresize" eeimg="1">  正负可能交换)。将矩阵化为标准型后，我们又能通过正交变换定义新的 Majorana 算符：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
-\gamma^A_k &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2k-1}+\omega_j^B O_{j,2k-1}\right], \\
-\gamma^B_k &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2k}+\omega_j^B O_{j,2k}\right],
+\gamma^A_n &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2n-1}+\omega_j^B O_{j,2n-1}\right], \\
+\gamma^B_n &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2n}+\omega_j^B O_{j,2n}\right],
 \end{eqnarray}
 " alt="\begin{eqnarray}
-\gamma^A_k &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2k-1}+\omega_j^B O_{j,2k-1}\right], \\
-\gamma^B_k &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2k}+\omega_j^B O_{j,2k}\right],
+\gamma^A_n &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2n-1}+\omega_j^B O_{j,2n-1}\right], \\
+\gamma^B_n &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2n}+\omega_j^B O_{j,2n}\right],
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
@@ -582,12 +552,12 @@ end
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
-H &=& \frac{i}{4} \sum_{k} \lambda_k (\gamma_k^A\gamma_k^B-\gamma_k^B\gamma_k^A) \\
-&=& \frac{i}{2} \sum_{k} \lambda_k \gamma_k^A\gamma_k^B.
+H &=& \frac{i}{4} \sum_{n} \lambda_n (\gamma_n^A\gamma_n^B-\gamma_n^B\gamma_n^A) \\
+&=& \frac{i}{2} \sum_{n} \lambda_n \gamma_n^A\gamma_n^B.
 \end{eqnarray}
 " alt="\begin{eqnarray}
-H &=& \frac{i}{4} \sum_{k} \lambda_k (\gamma_k^A\gamma_k^B-\gamma_k^B\gamma_k^A) \\
-&=& \frac{i}{2} \sum_{k} \lambda_k \gamma_k^A\gamma_k^B.
+H &=& \frac{i}{4} \sum_{n} \lambda_n (\gamma_n^A\gamma_n^B-\gamma_n^B\gamma_n^A) \\
+&=& \frac{i}{2} \sum_{n} \lambda_n \gamma_n^A\gamma_n^B.
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
@@ -630,3 +600,213 @@ function majorana_complex(
 end
 ```
 
+## 动量空间 BdG 型哈密顿量对角化
+
+对平移不变体系，做傅立叶变换后， 将 Nambu spinor 扩展为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\underline\Psi_k = (c_{k,1},c_{k,2},\cdots,c_{k,N},c_{-k,1}^\dagger,c_{-k,2}^\dagger,\cdots,c_{-k,N}^\dagger)^T.
+" alt="\underline\Psi_k = (c_{k,1},c_{k,2},\cdots,c_{k,N},c_{-k,1}^\dagger,c_{-k,2}^\dagger,\cdots,c_{-k,N}^\dagger)^T.
+" class="ee_img tr_noresize" eeimg="1">
+
+哈密顿量矩阵可分块写为(同样满足粒子-空穴对称性)：
+
+
+<img src="https://www.zhihu.com/equation?tex=H_k = 
+\left(
+\begin{array}{cc}
+	A_k & B_k \\
+	B^*_k & -A_k^*
+\end{array}
+\right),
+" alt="H_k = 
+\left(
+\begin{array}{cc}
+	A_k & B_k \\
+	B^*_k & -A_k^*
+\end{array}
+\right),
+" class="ee_img tr_noresize" eeimg="1">
+
+其中矩阵  <img src="https://www.zhihu.com/equation?tex=A,B" alt="A,B" class="ee_img tr_noresize" eeimg="1">  满足：
+
+
+<img src="https://www.zhihu.com/equation?tex=A_k^\dagger=A_k=A_{-k},\ B_{k}^T=B_{k}=-B_{-k}.
+" alt="A_k^\dagger=A_k=A_{-k},\ B_{k}^T=B_{k}=-B_{-k}.
+" class="ee_img tr_noresize" eeimg="1">
+
+满足粒子-空穴对称型的幺正变换可以形式化记为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\tilde{\underline\Psi}_{k,i} = 
+\left(
+\begin{array}{c}
+	\vec d_{k} \\
+	\vec d_{-k}^\dagger
+\end{array}
+\right) = 
+\left(
+\begin{array}{cc}
+	U_k & -V_k  \\
+	V_k^* & U_k^*
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+	c_{k,j} \\
+	c_{-k,j}^\dagger
+\end{array}
+\right).
+" alt="\tilde{\underline\Psi}_{k,i} = 
+\left(
+\begin{array}{c}
+	\vec d_{k} \\
+	\vec d_{-k}^\dagger
+\end{array}
+\right) = 
+\left(
+\begin{array}{cc}
+	U_k & -V_k  \\
+	V_k^* & U_k^*
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+	c_{k,j} \\
+	c_{-k,j}^\dagger
+\end{array}
+\right).
+" class="ee_img tr_noresize" eeimg="1">
+
+其中矩阵  <img src="https://www.zhihu.com/equation?tex=U_k,U_k" alt="U_k,U_k" class="ee_img tr_noresize" eeimg="1">  满足  <img src="https://www.zhihu.com/equation?tex=U_k U_k^{\dagger} + V_k V_k^{\dagger}=\mathbb{I}" alt="U_k U_k^{\dagger} + V_k V_k^{\dagger}=\mathbb{I}" class="ee_img tr_noresize" eeimg="1"> , 且  <img src="https://www.zhihu.com/equation?tex=U_k=U_k, V_k=-V_{-k}" alt="U_k=U_k, V_k=-V_{-k}" class="ee_img tr_noresize" eeimg="1"> . 此形式的对角化方案和实空间情形类似。
+
+## 动量空间的 Majorana 算符
+
+考虑 Majorana 算符的傅立叶变换：
+
+
+<img src="https://www.zhihu.com/equation?tex=\omega_{k} = \frac{1}{\sqrt N}\sum_j e^{-i k \cdot R_j} \omega_j.
+" alt="\omega_{k} = \frac{1}{\sqrt N}\sum_j e^{-i k \cdot R_j} \omega_j.
+" class="ee_img tr_noresize" eeimg="1">
+
+由于复系数的存在， <img src="https://www.zhihu.com/equation?tex=\omega_{\vec k}" alt="\omega_{\vec k}" class="ee_img tr_noresize" eeimg="1">  不再是厄米的，而满足：
+
+
+<img src="https://www.zhihu.com/equation?tex=\omega_{k}^\dagger = \omega_{- k}.
+" alt="\omega_{k}^\dagger = \omega_{- k}.
+" class="ee_img tr_noresize" eeimg="1">
+
+与动量空间费米子的关系为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
+	\omega_{k}^A &=& c_{k}+c_{-k}^\dagger, \\
+	\omega_{k}^B &=& \frac{c_{k}-c_{-k}^\dagger}{i}.
+\end{eqnarray}
+" alt="\begin{eqnarray}
+	\omega_{k}^A &=& c_{k}+c_{-k}^\dagger, \\
+	\omega_{k}^B &=& \frac{c_{k}-c_{-k}^\dagger}{i}.
+\end{eqnarray}
+" class="ee_img tr_noresize" eeimg="1">
+
+因此，在算符基
+
+
+<img src="https://www.zhihu.com/equation?tex=\underline\Omega_k = (\omega_{k,1}^A,\cdots,\omega_{k,N}^A,\omega_{k,1}^B,\cdots,\omega_{k,N}^B)^T.
+" alt="\underline\Omega_k = (\omega_{k,1}^A,\cdots,\omega_{k,N}^A,\omega_{k,1}^B,\cdots,\omega_{k,N}^B)^T.
+" class="ee_img tr_noresize" eeimg="1">
+
+下，哈密顿量矩阵为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
+\hat H_k &=& \frac{1}{4} 
+\underline\Omega_{-k}
+\left(\begin{array}{cc}
+	\mathbb{I} & \mathbb{I} \\
+	-i\mathbb{I} & i\mathbb{I}
+\end{array}\right)
+\cdot
+\left(\begin{array}{cc}
+	A_k & B_k \\
+	B^*_k & -A^*_k
+\end{array}\right)
+\cdot
+\left(\begin{array}{cc}
+	\mathbb{I} & i\mathbb{I} \\
+	\mathbb{I} & -i\mathbb{I}
+\end{array}\right)
+\underline\Omega_k \\
+&=& \frac{1}{2} 
+\underline\Omega_{-k} 
+\left(
+\begin{array}{cc}
+    iA^I_k + B^R_k & iA^R_k + B^I_k \\
+    -iA^R_k+B^I_k &  iA^I_k - B^R_k
+\end{array}
+\right)
+\underline\Omega_k.
+\end{eqnarray}
+" alt="\begin{eqnarray}
+\hat H_k &=& \frac{1}{4} 
+\underline\Omega_{-k}
+\left(\begin{array}{cc}
+	\mathbb{I} & \mathbb{I} \\
+	-i\mathbb{I} & i\mathbb{I}
+\end{array}\right)
+\cdot
+\left(\begin{array}{cc}
+	A_k & B_k \\
+	B^*_k & -A^*_k
+\end{array}\right)
+\cdot
+\left(\begin{array}{cc}
+	\mathbb{I} & i\mathbb{I} \\
+	\mathbb{I} & -i\mathbb{I}
+\end{array}\right)
+\underline\Omega_k \\
+&=& \frac{1}{2} 
+\underline\Omega_{-k} 
+\left(
+\begin{array}{cc}
+    iA^I_k + B^R_k & iA^R_k + B^I_k \\
+    -iA^R_k+B^I_k &  iA^I_k - B^R_k
+\end{array}
+\right)
+\underline\Omega_k.
+\end{eqnarray}
+" class="ee_img tr_noresize" eeimg="1">
+
+这是一个复幺正矩阵，对角化得到：
+
+
+<img src="https://www.zhihu.com/equation?tex=H = T\cdot \mathrm{diag}(\vec\lambda,-\vec\lambda) \cdot T^\dagger.
+" alt="H = T\cdot \mathrm{diag}(\vec\lambda,-\vec\lambda) \cdot T^\dagger.
+" class="ee_img tr_noresize" eeimg="1">
+
+相应新算符基为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
+	\tilde{\underline\Omega}_{+k} &=& T \cdot \underline\Omega_k, \\
+	\tilde{\underline\Omega}_{-k} &=& \underline\Omega_{-k} \cdot T^\dagger.
+\end{eqnarray}
+" alt="\begin{eqnarray}
+	\tilde{\underline\Omega}_{+k} &=& T \cdot \underline\Omega_k, \\
+	\tilde{\underline\Omega}_{-k} &=& \underline\Omega_{-k} \cdot T^\dagger.
+\end{eqnarray}
+" class="ee_img tr_noresize" eeimg="1">
+
+此算符基底同样满足 Majorana 的正则对易关系：
+
+
+<img src="https://www.zhihu.com/equation?tex=\{\tilde\omega_{-k_1,i},\tilde\omega_{k_2,j}\} = 2\delta_{k_1,k_2}\delta_{ij}.
+" alt="\{\tilde\omega_{-k_1,i},\tilde\omega_{k_2,j}\} = 2\delta_{k_1,k_2}\delta_{ij}.
+" class="ee_img tr_noresize" eeimg="1">
+
+对角化哈密顿量为：
+
+
+<img src="https://www.zhihu.com/equation?tex=\hat H_k = \frac{1}{2}\sum_n \lambda_n \omega_{-k,n}\omega_{k,n}.
+" alt="\hat H_k = \frac{1}{2}\sum_n \lambda_n \omega_{-k,n}\omega_{k,n}.
+" class="ee_img tr_noresize" eeimg="1">
