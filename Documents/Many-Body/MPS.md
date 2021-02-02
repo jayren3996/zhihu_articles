@@ -1,4 +1,4 @@
-# 矩阵乘积态表示简介
+# 矩阵乘积态简介
 
 本文希望简要介绍矩阵乘积态这种多体态的表示方法。及其以其为基础的两个重要的算法，即 DMRG 和 TEBD 算法, 分别用于求多体算符的基态和含时演化。MPS表示能够很好地处理哈密顿量只含短程相互作用的一维系统问题。关于 MPS 表示和算法更细节的讨论可参考以下几个 notes：
 
@@ -12,26 +12,25 @@
 对于一维格点系统，若每个格点有 $d$ 个量子态，则多体态的希尔伯特空间可以表示为格点希尔伯特空间的张量积：
 
 $$
-​    \mathscr{H}=\mathscr{H}_{1}\otimes\mathscr{H}_{2}\otimes\cdots\otimes\mathscr{H}_{N}.
+    \mathscr{H}=\mathscr{H}_{1}\otimes\mathscr{H}_{2}\otimes\cdots\otimes\mathscr{H}_{N}.
 $$
 
 相应任意多体态可以表示为：
 
 $$
-​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}C_{i_{1},\cdots,i_{N}}\left|i_{1},\cdots,i_{N}\right\rangle.
-
+    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}C_{i_{1},\cdots,i_{N}}\left|i_{1},\cdots,i_{N}\right\rangle.
 $$
 
 矩阵乘积态(MPS)的核心思想是将多体态表示为:
 
 $$
-​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\left|i_{1},\cdots,i_{N}\right\rangle.
+    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\left|i_{1},\cdots,i_{N}\right\rangle.
 $$
 
 我们将一个含有 N 个指标的系数（N阶张量）$C_{i_{1},\cdots,i_{N}}$ 替换为了 $N$ 个矩阵的乘积  $M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}$ , 其中 $M_{i_{1}}^{\left[1\right]},M_{i_{N}}^{\left[N\right]}$ 分别为行向量和列向量，因此矩阵乘积是一个数。这种表示往往用于开边界系统中，对于周期边界系统， $M_{i_{1}}^{\left[1\right]},M_{i_{N}}^{\left[N\right]}$ 往往不是向量，因此其矩阵乘积表示应写为：
 
 $$
-​    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}Tr\left[M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\right]\left|i_{1},\cdots,i_{N}\right\rangle.
+    \left|\psi\right\rangle =\sum_{i_{1},\cdots,i_{N}=1}^{d}Tr\left[M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}\right]\left|i_{1},\cdots,i_{N}\right\rangle.
 $$
 
 这里我们只讨论开边界系统。
@@ -51,43 +50,43 @@ $$
 我们现在来证明任意有限维的$N$阶张量可以表示为带指标的 $N$ 个矩阵的乘积：
 
 $$
-​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]} .
+    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]} .
 $$
 
 这种表示本质上是张量的分解，我们将$N$阶张量的指标组合，变为一矩阵：
 
 $$
-​    C_{i_{1},i_{2},\cdots,i_{N}}\rightarrow C_{i_{1},\left(i_{2},\cdots,i_{N}\right)}\rightarrow C_{m,n},
+    C_{i_{1},i_{2},\cdots,i_{N}}\rightarrow C_{i_{1},\left(i_{2},\cdots,i_{N}\right)}\rightarrow C_{m,n},
 $$
 
 括号表示张量指标合并，具体可以写为： $m=i_{1},\ n=i_{2}d^{N-2}+i_{3}d^{N-3}+\cdots+i_{N}d^{0}$. 我们接下来对矩阵 $C_{mn}$ 做奇异值分解：
 
 $$
-​    C_{m,n}=\sum_{\lambda=1}^{k}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger} .
+    C_{m,n}=\sum_{\lambda=1}^{k}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger} .
 $$
 
 我们用左边的矩阵 $U$ 作为矩阵乘积的第一项：
 
 $$
-​    \left(M_{i_{1}}^{\left[1\right]}\right)_{1,a}=U_{i_{1},a} ,
+    \left(M_{i_{1}}^{\left[1\right]}\right)_{1,a}=U_{i_{1},a} ,
 $$
 
 $M_{i_{1}}^{\left[1\right]}$ 是一个 $1\times k$ 矩阵。我们将剩余部分合并为新矩阵：
 
 $$
-​    \sum_{\lambda=1}^{k}S_{\lambda}V_{\lambda,n}^{\dagger}=D_{\lambda,i_{2},\cdots,i_{N}}\rightarrow D_{\left(\lambda,i_{2}\right),\left(i_{3},\cdots,i_{N}\right)}\rightarrow D_{m,n} ,
+    \sum_{\lambda=1}^{k}S_{\lambda}V_{\lambda,n}^{\dagger}=D_{\lambda,i_{2},\cdots,i_{N}}\rightarrow D_{\left(\lambda,i_{2}\right),\left(i_{3},\cdots,i_{N}\right)}\rightarrow D_{m,n} ,
 $$
 
 其中 $m=\lambda k+i_{2},\ n=i_{3}d^{N-3}+\cdots+i_{N}d^{0}$. 继续做奇异值分解：
 
 $$
-​    D_{m,n}=\sum_{\lambda=1}^{k'}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger}.
+    D_{m,n}=\sum_{\lambda=1}^{k'}U_{m,\lambda}S_{\lambda}V_{\lambda,n}^{\dagger}.
 $$
 
 左边的矩阵 $U$ 作为第二项：
 
 $$
-​    \left(M_{i_{2}}^{\left[2\right]}\right)_{a,b}=U_{a,i_{2},b}.
+    \left(M_{i_{2}}^{\left[2\right]}\right)_{a,b}=U_{a,i_{2},b}.
 $$
 
 $M_{i_{2}}^{\left[2\right]}$ 是一个 $k\times k'$ 矩阵。重复以上操作，直到我们分解到最后一个指标 $i_{N}$ ，即 $D_{m,i_{N}}$,此时我们将 $\sum_{\lambda=1}^{k''}S_{\lambda}V_{\lambda,i_{N}}^{\dagger}$ 作为最后一个矩阵 $M_{i_{N}}^{\left[N\right]}$, 是一个 $k'' \times 1$ 矩阵。
@@ -95,7 +94,7 @@ $M_{i_{2}}^{\left[2\right]}$ 是一个 $k\times k'$ 矩阵。重复以上操作�
 经过一系列指标重组，奇异值分解后，我们将原来的$N$指标张量表示为了矩阵乘积态:
 
 $$
-​    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}.
+    C_{i_{1},\cdots,i_{N}}=M_{i_{1}}^{\left[1\right]}M_{i_{2}}^{\left[2\right]}\cdots M_{i_{N}}^{\left[N\right]}.
 $$
 
 我们可以用图形语言十分清楚地表示出以上过程：
@@ -111,7 +110,7 @@ $$
 其中$i$指标是格点量子态，$x，y$可以看作其与左右系统之间的量子纠缠。这时这种表示的优越性就体现了出来，类似之前证明中的构造过程，我们可以将多体系统表示写为施密特分解的形式：
 
 $$
-​    \left|\psi\right\rangle =\sum_{\lambda}S_{\lambda}\left|\lambda\right\rangle _{A}\left|\lambda\right\rangle _{B}.
+    \left|\psi\right\rangle =\sum_{\lambda}S_{\lambda}\left|\lambda\right\rangle _{A}\left|\lambda\right\rangle _{B}.
 $$
 
 其中 $\left|\lambda\right\rangle _{A},\left|\lambda\right\rangle _{B}$ 分别为$A,B$子系统的一组正交基。图形语言表示为：
@@ -162,7 +161,7 @@ $$
 其中
 
 $$
-​    S=-\sum_{\lambda}S_{\lambda}\log\left(S_{\lambda}\right).
+    S=-\sum_{\lambda}S_{\lambda}\log\left(S_{\lambda}\right).
 $$
 
 ### 矩阵乘积算符
@@ -170,7 +169,7 @@ $$
 对于一个多体算符，像态一样，我们可以将多体算符写为矩阵乘积的形式(MPO)：
 
 $$
-​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}C_{i_{1},\cdots,i_{N}}^{i_{1}',\cdots,i_{N}'}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
+    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}C_{i_{1},\cdots,i_{N}}^{i_{1}',\cdots,i_{N}'}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
 $$
 
 图形表示为：
@@ -180,7 +179,7 @@ $$
 和态不同的是，局域算符组成的哈密顿量自然地可以写为矩阵乘积形式：
 
 $$
-​    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}M_{i_{1}',i_{1}}^{\left[1\right]}M_{i_{2}',i_{2}}^{\left[2\right]}\cdots M_{i_{N}',i_{N}}^{\left[N\right]}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
+    O=\sum_{i_{1},\cdots,i_{N},i_{1}',\cdots,i_{N}'=1}^{d}M_{i_{1}',i_{1}}^{\left[1\right]}M_{i_{2}',i_{2}}^{\left[2\right]}\cdots M_{i_{N}',i_{N}}^{\left[N\right]}\left|i_{1}',\cdots,i_{N}'\right\rangle \left\langle i_{1},\cdots,i_{N}\right|.
 $$
 
 ![](./include/MPS/p12.png)
@@ -196,7 +195,7 @@ $$
 本征值问题本质上是对一个变分极小值问题：
 
 $$
-​    E\left[\psi\right]=\left\langle \psi\right|H\left|\psi\right\rangle.
+    E\left[\psi\right]=\left\langle \psi\right|H\left|\psi\right\rangle.
 $$
 
 用图形语言表述：
@@ -216,25 +215,25 @@ $$
 态的演化可以看成是一个时间演化算符在态上的作用：
 
 $$
-​    \left|\psi\left(t\right)\right\rangle =e^{-iHt}\left|\psi\left(0\right)\right\rangle.
+    \left|\psi\left(t\right)\right\rangle =e^{-iHt}\left|\psi\left(0\right)\right\rangle.
 $$
 
 TEBD 的核心思想是将由局域哈密顿量组成的算符拆成一系列短程作用的叠加。我们这里讨论只含近邻格点作用的哈密顿量，这样的哈密顿量可以写为：
 
 $$
-​    H=\sum_{i}H_{i,i+1}=\sum_{i=even}H_{i,i+i}+\sum_{i=odd}H_{i,i+1}.
+    H=\sum_{i}H_{i,i+1}=\sum_{i=even}H_{i,i+i}+\sum_{i=odd}H_{i,i+1}.
 $$
 
 我们这样可以将哈密顿量分为两组，其中同一组内算符互相对易：
 
 $$
-​    \left[H_{i,i+1},H_{j,j+1}\right]=0,\ i=j\ \left(mod\ 2\right).
+    \left[H_{i,i+1},H_{j,j+1}\right]=0,\ i=j\ \left(mod\ 2\right).
 $$
 
 我们要做的近似是，当 $\tau=t/n$  较小时，忽略奇偶成分之间非对易的成分：
 
 $$
-​    e^{-iH\tau}\approx\left(\prod_{i=even}e^{-i\tau H_{i,i+1}}\right)\cdot\left(\prod_{i=odd}e^{-i\tau H_{i,i+1}}\right).
+    e^{-iH\tau}\approx\left(\prod_{i=even}e^{-i\tau H_{i,i+1}}\right)\cdot\left(\prod_{i=odd}e^{-i\tau H_{i,i+1}}\right).
 $$
 
 这样，我们可以将 $t$ 分割成 $n$ 份，并交替地作用奇偶算符。用图像语言表述为：
