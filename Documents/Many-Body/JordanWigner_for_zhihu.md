@@ -123,6 +123,7 @@
 
 相当与在原来的基础上引入了一条从  <img src="https://www.zhihu.com/equation?tex=1" alt="1" class="ee_img tr_noresize" eeimg="1">  到  <img src="https://www.zhihu.com/equation?tex=i" alt="i" class="ee_img tr_noresize" eeimg="1">  的链算符，此链算符保证了费米子算符之间的反对易性。这也自然引出了自旋算符与费米子算符的对应关系：
 
+
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
 	\sigma_{i}^{+} &\leftrightarrow& P_{i} c_{i},\\ 
 	\sigma_{i}^{-} &\leftrightarrow& P_{i}c_{i}^\dagger.
@@ -132,6 +133,7 @@
 	\sigma_{i}^{-} &\leftrightarrow& P_{i}c_{i}^\dagger.
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
+
 该对应关系就是 Jordan-Wigner 变换。
 
 
@@ -213,21 +215,27 @@
 
 事实上，在希尔伯特空间的角度看， Jordan-Wigner 变换不过是自旋与费米子希尔伯特空间的同构映射：
 
+
 <img src="https://www.zhihu.com/equation?tex=T_{JW}: \mathcal H_{spin}\rightarrow \mathcal{H}_{fermion}.
 " alt="T_{JW}: \mathcal H_{spin}\rightarrow \mathcal{H}_{fermion}.
 " class="ee_img tr_noresize" eeimg="1">
+
 具体形式为：
+
 
 <img src="https://www.zhihu.com/equation?tex=T_{JW} \left|\sigma_{1}^{z},\cdots,\sigma_{N}^{z}\right\rangle _{spin}
 = \left|n_{1},\cdots,n_{N}\right\rangle _{fermion},
 " alt="T_{JW} \left|\sigma_{1}^{z},\cdots,\sigma_{N}^{z}\right\rangle _{spin}
 = \left|n_{1},\cdots,n_{N}\right\rangle _{fermion},
 " class="ee_img tr_noresize" eeimg="1">
+
 其中
+
 
 <img src="https://www.zhihu.com/equation?tex=n_{i}=\frac{1-\sigma_{i}^{z}}{2}.
 " alt="n_{i}=\frac{1-\sigma_{i}^{z}}{2}.
 " class="ee_img tr_noresize" eeimg="1">
+
 即每个格点上，把自旋  <img src="https://www.zhihu.com/equation?tex=\left|\uparrow\right\rangle" alt="\left|\uparrow\right\rangle" class="ee_img tr_noresize" eeimg="1">  态对应为费米子空态，而把自旋  <img src="https://www.zhihu.com/equation?tex=\left|\downarrow\right\rangle" alt="\left|\downarrow\right\rangle" class="ee_img tr_noresize" eeimg="1">  态对应为费米子占据态。这个变换(在线性空间同构意义下)不改变波函数。只是在两个希尔伯特空间中，“局域”算符的定义发生了改变。在此对应下，费米子产生湮灭算符均是非局域的。
 
 在这个意义上，若我们只考虑体系波函数的结构，(线性代数意义下)自旋和费米的的结果是完全相同的。因此当考虑态的演化，以及考虑态的纠缠时，我们大可将自旋和费米系统视作相同的。然而一些涉及算符局域性的概念，如是否有长程关联，是否有局域的零能激发等，在自旋和费米子体系里有不同的表现，这导致了横场伊辛模型和 Kitaev chain 中对零能模的两种不同物理表现。
