@@ -179,5 +179,5 @@ $$
 
 ## 参考文献
 
-1. Nagaosa, Quantum field theory in strongly correlated electronic systems.
-2. Xiao-Gang Wen,  Quantum field theory of many-body systems.
+1. Nagaosa, *Quantum field theory in strongly correlated electronic systems*.
+2. Xiao-Gang Wen,  *Quantum field theory of many-body systems*.

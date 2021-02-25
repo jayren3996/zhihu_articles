@@ -515,14 +515,12 @@ $$
 相应新算符基为：
 
 $$
-\begin{eqnarray}
-	\tilde{\underline\Omega}_{+k} &=& T_k^\dagger \cdot \underline\Omega_k, \\
-	\tilde{\underline\Omega}_{-k} &=& T_k^T \cdot \underline\Omega_{-k}.
-\end{eqnarray}
+\tilde{\underline\Omega}_{k} = T_k^\dagger \cdot \underline\Omega_k,
 $$
 
-此算符基底同样满足 Majorana 的正则对易关系：
+其中
 
+此算符基底同样满足 Majorana 的正则对易关系：
 $$
 \{\tilde\omega_{-k_1,i},\tilde\omega_{k_2,j}\} = \delta_{k_1,k_2}\delta_{ij}.
 $$
@@ -532,3 +530,8 @@ $$
 $$
 \hat H_k = \sum_n \lambda_n \omega_{-k,n}\omega_{k,n}.
 $$
+
+## 参考文献
+
+1. E. Lieb, T. Schultz, D. Mattis, *Two soluble models of an antiferromagnetic chain*, Annals of Physics: 16, 407-466 (1961).
+2. M. V. Regemortel, D. Sels, M. Wouters, *Information propagation and equilibration in long-range Kitaev chains*, Phys. Rev. A 93, 032311 (2016).
