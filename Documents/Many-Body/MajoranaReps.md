@@ -10,15 +10,15 @@ $$
 \hat{H} = \frac{1}{2}\sum_k \underline \Psi_k^\dagger 
 \left(\begin{array}{cc}
 	\epsilon_k & \Delta_k \\
-	\Delta_{k}^* & -\epsilon_{k}
+	\Delta_{k} & -\epsilon_{k}
 \end{array}\right)
 \underline \Psi_k,
 $$
 
-其中 $\underline\Psi_k = (c_k, c_{-k}^\dagger)^T$ 称为 Nambu spinor. 此哈密顿量的特征是满足粒子-空穴对称性 $\mathcal C$，此对称性在算符基底上的作用为：
+其中 $\underline\Psi_k = (c_k, c_{-k}^\dagger)^T$ 称为 Nambu spinor. 此哈密顿量的特征是满足粒子-空穴对称性 $C=\sigma_x K$，$K$ 是复共轭操作。此对称性在算符基底上的作用为：
 
 $$
-\mathcal C \cdot \underline\Psi_k = \sigma^x \cdot \underline\Psi_{-k}^*
+C \cdot \underline\Psi_k = \sigma^x \cdot \underline\Psi_{-k}^*
 $$
 
 在哈密顿量上，表现为：
@@ -30,39 +30,33 @@ $$
 我们需要在此动量 $k$ 子空间内寻找一个幺正变换 $T_k$，满足：
 
 1. 保持费米算符的反对易关系;
-2. 满足此哈密顿量的粒子-空穴对称性 ($\sigma^x \cdot T_{-k}^* \sigma^x = T_k$);
+2. 满足此哈密顿量的粒子-空穴对称性 ($C T_k C^{-1} = T_{-k}$);
 3. 哈密顿量是完全对角化的。
 
 满足条件 1, 2 的变换的一般形式为：
 
 $$
 \tilde{\underline{\Psi}}_k =
-\left(
-\begin{array}{c}
+\left(\begin{array}{c}
 	d_k \\
 	d_{-k}^\dagger
-\end{array}
-\right) = 
-\left(
-\begin{array}{cc}
-	u_k & -v_{k} \\
-	v_k^* & u_k^*
-\end{array}
-\right)
-\left(
-\begin{array}{c}
+\end{array}\right) = 
+\left(\begin{array}{cc}
+	u_k & v_{-k}^* \\
+	v_k & u_{-k}^*
+\end{array}\right)
+\left(\begin{array}{c}
 	c_k \\
 	c_{-k}^\dagger
-\end{array}
-\right),
+\end{array}\right),
 $$
 
-其中 $|u_k|^2+|v_k|^2 = 1$, 且有对称关系 $u_k = u_{-k}, v_{k} = -v_{-k}$. 将上述形式代回，令非对角元为零，确定对角化条件为：
+其中 $|u_k|^2+|v_k|^2 = 1$. 将上述形式代回，令非对角元为零，确定对角化条件为：
 
 $$
 \begin{eqnarray} 
-|u_k|^{2} &=& \frac{1}{2}+\frac{\epsilon_{k}}{2\sqrt{\epsilon_{k}^{2}+\Delta_{k}^{2}}}, \\ 
-|v_k|^{2} &=& \frac{1}{2}-\frac{\epsilon_{k}}{2\sqrt{\epsilon_{k}^{2}+\Delta_{k}^{2}}}.
+u_k &=& \sqrt{\frac{1}{2}+\frac{\epsilon_{k}}{2\sqrt{\epsilon_{k}^{2}+\Delta_{k}^{2}}}}, \\ 
+v_k &=& -\sqrt{\frac{1}{2}-\frac{\epsilon_{k}}{2\sqrt{\epsilon_{k}^{2}+\Delta_{k}^{2}}}}.
 \end{eqnarray}
 $$
 
@@ -70,8 +64,8 @@ $$
 
 $$
 H_k = \left(\begin{array}{cc}
-	\sqrt{\epsilon_k^2+|\Delta_k|^2} & 0 \\
-	0 & -\sqrt{\epsilon_k^2+|\Delta_k|^2}
+	\sqrt{\epsilon_k^2+\Delta_k^2} & 0 \\
+	0 & -\sqrt{\epsilon_k^2+\Delta_k^2}
 \end{array}\right).
 $$
 
@@ -95,7 +89,7 @@ $$
 此时哈密顿量可形式化记为：
 
 $$
-\hat H = \frac{1}{2}\sum_{i,j=1}^{2N} \Psi_i^\dagger H_{ij} \Psi_j + const.
+\hat H = \frac{1}{2}\sum_{i,j=1}^{2N} \Psi_i^\dagger H_{ij} \Psi_j + \frac{1}{2}Tr[A].
 $$
 
 其中哈密顿量矩阵有分块形式：
@@ -132,8 +126,8 @@ $$
 \right) = 
 \left(
 \begin{array}{cc}
-	U & V \\
-	V^* & U^*
+	U & V^* \\
+	V & U^*
 \end{array}
 \right)
 \left(
@@ -147,45 +141,39 @@ $$
 下面我们讨论如何找到这样的幺正变换 $T$。首先，粒子-空穴对称性保证了能谱的正负对称性：
 
 $$
-T H T^\dagger = \mathrm{diag}(\lambda_1,\cdots,\lambda_N,-\lambda_1,\cdots,-\lambda_N).
+T^\dagger H T = \mathrm{diag}(\lambda_1,\cdots,\lambda_N,-\lambda_1,\cdots,-\lambda_N).
 $$
 
-我们可以首先找到 $H_{ij}$ 全部的本征值为正的本征向量。我们将它们形式化地记为：
+我们可以首先找到 $H_{ij}$ 全部的本征值为正的本征向量 $\{\vec \psi_i\}$，将其堆成矩阵：
 
 $$
-\psi_n = (U_{n,1}^*, \cdots, U_{n,N}^*,V_{n,1}^*,\cdots,V_{n,N}^*)^T,\ n=1,2,\cdots,N,
+\left[\vec\psi_1 \right| \cdots \left|\vec\psi_N \right] = 
+\left[\begin{array}{c}
+	U \\
+	V
+\end{array}\right],\ 
+n=1,2,\cdots,N,
 $$
 
-满足本征方程
-
-$$
-H\cdot \psi_n = \lambda_n \psi_n,\ \lambda_n >0.
-$$
-
-由此 $N$ 个本征向量能够确定矩阵 $U,V$，通过变换 $\tilde{\underline\Psi} = T \cdot \underline\Psi$，哈密顿量变为对角形式：
+由此 $N$ 个本征向量能够确定矩阵 $U,V$，通过变换 $\tilde{\underline\Psi} = T^\dagger \cdot \underline\Psi$，哈密顿量变为对角形式：
 
 $$
 \begin{eqnarray}
-\hat H &=& \frac{1}{2} \sum_n \lambda_n (\tilde c_n^\dagger \tilde c_n-\tilde c_n \tilde c_n^\dagger) \\
-&=& \sum_n \lambda_n\left(\tilde c_n^\dagger \tilde c_n-\frac{1}{2}\right).
+\hat H &=& \frac{1}{2} \sum_n \lambda_n (d_n^\dagger d_n- d_n d_n^\dagger) \\
+&=& \sum_n \lambda_n\left(d_n^\dagger d_n-\frac{1}{2}\right).
 \end{eqnarray}
 $$
 
 算法实现为 (Julia)：
 
 ```julia
-function bdg_eigen(
-    A::AbstractMatrix{<:Number},
-    B::AbstractMatrix{<:Number}
-)
+function bdg_eigen(A::AbstractMatrix, B::AbstractMatrix)
     n = size(A, 1)
 	H = [A B; -conj(B) -conj(A)]
     vals, vecs = eigen(Hermitian(H))
-    pos = vals .> 1e-14 # Discard zero-modes
-    λ = vals[pos]
-    U = vecs[1:n, pos]'
-    V = vecs[n+1:2n, pos]'
-    T = [U V;conj(V) conj(U)]
+    λ = real(vals[n+1:2n])
+    U, V = vecs[1:n, n+1:2n], vecs[n+1:2n, n+1:2n]
+    T = [U conj(V); V conj(U)]
     λ, T
 end
 ```
@@ -197,41 +185,29 @@ end
 Majorana 是一类费米产生湮灭算符的一种特殊线性组合：
 
 $$
-\begin{eqnarray} 
-    \omega^{A}_j &=& c_j + c_j^{\dagger}, \\ 
-    \omega^{B}_j &=& \frac{c_j-c_j^\dagger}{i},
-\end{eqnarray}
+\omega^{A}_j = c_j + c_j^{\dagger},\ 
+\omega^{B}_j = i(c_j-c_j^\dagger).
 $$
 
 同时，费米算符可以表达为 Majorana 的叠加：
 
 $$
-\begin{eqnarray} 
-    c_j &=& \frac{\omega_j^A+i\omega_j^B}{2}, \\ 
-    c_j^\dagger &=& \frac{\omega_j^A-i\omega_j^B}{2}.
-\end{eqnarray}
+c_j = \frac{\omega_j^A-i\omega_j^B}{2},\ 
+c_j^\dagger = \frac{\omega_j^A+i\omega_j^B}{2}.
 $$
 
-Majorana 算符之间有和费米子类似的反对易关系：
-
+实际上，在 Jordan-Wigner 变换下：
 $$
-\{\omega_i,\omega_j\} = 2\delta_{ij},
+\omega_j^A \Leftrightarrow P_j \sigma_j^x, \ 
+\omega_j^B \Leftrightarrow P_j \sigma_j^y.
 $$
-
-与费米子算符不同之处在于 Majorana 算符是厄米的：
-
-$$
-\omega^\dagger = \omega.
-$$
-
-现在我们考虑将一般的 BdG 形哈密顿量写为 Majorana 算符形式。我们将 Majorana 基形式化记为：
-
+Majorana 算符之间有和费米子类似的反对易关系 $\{\omega_i,\omega_j\} = 2\delta_{ij}$，与费米子算符不同之处在于 Majorana 算符是厄米的。现在我们考虑将一般的 BdG 形哈密顿量写为 Majorana 算符形式。我们将 Majorana 基形式化记为：
 $$
 \begin{eqnarray}
 \underline\Omega &=& (\omega_i^A,\cdots,\omega_N^A,\omega_1^B,\cdots,\omega_N^B)^T \\
 &=& \left(\begin{array}{cc}
 	\mathbb{I} & \mathbb{I} \\
-	-i\mathbb{I} & i\mathbb{I}
+	i\mathbb{I} & -i\mathbb{I}
 \end{array}\right)
 \cdot \underline\Psi.
 \end{eqnarray}
@@ -242,8 +218,8 @@ $$
 $$
 \underline\Psi = \frac{1}{2}
 \left(\begin{array}{cc}
-	\mathbb{I} & i\mathbb{I} \\
-	\mathbb{I} & -i\mathbb{I}
+	\mathbb{I} & -i\mathbb{I} \\
+	\mathbb{I} & i\mathbb{I}
 \end{array}\right)
 \cdot \underline\Omega.
 $$
@@ -255,7 +231,7 @@ $$
 \hat H &=& \frac{1}{4} \underline\Omega 
 \left(\begin{array}{cc}
 	\mathbb{I} & \mathbb{I} \\
-	-i\mathbb{I} & i\mathbb{I}
+	i\mathbb{I} & -i\mathbb{I}
 \end{array}\right)
 \cdot
 \left(\begin{array}{cc}
@@ -264,16 +240,16 @@ $$
 \end{array}\right)
 \cdot
 \left(\begin{array}{cc}
-	\mathbb{I} & i\mathbb{I} \\
-	\mathbb{I} & -i\mathbb{I}
+	\mathbb{I} & -i\mathbb{I} \\
+	\mathbb{I} & i\mathbb{I}
 \end{array}\right)
 \underline\Omega \\
 &=& \frac{i}{2} 
 \underline\Omega 
 \left(
 \begin{array}{cc}
-    A^I + B^I & A^R - B^R \\
-    - A^R-B^R &  A^I - B^I
+    A^I + B^I & -A^R + B^R \\
+    A^R + B^R &  A^I - B^I
 \end{array}
 \right)
 \underline\Omega.
@@ -289,24 +265,32 @@ B^R &=& \mathrm{Re}[B],\ B^I = \mathrm{Im}[B].
 \end{eqnarray}
 $$
 
-注意这个矩阵是 $2N \times 2N$ 维的纯虚反对称矩阵。接下来我们将讨论这种形式的矩阵的谱性质。
+注意上述 $2N \times 2N$ 维哈密顿量矩阵
+$$
+H = \frac{i}{2}\left(
+\begin{array}{cc}
+    A^I + B^I & -A^R + B^R \\
+    A^R + B^R &  A^I - B^I
+\end{array}
+\right)
+$$
+为纯虚反对称矩阵。接下来我们将讨论这种形式的矩阵的谱性质。
 
-##  实数 BdG 型的奇异值分解
+##  实数 BdG 型：SVD 分解
 
 我们首先讨论一种简单的情形，即系数 $A_{ij}, B_{ij} $ 均为实矩阵的情况。此时将费米子算符拆成 Majorana 算符后，哈密顿量变为：
 
 $$
-H = \frac{i}{2} \sum_{i,j=1}^{N}M_{ij} \omega_i^A \omega_j^B + \frac{1}{2}Tr[A],
+H = -i \sum_{ij} (A-B)_{ij} \omega_i^A \omega_j^B,
 $$
 
-其中系数矩阵 $M=A^R-B^R$. 此时 BdG 型哈密顿量变为一个 $N\times N$ 维的实矩阵，哈密顿量的谱可以通过对系数矩阵做奇异值分解得到：
+此时 BdG 型哈密顿量由变为一个 $N\times N$ 维的实矩阵 $(A-B)$ 刻画，对此系数矩阵做奇异值(SVD)分解得到：
 
 $$
-M_{ij} = \sum_n U_{in} \lambda_n V^T_{nj}.
+A-B = U \Lambda V^T.
 $$
 
 其中 $U,V$ 为两个实正交矩阵。我们可以定义一组新的 Majorana 算符：
-
 $$
 \begin{eqnarray}
 \gamma^A_n &=& \sum_j \omega_j^A U_{jn} , \\
@@ -317,81 +301,63 @@ $$
 容易验证，实正交变换后的算符 $\gamma^A, \gamma^B$ 还是 Majorana 算符，而哈密顿量变为对角形式：
 
 $$
-H = \frac{i}{2}\sum_n \lambda_n \gamma_n^A \gamma_n^B + \frac{1}{2}Tr[A].
+H = -\frac{i}{2}\sum_n \lambda_n \gamma_n^A \gamma_n^B.
 $$
 
 这样的形式事实上已经是 Majorana 算符表示下的准粒子形式，如果我们想回到熟悉的费米子表示，只需将两个 Majorana 算符重新配对：
 
 $$
 \begin{eqnarray}
-\frac{i}{2}\gamma_{n}^{A}\gamma_{n}^{B}
-&=&\frac{1} {2}\left(\tilde{c}_{n}+\tilde{c}_{n}^{\dagger}\right)\left(\tilde{c}_{n}-\tilde{c}_{n}^{\dagger}\right) \\
-&=&\tilde{c}_{n}^{\dagger}\tilde{c}_{n}-\frac{1}{2}.
+-\frac{i}{2}\gamma_{n}^{A}\gamma_{n}^{B}
+&=&\frac{1} {2}\left(d_{n}+d_{n}^{\dagger}\right)\left(d_{n}-d_{n}^{\dagger}\right) \\
+&=& d_{n}^{\dagger}d_{n}-\frac{1}{2}.
 \end{eqnarray}
 $$
 
 带回对角形的 Majorana 哈密顿量，得到对角形费米子哈密顿量：
 
 $$
-H = \sum_n \lambda_n \tilde{c}_n^\dagger \tilde{c}_n.
+H = \sum_n \lambda_n d_n^\dagger d_n + const.
 $$
 
 算法实现为 (Julia)：
 
 ```julia
-function majorana_real(
-    A::AbstractMatrix{<:AbstractFloat},
-    B::AbstractMatrix{<:AbstractFloat}
-)
-    M = A - B
-    U, λ, V = svd(M)
+function majorana_real(A::AbstractMatrix{<:Real}, B::AbstractMatrix{<:Real})
+    U, λ, V = svd(A - B)
     λ, U, V
 end
 ```
 
-## 复数 BdG 型的舒尔分解
+## 复数 BdG 型：Schur 分解
 
 对一般复数 BdG 型，我们将考虑实反对称矩阵
 
 $$
-H = 
-\left(
-\begin{array}{cc}
-    A^I + B^I & A^R - B^R \\
-    - A^R-B^R &  A^I - B^I
-\end{array}
-\right).
+2iH = 
+\left(\begin{array}{cc}
+    -A^I - B^I & A^R - B^R \\
+    -A^R - B^R &  -A^I + B^I
+\end{array}\right).
 $$
 
-实反对称矩阵均能化为标准型：
+可以证明，实反对称矩阵均能化为标准型：
 
 $$
-\underline M = \underline O \cdot \underline\Sigma \cdot \underline O^T.
+2iH = \underline O \cdot \underline\Sigma \cdot \underline O^T.
 $$
 
 其中
 
 $$
-\underline\Sigma = \bigoplus_{i=1}^{N}
-\left(
-\begin{array}{cc}
-     0 & \lambda_i \\
-    -\lambda_i & 0 
-\end{array}
-\right).
+\underline\Sigma = i\sigma_y\otimes diag(\lambda_1,\cdots,\lambda_n)
 $$
 
-数值上，实反对称矩阵的舒尔分解可以直接给出以上形式($\lambda_i$ 正负可能交换)。将矩阵化为标准型后，我们又能通过正交变换定义新的 Majorana 算符：
-
+数值上，实反对称矩阵的舒尔(Schur)分解可以直接给出以上形式($\lambda_i$ 正负可能交换)。将矩阵化为标准型后，我们又能通过正交变换定义新的 Majorana 算符
 $$
-\begin{eqnarray}
-\gamma^A_n &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2n-1}+\omega_j^B O_{j,2n-1}\right], \\
-\gamma^B_n &=& \sum_{j=1}^N \left[\omega_j^A O_{j,2n}+\omega_j^B O_{j,2n}\right],
-\end{eqnarray}
+\underline{\Gamma} = (\gamma_1^A,\cdots,\gamma_N^A,\gamma_1^B,\cdots,\gamma_N^B).
 $$
-
-得到：
-
+在变换 $\Gamma_n = \sum_j \Omega_j O_{j,n}$ 下，哈密顿量变为对角型：
 $$
 \begin{eqnarray}
 H &=& \frac{i}{4} \sum_{n} \lambda_n (\gamma_n^A\gamma_n^B-\gamma_n^B\gamma_n^A) \\
@@ -402,38 +368,24 @@ $$
 我们得到了和实数情形同样的形式。算法实现为 (Julia):
 
 ```julia
-function majorana_complex(
-    A::AbstractMatrix{<:Number},
-    B::AbstractMatrix{<:Number}
-)
+function majorana_complex(A::AbstractMatrix, B::AbstractMatrix)
     n = size(A, 1)
-    energy = Array{Float64}(undef, n)
-    temp = Array{Float64}(undef, 2*n)
-    H = begin
-        AR = real.(A)
-        AI = imag.(A)
-        BR = real.(B)
-        BI = imag.(B)
-        [AI+BI AR-BR; -AR-BR AI-BI]
+    S, V, vals = begin
+        AR, AI, BR, BI = real(A), imag(A), real(B), imag(B)
+        H = [AI+BI AR-BR; -AR-BR AI-BI]
+        schur(H)
     end
-    F = schur(H)
-    S = F.T # Almost standard form
-    O = F.Z # Transform matrix
+    λ = abs.(imag(vals))
+    O = Matrix{Float64}(undef, 2n, 2n)
     for i=1:n
-        Si = S[2i-1, 2i]
-        if Si < 0 # swith place
-            energy[i] = -Si
-            temp .= O[:, 2i-1]
-            O[:, 2i-1] .= O[:, 2i]
-            O[:, 2i] .= temp
+        if S[2i-1, 2i] > 0
+            O[:, i] = V[:, 2i-1]
+            O[:, i+n] = V[:, 2i]
         else
-            energy[i] = Si
+            O[:, i] = V[:, 2i]
+            O[:, i+n] = V[:, 2i-1]
         end
     end
-    sortinds = sortperm(energy, rev=true) # sort eigen values
-    sortinds2 = vcat(([2i-1, 2i] for i in sortinds)...)
-    λ = energy[sortinds]
-    O = O[:, sortinds2]
     λ, O
 end
 ```
@@ -443,7 +395,7 @@ end
 对平移不变体系，做傅立叶变换后， 将 Nambu spinor 扩展为：
 
 $$
-\underline\Psi_k = (c_{k,1},c_{k,2},\cdots,c_{k,N},c_{-k,1}^\dagger,c_{-k,2}^\dagger,\cdots,c_{-k,N}^\dagger)^T.
+\underline\Psi_k = (c_{k,1},\cdots,c_{k,N},c_{-k,1}^\dagger,\cdots,c_{-k,N}^\dagger)^T.
 $$
 
 哈密顿量矩阵可分块写为(同样满足粒子-空穴对称性)：
@@ -453,19 +405,21 @@ H_k =
 \left(
 \begin{array}{cc}
 	A_k & B_k \\
-	B^*_k & -A_k^*
+	-B^*_{-k} & -A_{-k}^*
 \end{array}
 \right),
 $$
 
-其中矩阵 $A,B$ 满足：
-
+厄米性保证了矩阵满足：
 $$
-A_k^\dagger=A_k=A_{-k},\ B_{k}^T=B_{k}=-B_{-k}.
+A_k = A_{k}^\dagger,\ 
+B_{k} = -B_{-k}^T.
 $$
-
+同时动量空间中的矩阵也满足同样的粒子-空穴对称性：
+$$
+\sigma_x H_k^*\sigma_x = -H_k.
+$$
 满足粒子-空穴对称型的幺正变换可以形式化记为：
-
 $$
 \tilde{\underline\Psi}_{k,i} = 
 \left(
@@ -476,8 +430,8 @@ $$
 \right) = 
 \left(
 \begin{array}{cc}
-	U_k & -V_k  \\
-	V_k^* & U_k^*
+	U_k & V_{-k}^*  \\
+	V_k & U_{-k}^*
 \end{array}
 \right)
 \left(
@@ -488,17 +442,17 @@ $$
 \right).
 $$
 
-其中矩阵 $U_k,U_k$ 满足 $U_k U_k^{\dagger} + V_k V_k^{\dagger}=\mathbb{I}$, 且 $U_k=U_k, V_k=-V_{-k}$. 此形式的对角化方案和实空间情形类似。
+其中矩阵 $U_k,U_k$ 满足 $U_k U_k^{\dagger} + V_k V_k^{\dagger}=\mathbb{I}$. 此形式的对角化方案和实空间情形类似。
 
 ## 动量空间的 Majorana 算符
 
 考虑 Majorana 算符的傅立叶变换：
 
 $$
-\omega_{k} = \frac{1}{\sqrt N}\sum_j e^{-i k \cdot R_j} \omega_j.
+\omega_{k} = \frac{1}{\sqrt{2N}}\sum_j e^{-i k \cdot R_j} \omega_j.
 $$
 
-由于复系数的存在，$\omega_{\vec k}$ 不再是厄米的，而满足：
+由于复系数的存在，$\omega_{k}$ 不再是厄米的，而满足：
 
 $$
 \omega_{k}^\dagger = \omega_{- k}.
@@ -508,8 +462,8 @@ $$
 
 $$
 \begin{eqnarray}
-	\omega_{k}^A &=& c_{k}+c_{-k}^\dagger, \\
-	\omega_{k}^B &=& \frac{c_{k}-c_{-k}^\dagger}{i}.
+	\omega_{k}^A &=& \frac{c_{k}+c_{-k}^\dagger}{\sqrt 2}, \\
+	\omega_{k}^B &=& i\frac{c_{k}-c_{-k}^\dagger}{\sqrt 2}.
 \end{eqnarray}
 $$
 
@@ -523,29 +477,29 @@ $$
 
 $$
 \begin{eqnarray}
-\hat H_k &=& \frac{1}{4} 
+\hat H_k &=& \frac{1}{2} 
 \underline\Omega_{-k}
 \left(\begin{array}{cc}
 	\mathbb{I} & \mathbb{I} \\
-	-i\mathbb{I} & i\mathbb{I}
+	i\mathbb{I} & -i\mathbb{I}
 \end{array}\right)
 \cdot
 \left(\begin{array}{cc}
 	A_k & B_k \\
-	B^*_k & -A^*_k
+	-B^*_{-k} & -A^*_{-k}
 \end{array}\right)
 \cdot
 \left(\begin{array}{cc}
-	\mathbb{I} & i\mathbb{I} \\
-	\mathbb{I} & -i\mathbb{I}
+	\mathbb{I} & -i\mathbb{I} \\
+	\mathbb{I} & i\mathbb{I}
 \end{array}\right)
 \underline\Omega_k \\
 &=& \frac{1}{2} 
 \underline\Omega_{-k} 
 \left(
 \begin{array}{cc}
-    iA^I_k + B^R_k & iA^R_k + B^I_k \\
-    -iA^R_k+B^I_k &  iA^I_k - B^R_k
+    A_k-A^*_{-k} + B_k-B^*_{-k} & -iA_k-iA_{-k}^* + i B_k + i B_{-k}^* \\
+    iA_k+iA_{-k}^* + i B_k + i B_{-k}^* & A_k-A^*_{-k} - B_k+B^*_{-k}
 \end{array}
 \right)
 \underline\Omega_k.
@@ -555,26 +509,26 @@ $$
 这是一个复幺正矩阵，对角化得到：
 
 $$
-H = T\cdot \mathrm{diag}(\vec\lambda,-\vec\lambda) \cdot T^\dagger.
+H = T_k\cdot \mathrm{diag}(\vec\lambda,-\vec\lambda) \cdot T_k^\dagger.
 $$
 
 相应新算符基为：
 
 $$
 \begin{eqnarray}
-	\tilde{\underline\Omega}_{+k} &=& T \cdot \underline\Omega_k, \\
-	\tilde{\underline\Omega}_{-k} &=& \underline\Omega_{-k} \cdot T^\dagger.
+	\tilde{\underline\Omega}_{+k} &=& T_k^\dagger \cdot \underline\Omega_k, \\
+	\tilde{\underline\Omega}_{-k} &=& T_k^T \cdot \underline\Omega_{-k}.
 \end{eqnarray}
 $$
 
 此算符基底同样满足 Majorana 的正则对易关系：
 
 $$
-\{\tilde\omega_{-k_1,i},\tilde\omega_{k_2,j}\} = 2\delta_{k_1,k_2}\delta_{ij}.
+\{\tilde\omega_{-k_1,i},\tilde\omega_{k_2,j}\} = \delta_{k_1,k_2}\delta_{ij}.
 $$
 
 对角化哈密顿量为：
 
 $$
-\hat H_k = \frac{1}{2}\sum_n \lambda_n \omega_{-k,n}\omega_{k,n}.
+\hat H_k = \sum_n \lambda_n \omega_{-k,n}\omega_{k,n}.
 $$
