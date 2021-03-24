@@ -70,11 +70,11 @@ Z
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
 Z
-&=& \int \mathcal D[\phi] e^{-\sum_{ij} \phi_i K_{ij} \phi_j +h\sum_{i}\phi_i+\sum_i\ln[\cosh(2\sum_j K_{ij}\phi_j)]}.
+&=& \int \mathcal D[\phi] e^{-\sum_{ij} \phi_i K_{ij} \phi_j +h\sum_{i}\phi_i+\sum_i\ln[2\cosh(2\sum_j K_{ij}\phi_j)]}.
 \end{eqnarray}
 " alt="\begin{eqnarray}
 Z
-&=& \int \mathcal D[\phi] e^{-\sum_{ij} \phi_i K_{ij} \phi_j +h\sum_{i}\phi_i+\sum_i\ln[\cosh(2\sum_j K_{ij}\phi_j)]}.
+&=& \int \mathcal D[\phi] e^{-\sum_{ij} \phi_i K_{ij} \phi_j +h\sum_{i}\phi_i+\sum_i\ln[2\cosh(2\sum_j K_{ij}\phi_j)]}.
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
@@ -111,7 +111,7 @@ K_{ij} = \frac{1}{N} \sum_k e^{ik(R_i-R_j)} K(k).
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
-\sum_i\ln[\cosh(2\sum_j K_{ij}\phi_j)] &=& 
+\sum_i\ln[2\cosh(2\sum_j K_{ij}\phi_j)] &\simeq& 
 2 \sum_k \left(K_0 + \frac{K_2}{2}k^2 \right)^2\phi_{-k}\phi_k 
 -\frac{4}{3N}\sum_{k_1,k_2,k_3} \left(K_0 + \frac{K_2}{2}k^2 \right)^4 
 \phi_{k_4}\phi_{k_3}\phi_{k_2}\phi_{k_1}\\
@@ -119,7 +119,7 @@ K_{ij} = \frac{1}{N} \sum_k e^{ik(R_i-R_j)} K(k).
 -\frac{4K_0^4}{3N} \sum_{k_1,k_2,k_3} \phi_{k_4}\phi_{k_3}\phi_{k_2}\phi_{k_1}
 \end{eqnarray}
 " alt="\begin{eqnarray}
-\sum_i\ln[\cosh(2\sum_j K_{ij}\phi_j)] &=& 
+\sum_i\ln[2\cosh(2\sum_j K_{ij}\phi_j)] &\simeq& 
 2 \sum_k \left(K_0 + \frac{K_2}{2}k^2 \right)^2\phi_{-k}\phi_k 
 -\frac{4}{3N}\sum_{k_1,k_2,k_3} \left(K_0 + \frac{K_2}{2}k^2 \right)^4 
 \phi_{k_4}\phi_{k_3}\phi_{k_2}\phi_{k_1}\\
@@ -136,14 +136,14 @@ S[\phi] &=&
 \sum_k \left(c_1+c_2 k^2 \right) \phi_{-k}\phi_k 
 - h \phi_0
 + \frac{c_3}{N} \sum_{k_1,k_2,k_3} \phi_{k_4}\phi_{k_3}\phi_{k_2}\phi_{k_1} \\
-&\simeq& \int d^d x \left[ c_1\phi^2-c_2 (\nabla \phi)^2 +c_3 \phi^4 - h\phi \right].
+&\simeq& \int d^d x \left[ c_1\phi^2 + c_2 (\nabla \phi)^2 +c_3 \phi^4 - h\phi \right].
 \end{eqnarray}
 " alt="\begin{eqnarray}
 S[\phi] &=& 
 \sum_k \left(c_1+c_2 k^2 \right) \phi_{-k}\phi_k 
 - h \phi_0
 + \frac{c_3}{N} \sum_{k_1,k_2,k_3} \phi_{k_4}\phi_{k_3}\phi_{k_2}\phi_{k_1} \\
-&\simeq& \int d^d x \left[ c_1\phi^2-c_2 (\nabla \phi)^2 +c_3 \phi^4 - h\phi \right].
+&\simeq& \int d^d x \left[ c_1\phi^2 + c_2 (\nabla \phi)^2 +c_3 \phi^4 - h\phi \right].
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
@@ -176,7 +176,7 @@ S[\phi] &=&
 " alt="\phi_k \rightarrow \frac{1}{\sqrt N} \phi_k.
 " class="ee_img tr_noresize" eeimg="1">
 
-最终得到的连续场是一个低能理论，其有一个来自于晶格常数的天然紫外截断  <img src="https://www.zhihu.com/equation?tex=\Lambda" alt="\Lambda" class="ee_img tr_noresize" eeimg="1"> . 许多时候，晶格常数被取为单位 1，这相当于取截断能量为自然的能量标度( <img src="https://www.zhihu.com/equation?tex=\Lambda=1" alt="\Lambda=1" class="ee_img tr_noresize" eeimg="1"> )。为了形式上的简洁，可以再做一个重标度：
+最终得到的连续场是一个低能理论，其有一个来自于晶格常数的天然紫外截断  <img src="https://www.zhihu.com/equation?tex=\Lambda" alt="\Lambda" class="ee_img tr_noresize" eeimg="1"> . 为了形式上的简洁，可以再做一个重标度：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
@@ -361,12 +361,14 @@ S_I^{(1)} &=& 6\frac{\lambda}{4!} \phi^s_{-k}\phi^s_{k} \int_{\Lambda/s}^\Lambda
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
 r'_0 &=& \frac{\lambda}{2} \int_{\Lambda(1-dl)}^{\Lambda} \frac{d k}{(2\pi)^d} \frac{k^{d-1}S_d}{k^2+r} \\
 &=& \frac{\lambda\Lambda^d S_d}{2(2\pi)^d} \frac{dl}{\Lambda^2+r} \\
-&=:& \frac{A_d\lambda}{1+r} dl
+&=:& \frac{A_d\lambda}{1+r} dl \\
+&=& A_d\lambda dl + O(r\lambda).
 \end{eqnarray}
 " alt="\begin{eqnarray}
 r'_0 &=& \frac{\lambda}{2} \int_{\Lambda(1-dl)}^{\Lambda} \frac{d k}{(2\pi)^d} \frac{k^{d-1}S_d}{k^2+r} \\
 &=& \frac{\lambda\Lambda^d S_d}{2(2\pi)^d} \frac{dl}{\Lambda^2+r} \\
-&=:& \frac{A_d\lambda}{1+r} dl
+&=:& \frac{A_d\lambda}{1+r} dl \\
+&=& A_d\lambda dl + O(r\lambda).
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
@@ -394,7 +396,7 @@ S_{eff} &=& \int_0^{|k|<\Lambda} \frac{d^d k}{(2\pi)^d}
 \phi^*(k_4)\phi^*(k_3) \phi(k_2)\phi(k_1) \prod_{i=1}^3 \frac{d^dk_i}{(2\pi)^d} \\
 &=& S + 
 dl\int_0^{|k|<\Lambda} \frac{d^d k}{(2\pi)^d}
-\phi^s_{-k} \left(\frac{r+A_d \lambda/(1+r)}{2} \right) \phi^s_{k}+
+\phi^s_{-k} \left(\frac{r+ \Lambda^d A_d \lambda/(\Lambda+r)}{2} \right) \phi^s_{k}+
 \frac{\lambda}{4!}(4-d)dl \int_0^{|k|<\Lambda} \phi^s_{k_4}\phi^s_{k_3} \phi^s_{k_2}\phi^s_{k_1} \prod_{i=1}^3 \frac{d^dk_i}{(2\pi)^d}.
 \end{eqnarray}
 " alt="\begin{eqnarray}
@@ -404,25 +406,33 @@ S_{eff} &=& \int_0^{|k|<\Lambda} \frac{d^d k}{(2\pi)^d}
 \phi^*(k_4)\phi^*(k_3) \phi(k_2)\phi(k_1) \prod_{i=1}^3 \frac{d^dk_i}{(2\pi)^d} \\
 &=& S + 
 dl\int_0^{|k|<\Lambda} \frac{d^d k}{(2\pi)^d}
-\phi^s_{-k} \left(\frac{r+A_d \lambda/(1+r)}{2} \right) \phi^s_{k}+
+\phi^s_{-k} \left(\frac{r+ \Lambda^d A_d \lambda/(\Lambda+r)}{2} \right) \phi^s_{k}+
 \frac{\lambda}{4!}(4-d)dl \int_0^{|k|<\Lambda} \phi^s_{k_4}\phi^s_{k_3} \phi^s_{k_2}\phi^s_{k_1} \prod_{i=1}^3 \frac{d^dk_i}{(2\pi)^d}.
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
-最后的重整化方程为：
+最后的重整化方程(一阶)为：
 
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
-	\frac{d r}{dl} &=& 2 r + \frac{A_d}{1+r} \lambda, \\
+	\frac{d r}{dl} &=& 2 r + A_d \lambda, \\
 	\frac{d \lambda}{dl} &=& (4-d) \lambda.
 \end{eqnarray}
 " alt="\begin{eqnarray}
-	\frac{d r}{dl} &=& 2 r + \frac{A_d}{1+r} \lambda, \\
+	\frac{d r}{dl} &=& 2 r + A_d \lambda, \\
 	\frac{d \lambda}{dl} &=& (4-d) \lambda.
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
-此时重整化不动点仍在  <img src="https://www.zhihu.com/equation?tex=(r,\lambda)=(0,0)" alt="(r,\lambda)=(0,0)" class="ee_img tr_noresize" eeimg="1">  处。
+此时重整化不动点仍在  <img src="https://www.zhihu.com/equation?tex=(r,\lambda)=(0,0)" alt="(r,\lambda)=(0,0)" class="ee_img tr_noresize" eeimg="1">  处。对于  <img src="https://www.zhihu.com/equation?tex=d>4" alt="d>4" class="ee_img tr_noresize" eeimg="1">  情况，此 RG 分析是准确的。取  <img src="https://www.zhihu.com/equation?tex=d=5" alt="d=5" class="ee_img tr_noresize" eeimg="1">  画出重整化流：
+
+```mathematica
+d = 5;
+Ad = 1/(2^d*Pi^d*Gamma[d/2]);
+VectorPlot[{2 r + Ad*l, (4 - d)*l}, {r, -1, 1}, {l, 0, 10000}, VectorPoints -> Fine]
+```
+
+![](https://raw.githubusercontent.com/jayren3996/zhihu_articles/master/Documents/Phi4RG/flow1.pdf)
 
 ## 二阶微扰
 
@@ -446,22 +456,56 @@ S_I^{(2)} &=& \left(72\frac{\lambda^2}{2(4!)^2}\int_{|k|<\Lambda(1-dl)}^{|k|<\La
 其中
 
 
-<img src="https://www.zhihu.com/equation?tex=\lambda' = 3A_d \lambda^2 dl.
-" alt="\lambda' = 3A_d \lambda^2 dl.
+<img src="https://www.zhihu.com/equation?tex=\lambda' = \frac{3 A_d \lambda^2}{(1+r)^2} dl.
+" alt="\lambda' = \frac{3 A_d \lambda^2}{(1+r)^2} dl.
 " class="ee_img tr_noresize" eeimg="1">
 
 重标度后，这部分贡献为：
 
 
-<img src="https://www.zhihu.com/equation?tex=\lambda' s^{4-d} = 3A_d \lambda^2 dl + O(dl^2). 
-" alt="\lambda' s^{4-d} = 3A_d \lambda^2 dl + O(dl^2). 
+<img src="https://www.zhihu.com/equation?tex=\lambda' s^{4-d} = 3A_d \lambda^2 dl + O(dl^2).
+" alt="\lambda' s^{4-d} = 3A_d \lambda^2 dl + O(dl^2).
 " class="ee_img tr_noresize" eeimg="1">
 
 由此得到：
 
 
-<img src="https://www.zhihu.com/equation?tex=\frac{d\lambda}{dl} = (4-d)\lambda -3A_d\lambda^2.
-" alt="\frac{d\lambda}{dl} = (4-d)\lambda -3A_d\lambda^2.
+<img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
+	\frac{d r}{dl} &=& 2 r + A_d \lambda-A_d r \lambda , \\
+	\frac{d \lambda}{dl} &=& (4-d) \lambda -3A_d\lambda^2.
+\end{eqnarray}
+" alt="\begin{eqnarray}
+	\frac{d r}{dl} &=& 2 r + A_d \lambda-A_d r \lambda , \\
+	\frac{d \lambda}{dl} &=& (4-d) \lambda -3A_d\lambda^2.
+\end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
-对  <img src="https://www.zhihu.com/equation?tex=d=3" alt="d=3" class="ee_img tr_noresize" eeimg="1">  情形，首先设  <img src="https://www.zhihu.com/equation?tex=\epsilon=4-d \ll 1" alt="\epsilon=4-d \ll 1" class="ee_img tr_noresize" eeimg="1"> ，再解析延拓到  <img src="https://www.zhihu.com/equation?tex=\epsilon=1" alt="\epsilon=1" class="ee_img tr_noresize" eeimg="1">  得到结果。
+对  <img src="https://www.zhihu.com/equation?tex=d<4" alt="d<4" class="ee_img tr_noresize" eeimg="1">  情形，首先设  <img src="https://www.zhihu.com/equation?tex=\epsilon=4-d \ll 1" alt="\epsilon=4-d \ll 1" class="ee_img tr_noresize" eeimg="1"> ，再解析延拓到  <img src="https://www.zhihu.com/equation?tex=\epsilon=O(1)" alt="\epsilon=O(1)" class="ee_img tr_noresize" eeimg="1">  得到结果：
+
+
+<img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
+	\frac{d r}{dl} &=& 2 r + \frac{\lambda}{16 \pi^2} - \frac{r\lambda}{16 \pi^2}, \\
+	\frac{d \lambda}{dl} &=& \epsilon \lambda -\frac{3\lambda^2}{16 \pi^2}.
+\end{eqnarray}
+" alt="\begin{eqnarray}
+	\frac{d r}{dl} &=& 2 r + \frac{\lambda}{16 \pi^2} - \frac{r\lambda}{16 \pi^2}, \\
+	\frac{d \lambda}{dl} &=& \epsilon \lambda -\frac{3\lambda^2}{16 \pi^2}.
+\end{eqnarray}
+" class="ee_img tr_noresize" eeimg="1">
+如取  <img src="https://www.zhihu.com/equation?tex=\epsilon=1" alt="\epsilon=1" class="ee_img tr_noresize" eeimg="1"> ，画出重整化流为：
+
+```mathematica
+d = 4;
+e = 1;
+Ad = 1/(2^d*Pi^d*Gamma[d/2]);
+VectorPlot[{2 r + Ad*(1 - r)*l, e*l - 3*Ad*l^2}, {r, -0.5, 0.5}, {l, 0, 1000}, VectorPoints -> Fine]
+```
+
+![](https://raw.githubusercontent.com/jayren3996/zhihu_articles/master/Documents/Phi4RG/flow2.pdf)
+
+
+
+## References
+
+1. Altland & Simons, *Condensed Matter Field Theory*.
+2. Shankar, *Quantum Field Theory and Condensed Matter*.

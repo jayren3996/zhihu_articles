@@ -52,7 +52,7 @@ $$
 $$
 \begin{eqnarray}
 Z
-&=& \int \mathcal D[\phi] e^{-\sum_{ij} \phi_i K_{ij} \phi_j +h\sum_{i}\phi_i+\sum_i\ln[\cosh(2\sum_j K_{ij}\phi_j)]}.
+&=& \int \mathcal D[\phi] e^{-\sum_{ij} \phi_i K_{ij} \phi_j +h\sum_{i}\phi_i+\sum_i\ln[2\cosh(2\sum_j K_{ij}\phi_j)]}.
 \end{eqnarray}
 $$
 
@@ -82,7 +82,7 @@ $$
 
 $$
 \begin{eqnarray}
-\sum_i\ln[\cosh(2\sum_j K_{ij}\phi_j)] &=& 
+\sum_i\ln[2\cosh(2\sum_j K_{ij}\phi_j)] &\simeq& 
 2 \sum_k \left(K_0 + \frac{K_2}{2}k^2 \right)^2\phi_{-k}\phi_k 
 -\frac{4}{3N}\sum_{k_1,k_2,k_3} \left(K_0 + \frac{K_2}{2}k^2 \right)^4 
 \phi_{k_4}\phi_{k_3}\phi_{k_2}\phi_{k_1}\\
@@ -99,7 +99,7 @@ S[\phi] &=&
 \sum_k \left(c_1+c_2 k^2 \right) \phi_{-k}\phi_k 
 - h \phi_0
 + \frac{c_3}{N} \sum_{k_1,k_2,k_3} \phi_{k_4}\phi_{k_3}\phi_{k_2}\phi_{k_1} \\
-&\simeq& \int d^d x \left[ c_1\phi^2-c_2 (\nabla \phi)^2 +c_3 \phi^4 - h\phi \right].
+&\simeq& \int d^d x \left[ c_1\phi^2 + c_2 (\nabla \phi)^2 +c_3 \phi^4 - h\phi \right].
 \end{eqnarray}
 $$
 
@@ -125,7 +125,7 @@ $$
 \phi_k \rightarrow \frac{1}{\sqrt N} \phi_k.
 $$
 
-最终得到的连续场是一个低能理论，其有一个来自于晶格常数的天然紫外截断 $\Lambda$. 许多时候，晶格常数被取为单位 1，这相当于取截断能量为自然的能量标度($\Lambda=1$)。为了形式上的简洁，可以再做一个重标度：
+最终得到的连续场是一个低能理论，其有一个来自于晶格常数的天然紫外截断 $\Lambda$. 为了形式上的简洁，可以再做一个重标度：
 
 $$
 \begin{eqnarray}
@@ -275,7 +275,8 @@ $$
 \begin{eqnarray}
 r'_0 &=& \frac{\lambda}{2} \int_{\Lambda(1-dl)}^{\Lambda} \frac{d k}{(2\pi)^d} \frac{k^{d-1}S_d}{k^2+r} \\
 &=& \frac{\lambda\Lambda^d S_d}{2(2\pi)^d} \frac{dl}{\Lambda^2+r} \\
-&=:& \frac{A_d\lambda}{1+r} dl
+&=:& \frac{A_d\lambda}{1+r} dl \\
+&=& A_d\lambda dl + O(r\lambda).
 \end{eqnarray}
 $$
 
@@ -301,21 +302,29 @@ S_{eff} &=& \int_0^{|k|<\Lambda} \frac{d^d k}{(2\pi)^d}
 \phi^*(k_4)\phi^*(k_3) \phi(k_2)\phi(k_1) \prod_{i=1}^3 \frac{d^dk_i}{(2\pi)^d} \\
 &=& S + 
 dl\int_0^{|k|<\Lambda} \frac{d^d k}{(2\pi)^d}
-\phi^s_{-k} \left(\frac{r+A_d \lambda/(1+r)}{2} \right) \phi^s_{k}+
+\phi^s_{-k} \left(\frac{r+ \Lambda^d A_d \lambda/(\Lambda+r)}{2} \right) \phi^s_{k}+
 \frac{\lambda}{4!}(4-d)dl \int_0^{|k|<\Lambda} \phi^s_{k_4}\phi^s_{k_3} \phi^s_{k_2}\phi^s_{k_1} \prod_{i=1}^3 \frac{d^dk_i}{(2\pi)^d}.
 \end{eqnarray}
 $$
 
-最后的重整化方程为：
+最后的重整化方程(一阶)为：
 
 $$
 \begin{eqnarray}
-	\frac{d r}{dl} &=& 2 r + \frac{A_d}{1+r} \lambda, \\
+	\frac{d r}{dl} &=& 2 r + A_d \lambda, \\
 	\frac{d \lambda}{dl} &=& (4-d) \lambda.
 \end{eqnarray}
 $$
 
-此时重整化不动点仍在 $(r,\lambda)=(0,0)$ 处。
+此时重整化不动点仍在 $(r,\lambda)=(0,0)$ 处。对于 $d>4$ 情况，此 RG 分析是准确的。取 $d=5$ 画出重整化流：
+
+```mathematica
+d = 5;
+Ad = 1/(2^d*Pi^d*Gamma[d/2]);
+VectorPlot[{2 r + Ad*l, (4 - d)*l}, {r, -1, 1}, {l, 0, 10000}, VectorPoints -> Fine]
+```
+
+![](include/RGPhi4/flow1.pdf)
 
 ## 二阶微扰
 
@@ -335,19 +344,46 @@ $$
 其中
 
 $$
-\lambda' = 3A_d \lambda^2 dl.
+\lambda' = \frac{3 A_d \lambda^2}{(1+r)^2} dl.
 $$
 
 重标度后，这部分贡献为：
 
 $$
-\lambda' s^{4-d} = 3A_d \lambda^2 dl + O(dl^2). 
+\lambda' s^{4-d} = 3A_d \lambda^2 dl + O(dl^2).
 $$
 
 由此得到：
 
 $$
-\frac{d\lambda}{dl} = (4-d)\lambda -3A_d\lambda^2.
+\begin{eqnarray}
+	\frac{d r}{dl} &=& 2 r + A_d \lambda-A_d r \lambda , \\
+	\frac{d \lambda}{dl} &=& (4-d) \lambda -3A_d\lambda^2.
+\end{eqnarray}
 $$
 
-对 $d=3$ 情形，首先设 $\epsilon=4-d \ll 1$，再解析延拓到 $\epsilon=1$ 得到结果。
+对 $d<4$ 情形，首先设 $\epsilon=4-d \ll 1$，再解析延拓到 $\epsilon=O(1)$ 得到结果：
+
+$$
+\begin{eqnarray}
+	\frac{d r}{dl} &=& 2 r + \frac{\lambda}{16 \pi^2} - \frac{r\lambda}{16 \pi^2}, \\
+	\frac{d \lambda}{dl} &=& \epsilon \lambda -\frac{3\lambda^2}{16 \pi^2}.
+\end{eqnarray}
+$$
+如取 $\epsilon=1$，画出重整化流为：
+
+```mathematica
+d = 4;
+e = 1;
+Ad = 1/(2^d*Pi^d*Gamma[d/2]);
+VectorPlot[{2 r + Ad*(1 - r)*l, e*l - 3*Ad*l^2}, {r, -0.5, 0.5}, {l, 0, 1000}, VectorPoints -> Fine]
+```
+
+![](include/RGPhi4/flow2.pdf)
+
+
+
+## References
+
+1. Altland & Simons, *Condensed Matter Field Theory*.
+2. Shankar, *Quantum Field Theory and Condensed Matter*.
