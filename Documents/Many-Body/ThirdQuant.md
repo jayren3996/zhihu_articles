@@ -283,7 +283,6 @@ $$
 		\delta_{lj} \omega_k \omega_i
 	\rangle_t \\
 	&=& 2[M\cdot O(t)]_{ij} + 2[O(t)\cdot M^*]_{ij} - 4 M_{ij}^*.
-	
 \end{eqnarray}
 $$
 
@@ -335,3 +334,9 @@ $$
 $$
 
 利用高斯态的性质，我们也可以方便地求出包括纠缠熵在内的其他物理量。
+
+## References
+
+1. T. Prosen, *Third quantization: a general method to solve master equations for quadratic open Fermi systems.*
+2. T. Prosen, *Spectral theorem for the Lindblad equation for quadratic open fermionic systems.*
+
