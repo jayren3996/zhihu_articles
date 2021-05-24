@@ -393,10 +393,13 @@ Tr[F_i^\dagger F_j] = \delta_{ij},
 $$
 
 其中，我们令 $F_0=N^{-1/2} \cdot\mathbb I$. 对于一个 quantum channel，算符 $K_\mu$ 总能用此算符基展开：
+
 $$
 K_\mu = \sum_i Tr[F_i^\dagger K_\mu]F_i
 $$
+
 因此有一般形式：
+
 $$
 \mathcal{L}_t[\rho] = \sum_{ij}c_{ij}(t)F_i\rho F_j^\dagger,
 $$
