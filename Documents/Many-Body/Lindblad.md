@@ -8,7 +8,7 @@ $$
 
 描述，从而在量子力学框架下计算系统演化，最后对环境自由度部分取迹，得到系统演化后的状态。
 
-<img src="include/opensystem.png" style="zoom: 33%;" />
+<img src="include/Lindblad/opensystem.png" style="zoom: 33%;" />
 
 不过由于环境往往具有很大的自由度，这样的直接计算往往是不现实的。我们因此希望寻找一个新的方程来描述系统演化。系统-环境耦合的作用能(近似地)体现在该方程中。描述一般的开放系统演化的方程被称为主方程(master equation)，而其中最简单的一种主方程叫做 Lindblad 方程：
 
@@ -311,8 +311,9 @@ $$
 x^{lk}_{\omega\omega'} = x^{lk}_{-\omega'-\omega}.
 $$
 
-可以定义
+![image-20210524093022707](/Users/ren/Documents/GitHub/zhihu_articles/Documents/Many-Body/include/Lindblad/integration.png)
 
+可以定义
 $$
 \gamma_{\omega\omega'}^{kl} = x^{kl}_{\omega\omega'} + x^{lk*}_{\omega\omega'}
 = \frac{1}{T_a}\int_{-T_a/2}^{T_a/2} dt' \int_{-T_a/2}^{T_a/2} d\tau C_{kl}(\tau-t')e^{-i\omega t'-i\omega' \tau}
@@ -368,10 +369,10 @@ $$
 一般地，形如
 
 $$
-\mathcal{L}[\rho] = \sum_\alpha K_\alpha \rho K_\alpha^\dagger
+\mathcal{L}[\rho] = \sum_\mu K_\mu \rho K_\mu^\dagger
 $$
 
-的操作称为 quantum channel，它描述了有外界干扰下量子态变化的一般形式。
+的变换称为 quantum channel，它描述了有外界干扰下量子态变化的一般形式。
 
 对于开放系统的演化，我们总可以形式上将其记为：
 
@@ -379,22 +380,23 @@ $$
 \rho(t) = \mathcal{L}_t[\rho].
 $$
 
-而 Lindblad 方程假设这个烟花过程可以拆分为无穷小时间演化的迭代，即：
+而 Lindblad 方程假设这个演化过程可以拆分为无穷小时间演化的迭代，即：
 
 $$
 \mathcal{L}_t = \lim_{N \rightarrow \infty} \mathcal{L}_{t/N}\cdot\mathcal{L}_{t/N}\cdots \mathcal{L}_{t/N}.
 $$
 
-这样的拆分隐含着每一时刻系统演与时间无关，仅与系统状态有关，这实际上是一种马尔可夫近似。我们将要说明，满足上述关系的演化方程形式上必然是 Lindblad 方程。
-
-我们首先在希尔伯特空间内(设其为 $N$ 维)取一组正交完备算符基 $\{F_i\}$，满足：
+这样的拆分隐含着每一时刻系统演化与时间无关，仅与系统状态有关，这实际上是一种马尔可夫近似。我们将要说明，满足上述关系的演化方程形式上必然是 Lindblad 方程。首先在希尔伯特空间内(设其为 $N$ 维)取一组正交完备算符基 $\{F_i\}$，满足：
 
 $$
 Tr[F_i^\dagger F_j] = \delta_{ij},
 $$
 
-其中，我们令 $F_0=N^{-1/2} \cdot\mathbb I$. 对于一个 quantum channel，算符 $K_\alpha$ 总能用此算符基展开。这样，我们有一般形式：
-
+其中，我们令 $F_0=N^{-1/2} \cdot\mathbb I$. 对于一个 quantum channel，算符 $K_\mu$ 总能用此算符基展开：
+$$
+K_\mu = \sum_i Tr[F_i^\dagger K_\mu]F_i
+$$
+因此有一般形式：
 $$
 \mathcal{L}_t[\rho] = \sum_{ij}c_{ij}(t)F_i\rho F_j^\dagger,
 $$
@@ -402,7 +404,7 @@ $$
 其中
 
 $$
-c_{ij}(t) = \sum_{\alpha} Tr[F_i^\dagger K_\alpha]\cdot Tr[F_j^\dagger K_\alpha]^*.
+c_{ij}(t) = \sum_{\mu} Tr[F_i^\dagger K_\mu]\cdot Tr[F_j^\dagger K_\mu]^*.
 $$
 
 我们的目标是求出极限
@@ -430,7 +432,7 @@ $$
 \end{eqnarray}
 $$
 
-上述极限可化简为：
+上述极限表达式可用 $F,G,H$ 表达为紧凑的形式：
 
 $$
 \frac{d\rho}{dt} = -i[H,\rho]+\{G, \rho\}+\sum_{i,j=1}^{N^2-1}a_{ij}F_i\rho F_j^\dagger.

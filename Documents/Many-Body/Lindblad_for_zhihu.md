@@ -414,8 +414,9 @@ C_{lk}(\tau-t')e^{-i\omega (t'-t)-i\omega' (\tau-t)} \left[A_{k,\omega}\rho(t) A
 " alt="x^{lk}_{\omega\omega'} = x^{lk}_{-\omega'-\omega}.
 " class="ee_img tr_noresize" eeimg="1">
 
-可以定义
+![image-20210524093022707](https://raw.githubusercontent.com/jayren3996/zhihu_articles/master/Documents/Lindblad/integration.png)
 
+可以定义
 
 <img src="https://www.zhihu.com/equation?tex=\gamma_{\omega\omega'}^{kl} = x^{kl}_{\omega\omega'} + x^{lk*}_{\omega\omega'}
 = \frac{1}{T_a}\int_{-T_a/2}^{T_a/2} dt' \int_{-T_a/2}^{T_a/2} d\tau C_{kl}(\tau-t')e^{-i\omega t'-i\omega' \tau}
@@ -488,11 +489,11 @@ d\tau C_{kl}(\tau-t')e^{-i\omega t'-i\omega' \tau}.
 一般地，形如
 
 
-<img src="https://www.zhihu.com/equation?tex=\mathcal{L}[\rho] = \sum_\alpha K_\alpha \rho K_\alpha^\dagger
-" alt="\mathcal{L}[\rho] = \sum_\alpha K_\alpha \rho K_\alpha^\dagger
+<img src="https://www.zhihu.com/equation?tex=\mathcal{L}[\rho] = \sum_\mu K_\mu \rho K_\mu^\dagger
+" alt="\mathcal{L}[\rho] = \sum_\mu K_\mu \rho K_\mu^\dagger
 " class="ee_img tr_noresize" eeimg="1">
 
-的操作称为 quantum channel，它描述了有外界干扰下量子态变化的一般形式。
+的变换称为 quantum channel，它描述了有外界干扰下量子态变化的一般形式。
 
 对于开放系统的演化，我们总可以形式上将其记为：
 
@@ -501,24 +502,26 @@ d\tau C_{kl}(\tau-t')e^{-i\omega t'-i\omega' \tau}.
 " alt="\rho(t) = \mathcal{L}_t[\rho].
 " class="ee_img tr_noresize" eeimg="1">
 
-而 Lindblad 方程假设这个烟花过程可以拆分为无穷小时间演化的迭代，即：
+而 Lindblad 方程假设这个演化过程可以拆分为无穷小时间演化的迭代，即：
 
 
 <img src="https://www.zhihu.com/equation?tex=\mathcal{L}_t = \lim_{N \rightarrow \infty} \mathcal{L}_{t/N}\cdot\mathcal{L}_{t/N}\cdots \mathcal{L}_{t/N}.
 " alt="\mathcal{L}_t = \lim_{N \rightarrow \infty} \mathcal{L}_{t/N}\cdot\mathcal{L}_{t/N}\cdots \mathcal{L}_{t/N}.
 " class="ee_img tr_noresize" eeimg="1">
 
-这样的拆分隐含着每一时刻系统演与时间无关，仅与系统状态有关，这实际上是一种马尔可夫近似。我们将要说明，满足上述关系的演化方程形式上必然是 Lindblad 方程。
-
-我们首先在希尔伯特空间内(设其为  <img src="https://www.zhihu.com/equation?tex=N" alt="N" class="ee_img tr_noresize" eeimg="1">  维)取一组正交完备算符基  <img src="https://www.zhihu.com/equation?tex=\{F_i\}" alt="\{F_i\}" class="ee_img tr_noresize" eeimg="1"> ，满足：
+这样的拆分隐含着每一时刻系统演化与时间无关，仅与系统状态有关，这实际上是一种马尔可夫近似。我们将要说明，满足上述关系的演化方程形式上必然是 Lindblad 方程。首先在希尔伯特空间内(设其为  <img src="https://www.zhihu.com/equation?tex=N" alt="N" class="ee_img tr_noresize" eeimg="1">  维)取一组正交完备算符基  <img src="https://www.zhihu.com/equation?tex=\{F_i\}" alt="\{F_i\}" class="ee_img tr_noresize" eeimg="1"> ，满足：
 
 
 <img src="https://www.zhihu.com/equation?tex=Tr[F_i^\dagger F_j] = \delta_{ij},
 " alt="Tr[F_i^\dagger F_j] = \delta_{ij},
 " class="ee_img tr_noresize" eeimg="1">
 
-其中，我们令  <img src="https://www.zhihu.com/equation?tex=F_0=N^{-1/2} \cdot\mathbb I" alt="F_0=N^{-1/2} \cdot\mathbb I" class="ee_img tr_noresize" eeimg="1"> . 对于一个 quantum channel，算符  <img src="https://www.zhihu.com/equation?tex=K_\alpha" alt="K_\alpha" class="ee_img tr_noresize" eeimg="1">  总能用此算符基展开。这样，我们有一般形式：
+其中，我们令  <img src="https://www.zhihu.com/equation?tex=F_0=N^{-1/2} \cdot\mathbb I" alt="F_0=N^{-1/2} \cdot\mathbb I" class="ee_img tr_noresize" eeimg="1"> . 对于一个 quantum channel，算符  <img src="https://www.zhihu.com/equation?tex=K_\mu" alt="K_\mu" class="ee_img tr_noresize" eeimg="1">  总能用此算符基展开：
 
+<img src="https://www.zhihu.com/equation?tex=K_\mu = \sum_i Tr[F_i^\dagger K_\mu]F_i
+" alt="K_\mu = \sum_i Tr[F_i^\dagger K_\mu]F_i
+" class="ee_img tr_noresize" eeimg="1">
+因此有一般形式：
 
 <img src="https://www.zhihu.com/equation?tex=\mathcal{L}_t[\rho] = \sum_{ij}c_{ij}(t)F_i\rho F_j^\dagger,
 " alt="\mathcal{L}_t[\rho] = \sum_{ij}c_{ij}(t)F_i\rho F_j^\dagger,
@@ -527,8 +530,8 @@ d\tau C_{kl}(\tau-t')e^{-i\omega t'-i\omega' \tau}.
 其中
 
 
-<img src="https://www.zhihu.com/equation?tex=c_{ij}(t) = \sum_{\alpha} Tr[F_i^\dagger K_\alpha]\cdot Tr[F_j^\dagger K_\alpha]^*.
-" alt="c_{ij}(t) = \sum_{\alpha} Tr[F_i^\dagger K_\alpha]\cdot Tr[F_j^\dagger K_\alpha]^*.
+<img src="https://www.zhihu.com/equation?tex=c_{ij}(t) = \sum_{\mu} Tr[F_i^\dagger K_\mu]\cdot Tr[F_j^\dagger K_\mu]^*.
+" alt="c_{ij}(t) = \sum_{\mu} Tr[F_i^\dagger K_\mu]\cdot Tr[F_j^\dagger K_\mu]^*.
 " class="ee_img tr_noresize" eeimg="1">
 
 我们的目标是求出极限
@@ -566,7 +569,7 @@ d\tau C_{kl}(\tau-t')e^{-i\omega t'-i\omega' \tau}.
 \end{eqnarray}
 " class="ee_img tr_noresize" eeimg="1">
 
-上述极限可化简为：
+上述极限表达式可用  <img src="https://www.zhihu.com/equation?tex=F,G,H" alt="F,G,H" class="ee_img tr_noresize" eeimg="1">  表达为紧凑的形式：
 
 
 <img src="https://www.zhihu.com/equation?tex=\frac{d\rho}{dt} = -i[H,\rho]+\{G, \rho\}+\sum_{i,j=1}^{N^2-1}a_{ij}F_i\rho F_j^\dagger.
