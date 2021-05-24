@@ -268,15 +268,20 @@ W,
 
 三次量子化框架下密度算符 Fock 基的物理意义不明显，许多时候更有意义的是物理观测量。特别是对于单粒子问题，2 点关联函数完全确定了体系的所有性质，因此接下来我们考虑物理观测量的动力学，及其与刘维尔算子谱的关系。首先，利用关系
 
+
 <img src="https://www.zhihu.com/equation?tex=\frac{d}{dt}\bar{O}(t) = Tr\left[O\frac{d\rho(t)}{dt}\right]
 " alt="\frac{d}{dt}\bar{O}(t) = Tr\left[O\frac{d\rho(t)}{dt}\right]
 " class="ee_img tr_noresize" eeimg="1">
+
 将密度矩阵的演化转化为算符的演化，得到“海森堡表象”下的 Lindblad 方程：
+
 
 <img src="https://www.zhihu.com/equation?tex=\frac{d}{dt} O(t) = i [H,O] + \sum_\mu\left[2L_\mu O L_\mu^\dagger -\{L_\mu^\dagger L_\mu, O\} \right].
 " alt="\frac{d}{dt} O(t) = i [H,O] + \sum_\mu\left[2L_\mu O L_\mu^\dagger -\{L_\mu^\dagger L_\mu, O\} \right].
 " class="ee_img tr_noresize" eeimg="1">
+
 通过一适当组合，我们写下算符期望值的演化方程：
+
 
 <img src="https://www.zhihu.com/equation?tex=\begin{eqnarray}
 \frac{d}{dt}\langle O\rangle_t
@@ -396,6 +401,7 @@ W,
 
 由于  <img src="https://www.zhihu.com/equation?tex=X+X^T=2 \mathrm{Re}[M]" alt="X+X^T=2 \mathrm{Re}[M]" class="ee_img tr_noresize" eeimg="1"> ，我们可以定义 2 点关联函数：
 
+
 <img src="https://www.zhihu.com/equation?tex=C_{ij} = iO_{ij}-i\delta_{ij}.
 " alt="C_{ij} = iO_{ij}-i\delta_{ij}.
 " class="ee_img tr_noresize" eeimg="1">
@@ -409,9 +415,11 @@ W,
 
 此前考虑刘维尔算子谱的时候，我们定义了矩阵  <img src="https://www.zhihu.com/equation?tex=Z" alt="Z" class="ee_img tr_noresize" eeimg="1">  满足连续李雅普诺夫方程  <img src="https://www.zhihu.com/equation?tex=X^T Z + ZX = M_I" alt="X^T Z + ZX = M_I" class="ee_img tr_noresize" eeimg="1"> ，由此我们直接得到稳态的关联函数：
 
+
 <img src="https://www.zhihu.com/equation?tex=C^{s}_{ij} = 4Z_{ij}.
 " alt="C^{s}_{ij} = 4Z_{ij}.
 " class="ee_img tr_noresize" eeimg="1">
+
 我们因此看到，虽然矩阵  <img src="https://www.zhihu.com/equation?tex=Z" alt="Z" class="ee_img tr_noresize" eeimg="1">  不对刘维尔谱造成影响，但其完全决定了物理量在稳态的期望值。总的演化因此可以表达为：
 
 
@@ -429,13 +437,16 @@ C(t) &=& 4Z + e^{-2X^Tt} (C_0-4Z) e^{-2Xt} \\
 
 我们也可以回过头看态的演化。对于单粒子问题，我们关心的态往往总是高斯态。一个高斯态可以方便地通过 Grassmann 数表示出来：
 
+
 <img src="https://www.zhihu.com/equation?tex=\omega(\hat\rho,\theta) = \exp\left(\frac{i}{2} \sum_{ij} C_{ij} \theta_i\theta_j\right).
 " alt="\omega(\hat\rho,\theta) = \exp\left(\frac{i}{2} \sum_{ij} C_{ij} \theta_i\theta_j\right).
 " class="ee_img tr_noresize" eeimg="1">
 
 这里的  <img src="https://www.zhihu.com/equation?tex=C_{ij}" alt="C_{ij}" class="ee_img tr_noresize" eeimg="1">  就是上述关联函数。因此，知道了关联函数的演化，高斯态的演化也就完全确定了：
 
+
 <img src="https://www.zhihu.com/equation?tex=\omega(\hat\rho_t, \theta) = \exp\left(\frac{i}{2} \sum_{ij} C_{ij}(t) \theta_i\theta_j\right).
 " alt="\omega(\hat\rho_t, \theta) = \exp\left(\frac{i}{2} \sum_{ij} C_{ij}(t) \theta_i\theta_j\right).
 " class="ee_img tr_noresize" eeimg="1">
+
 利用高斯态的性质，我们也可以方便地求出包括纠缠熵在内的其他物理量。
