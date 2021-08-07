@@ -320,3 +320,7 @@ $$
 
 ## References
 
+1. Uma Bhaumik, A Taraphder, *A study of long-range order in certain two-dimensional frustrated lattices*, [arXiv:1402.6069](https://arxiv.org/abs/1402.6069).
+2. S Toth, B Lake, *Linear spin wave theory for single-Q incommensurate magnetic structures*, [arXiv:1402.6069](https://arxiv.org/abs/1402.6069).
+3. Ming-wen Xiao, *Theory of transformation for the diagonalization of quadratic Hamiltonians*, [arXiv:0908.0787](https://arxiv.org/abs/0908.0787).
+

@@ -225,3 +225,8 @@ iG_{n}^{R}\left(q,\omega\right)=\begin{cases}
 \frac{i}{\omega+\omega_{q,n}+i\eta} & n>N
 \end{cases}
 $$
+
+## References
+
+1. S Toth, B Lake, *Linear spin wave theory for single-Q incommensurate magnetic structures*, [arXiv:1402.6069](https://arxiv.org/abs/1402.6069).
+

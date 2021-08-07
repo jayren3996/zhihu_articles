@@ -1,11 +1,10 @@
 # 洛伦兹群的旋量表示
 
-首先简要介绍下本文的 motivation. 本人是凝聚态学生，之前一直将场论理解为二次量子化下的多体物理。在学习量子场论的过程中，对将不同的场归结为洛伦兹群的表示这一观点感到十分惊艳。然而感觉
-Weinberg 语言过于数学化与晦涩，其他常规场论书(Peskin 等)几乎只是讲了个故事，从表示到场论逻辑较为跳跃。希望用较为具体的语言，整理洛伦兹群的旋量表示及各种推论。
+首先简要介绍下本文的 motivation。本人是凝聚态学生，之前一直将场论理解为二次量子化下的多体物理。在学习量子场论的过程中，对将不同的场归结为洛伦兹群的表示这一观点感到十分惊艳。然而感觉 Weinberg 语言过于数学化与晦涩，其他常规场论书(Peskin 等)几乎只是讲了个故事，从表示到场论逻辑较为跳跃。希望用较为具体的语言，整理洛伦兹群的旋量表示及各种推论。
 
 ## 无穷小洛伦兹变换
 
-我们采用 $\eta_{\mu\nu}=diag\left(1,-1,-1,-1\right)$ 度规。洛伦兹矩阵是在合同变换下保持洛伦兹度规不变的(实)矩阵：
+我们采用 $\eta_{\mu\nu}= \mathrm{diag}\left(1,-1,-1,-1\right)$​ 度规。洛伦兹矩阵是在合同变换下保持洛伦兹度规不变的(实)矩阵：
 
 $$
 \Lambda^{T}\left(\begin{array}{cccc}
@@ -25,8 +24,8 @@ $$
 
 $$
 \begin{eqnarray}
-{\Lambda^{\mu}}_{\nu} & \eqsim & {\delta^{\mu}}_{\nu}+{\left(\delta\omega\right)^{\mu}}_{\nu},\\
-{\left(\Lambda^{T}\right)_{\mu}}^{\nu} & \eqsim & {\delta_{\mu}}^{\mu}+{\left(\delta\omega^{T}\right)_{\mu}}^{\nu}.
+{\Lambda^{\mu}}_{\nu} & \simeq & {\delta^{\mu}}_{\nu}+{\left(\delta\omega\right)^{\mu}}_{\nu},\\
+{\left(\Lambda^{T}\right)_{\mu}}^{\nu} & \simeq & {\delta_{\mu}}^{\nu}+{\left(\delta\omega^{T}\right)_{\mu}}^{\nu}.
 \end{eqnarray}
 $$
 
@@ -34,15 +33,18 @@ $$
 
 $$
 \begin{eqnarray}
-\eta_{\mu\nu} & = & \left({\delta_{\mu}}^{\rho}+{\left(\delta\omega\right)^{\mu}}_{\nu}\right)\eta_{\rho\sigma}\left({\delta^{\sigma}}_{\nu}+{\left(\delta\omega^{T}\right)_{\mu}}^{\nu}\right)\nonumber \\
- & \eqsim & \eta_{\mu\nu}+{\left(\delta\omega\right)^{\mu}}_{\nu}\eta_{\rho\sigma}{\delta^{\sigma}}_{\nu}+{\delta_{\mu}}^{\rho}\eta_{\rho\sigma}{\left(\delta\omega^{T}\right)_{\mu}}^{\nu}\nonumber \\
- & = & \eta_{\mu\nu}+\left(\delta\omega\right)_{\mu\nu}+\left(\delta\omega^{T}\right)_{\mu\nu}.
+\eta_{\mu\nu} & = & \left({\delta_{\mu}}^{\rho}+{\left(\delta\omega^T\right)_{\mu}}^{\rho}\right)\eta_{\rho\sigma}\left({\delta^{\sigma}}_{\nu}+{\left(\delta\omega\right)^{\sigma}}_{\nu}\right)\nonumber \\
+ & \eqsim & \eta_{\mu\nu}+{\left(\delta\omega^T\right)_{\mu}}^{\rho}\eta_{\rho\nu}+
+\eta_{\mu\sigma}{\left(\delta\omega\right)^{\sigma}}_{\nu}\nonumber \\
+ & = & \eta_{\mu\nu}+\left(\delta\omega^T\right)_{\mu\nu}+\left(\delta\omega\right)_{\mu\nu}.
 \end{eqnarray}
 $$
 
-因此洛伦兹群上无穷小元素的限制是反对称：$\delta\omega_{\mu\nu}=-\delta\omega_{\nu\mu}$.
+因此洛伦兹群上无穷小元素的限制是反对称：
+$$
+\delta\omega_{\mu\nu}=-\delta\omega_{\nu\mu}.
+$$
 这里无穷小矩阵两个下指标，为了写出通常意义下的矩阵形式，最好将其一个指标用度规提升：
-
 $$
 {\left(\delta\omega\right)^{\mu}}_{\nu}=\eta^{\mu\sigma}\left(\delta\omega\right)_{\sigma\nu}.
 $$
@@ -87,9 +89,7 @@ K^{1}=\left(\begin{array}{cccc}
 \end{array}\right).
 $$
 
-其中第二行 3 个矩阵由于乘上度规因子变为对称矩阵。这六个无穷小矩阵有直接的物理意义：第一行 3 个矩阵对应 3 个方向的空间转动，第二行
-3 个矩阵对应 3 个方向的洛伦兹 boost。我们将三个空间转动的无穷小系数记为 $\left(\theta_{1},\theta_{2},\theta_{3}\right)$，三个
-boost 方向无穷小系数记为 $\left(\beta_{1},\beta_{2},\beta_{3}\right)$. 一般的洛伦兹变换可以写为一个指数形式：
+其中第二行 3 个矩阵由于乘上度规因子变为对称矩阵。这六个无穷小矩阵有直接的物理意义：第一行 3 个矩阵对应 3 个方向的空间转动，第二行 3 个矩阵对应 3 个方向的洛伦兹 boost。我们将三个空间转动的无穷小系数记为 $\left(\theta_{1},\theta_{2},\theta_{3}\right)$，三个 boost 方向无穷小系数记为 $\left(\beta_{1},\beta_{2},\beta_{3}\right)$，则一般的洛伦兹变换可以写为一个指数形式：
 
 $$
 \Lambda\left(\vec{\theta},\vec{\beta}\right)=\exp\left(\vec{\theta}\cdot\vec{J}+\vec{\beta}\cdot\vec{K}\right).
@@ -97,9 +97,7 @@ $$
 
 
 ## 洛伦兹代数
-对于连续群，李氏定理告诉我们只要确定生成元直接的对易关系，相应连续群的局部结果就完全确定了。我们因此考虑洛伦兹群 6 个生成元的对易关系。
-
-要确定这些对易关系，原则上我们可以将矩阵两两相乘再相减。这里直接给出结果：
+对于连续群，李氏定理告诉我们只要确定生成元直接的对易关系，相应连续群的局部结果就完全确定了。我们因此考虑洛伦兹群 6 个生成元的对易关系。要确定这些对易关系，原则上我们可以将矩阵两两取对易子。这里直接给出结果：
 
 $$
 \begin{eqnarray}
@@ -128,7 +126,7 @@ $$
 \end{eqnarray}
 $$
 
-而每组算符内部分别满足 $SU(2)$ 生成元的对易关系：
+而每组算符内部分别满足 $su(2)$​ 生成元的对易关系：
 
 $$
 \begin{eqnarray}
@@ -179,8 +177,7 @@ $$
 \psi_{L}^{i}\rightarrow{\left(\Lambda_{L}\right)^{i}}_{j}\psi_{L}^{j}.
 $$
 
-其中 $\Lambda_{L}$ 为一个 $2\times2$ 维矩阵，对应 $\left(\frac{1}{2},0\right)$
-表示的表示矩阵。要确定表示矩阵，我们注意到 $j_{-}=0$, 即第二个“自旋”为 0 ，用我们之前确定的生成元关系，有：
+其中 $\Lambda_{L}$ 为一个 $2\times2$ 维矩阵，对应 $\left(\frac{1}{2},0\right)$ 表示的表示矩阵。要确定表示矩阵，我们注意到 $j_{-}=0$, 即第二个“自旋”为 0 ，用我们之前确定的生成元关系，有：
 
 $$
 J_{-}^{i}\psi=0,\ \forall i.
@@ -198,7 +195,7 @@ $$
 J_{+}^{i}\psi=\frac{1}{2}\left(J^{i}+iK^{i}\right)\psi=J_{-}^{i}\psi.
 $$
 
-此时，由于 $J_{-}^{i}$ 满足 $su(2)$ 的对易关系，我们可以用泡利矩阵表示之(这里我们插入 i 使得生成元幺正)：
+此时，由于 $J_{-}^{i}$​ 满足 $su(2)$​ 的对易关系，我们可以用泡利矩阵表示之(这里我们插入 $i$ 使得生成元幺正)：
 
 $$
 iJ^{i}=iJ_{-}^{i}=\sigma^{i};
@@ -222,10 +219,7 @@ $$
 \Lambda_{R}=e^{\frac{1}{2}\left(-i\vec{\theta}+\vec{\beta}\right)\cdot\vec{\sigma}}.
 $$
 
-这样，我们确定了洛伦兹群两个不等价二维不可约表示。在我们转而考虑更高维表示之前，我们先来看两个 Weyl 旋量表示的关系。
-
-从指数矩阵的形式上看，左手右手的差别在于 boost 生成元的符号。我们可以用一个小 trick 将互换左右手表示。首先我们注意到共轭作用
-$\sigma^{2}$ 有翻转自旋的效果(同时产生一个复共轭)：
+这样，我们确定了洛伦兹群两个不等价二维不可约表示。在我们转而考虑更高维表示之前，我们先来看两个 Weyl 旋量表示的关系。从指数矩阵的形式上看，左手右手的差别在于 boost 生成元的符号。我们可以用一个小 trick 将互换左右手表示。首先我们注意到共轭作用 $\sigma^{2}$ 有翻转自旋的效果(同时产生一个复共轭)：
 
 $$
 \sigma^{2}\vec{\sigma}\sigma^{2}=-\vec{\sigma}^{*}.
@@ -297,11 +291,9 @@ $$
 
 
 ## 矢量表示
-现在我们来考虑 $\left(\frac{1}{2},\frac{1}{2}\right)$ 不可约表示。实际上，从矩阵的维数就可以看出这是这对应洛伦兹群的自身表示，因为洛伦兹群只有一个
-4 维不可约表示。但我们在这里具体将这个 4-矢量写出来。
+现在我们来考虑 $\left(\frac{1}{2},\frac{1}{2}\right)$ 不可约表示。实际上，从矩阵的维数就可以看出这是这对应洛伦兹群的自身表示，因为洛伦兹群只有一个 4 维不可约表示。但我们在这里具体将这个 4-矢量写出来。
 
-首先， $\left(\frac{1}{2},\frac{1}{2}\right)$ 表示可以写成左手 Weyl 旋量与右手 Weyl
-旋量表示的直积：
+首先， $\left(\frac{1}{2},\frac{1}{2}\right)$ 表示可以写成左手 Weyl 旋量与右手 Weyl 旋量表示的直积：
 
 $$
 \left(\frac{1}{2},\frac{1}{2}\right)=\left(\frac{1}{2},0\right)\otimes\left(0,\frac{1}{2}\right).
@@ -324,8 +316,7 @@ $$
 \Lambda_{\left(\frac{1}{2},\frac{1}{2}\right)}\psi=\left(\Lambda_{L}\otimes\Lambda_{R}\right)\psi.
 $$
 
-到这里，原则上我们已经具体给出了这个表示，但我们不满足于此。我们还希望直接看出 4-矢量变换来，这里我们就要用到旋量表示的“换手”trick：在直乘表达式中，我们让
-$\psi_{R}$ 躺下，即将直乘变为外积：
+到这里，原则上我们已经具体给出了这个表示，但我们不满足于此。我们还希望直接看出 4-矢量变换来，这里我们就要用到旋量表示的“换手”trick：在直乘表达式中，我们让 $\psi_{R}$ 躺下，即将直乘变为外积：
 
 $$
 M=\psi_{L}\cdot\psi_{R}^{T}=\left(\begin{array}{cc}
@@ -334,15 +325,13 @@ M=\psi_{L}\cdot\psi_{R}^{T}=\left(\begin{array}{cc}
 \end{array}\right).
 $$
 
-我们看到，我们没改变 4 分量的任何一个，不过是对矢量做了个变形。我们用这个变形后矩阵承载 $\left(\frac{1}{2},\frac{1}{2}\right)$
-表示。其在洛伦兹变换下的变换形式现在变为：
+我们看到，我们没改变 4 分量的任何一个，不过是对矢量做了个变形。我们用这个变形后矩阵承载 $\left(\frac{1}{2},\frac{1}{2}\right)$ 表示。其在洛伦兹变换下的变换形式现在变为：
 
 $$
 M\rightarrow\Lambda_{L}M\Lambda_{R}^{T}.
 $$
 
-转置的结果相当于取 $\vec{\sigma}\rightarrow\vec{\sigma}^{*}$. 这启发我们在插入一个 $\sigma^{2}$
-矩阵：
+转置的结果相当于取 $\vec{\sigma}\rightarrow\vec{\sigma}^{*}$. 这启发我们在插入一个 $\sigma^{2}$ 矩阵：
 
 $$
 \begin{eqnarray}
@@ -408,8 +397,7 @@ V^{3}+\beta_{3}V^{0}+\theta_{1}V^{2}-\theta_{2}V^{1}
 \end{array}\right).
 $$
 
-发现 $V^{\mu}$ 的确像 4-矢量那样变换。我们将 $\psi_{L}\cdot\psi_{L}^{\dagger}$
-具体乘开成矩阵形式并与参数化的矩阵比较：
+发现 $V^{\mu}$ 的确像 4-矢量那样变换。我们将 $\psi_{L}\cdot\psi_{L}^{\dagger}$ 具体乘开成矩阵形式并与参数化的矩阵比较：
 
 $$
 \left(\begin{array}{cc}
@@ -449,17 +437,13 @@ $$
 ## 洛伦兹不变性
 在讨论 Dirac (可约)表示之前，我们来考虑目前为止我们讨论的表示对应的场。量子场论的基本原则是想办法构造满足洛伦兹不变的场拉氏量。
 
-我们同样从最简单的情况开始，考虑左手 weyl 表示可能对应的场拉氏量。首先，对于旋量场，我们希望拉氏量含有场的一阶导数，而导数算符作用在场上有逆变矢量的变换规律，有了之前的铺垫，我们自然想到用
-$\sigma^{\mu}$与其缩并得到洛伦兹不变的动能项：
+我们同样从最简单的情况开始，考虑左手 weyl 表示可能对应的场拉氏量。首先，对于旋量场，我们希望拉氏量含有场的一阶导数，而导数算符作用在场上有逆变矢量的变换规律，有了之前的铺垫，我们自然想到用 $\sigma^{\mu}$与其缩并得到洛伦兹不变的动能项：
 
 $$
 i\psi_{L}^{\dagger}\bar{\sigma}^{\mu}\partial_{\mu}\psi_{L}.
 $$
 
-这就对应了 Weyl 场拉氏量，对应零质量情形。考虑质量，我们就要在拉氏量中加入质量项，直接的想法是模仿 Klein-Gordon
-方程加入类似于 $\psi_{L}^{\dagger}m\psi_{L}$ 的项，可惜这不是洛伦兹不变的。
-
-幸运的是，对于旋量表示的矢量，我们已经提到过，可以用对偶矢量
+这就对应了 Weyl 场拉氏量，对应零质量情形。考虑质量，我们就要在拉氏量中加入质量项，直接的想法是模仿 Klein-Gordon 方程加入类似于 $\psi_{L}^{\dagger}m\psi_{L}$ 的项，可惜这不是洛伦兹不变的。幸运的是，对于旋量表示的矢量，我们已经提到过，可以用对偶矢量
 
 $$
 \psi_{i}:=\epsilon_{ij}\psi^{j}=\left(i\sigma^{2}\right)_{ij}\psi^{i}
@@ -477,8 +461,7 @@ $$
 {\cal L}=i\psi_{L}^{\dagger}\sigma^{\mu}\partial_{\mu}\psi_{L}+im\psi_{L}^{T}\sigma^{2}\psi_{L}.
 $$
 
-到这里，我们似乎已经得到了想要的带质量的洛伦兹不变拉氏量。但这个拉氏量有一个严重的问题，即它的质量项没有 $U(1)$ 对称性，即在变换
-$\psi_{L}\rightarrow e^{i\theta}\psi_{L}$ 下质量项改变。这个困难可以通过一个复对称化操作解决：
+到这里，我们似乎已经得到了想要的带质量的洛伦兹不变拉氏量。但这个拉氏量有一个严重的问题，即它的质量项没有 $U(1)$ 对称性，即在变换 $\psi_{L}\rightarrow e^{i\theta}\psi_{L}$ 下质量项改变。这个困难可以通过一个复对称化操作解决：
 
 $$
 \begin{eqnarray}
@@ -487,8 +470,7 @@ $$
 \end{eqnarray}
 $$
 
-这里我们将 $\psi_{L}$ 替换为 $\chi$, 这个拉氏量就是 Majorana 拉氏量。Majorana 可以看作
-Dirac 表示的一种等价变形。这里由于场是复的，实际上体系表示空间是 4 维的。这也启发我们写下一个 4 维表示。最直接的思路是把左右手表示放在一起：
+这里我们将 $\psi_{L}$ 替换为 $\chi$, 这个拉氏量就是 Majorana 拉氏量。Majorana 可以看作 Dirac 表示的一种等价变形。这里由于场是复的，实际上体系表示空间是 4 维的。这也启发我们写下一个 4 维表示。最直接的思路是把左右手表示放在一起：
 
 $$
 \begin{eqnarray}
@@ -518,8 +500,7 @@ $$
 我们就得到了 Dirac 场拉氏量。
 
 ## Dirac 表示
-现在我们知道，引入 $\left(\frac{1}{2},0\right)\oplus\left(0,\frac{1}{2}\right)$
-这个可约表示的目的是描述电子拉氏量，表示空间是左右手 Weyl 旋量表示矢量直和：
+现在我们知道，引入 $\left(\frac{1}{2},0\right)\oplus\left(0,\frac{1}{2}\right)$ 这个可约表示的目的是描述电子拉氏量，表示空间是左右手 Weyl 旋量表示矢量直和：
 
 $$
 \psi=\left(\begin{array}{c}
